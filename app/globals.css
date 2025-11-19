@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html{
+  background: #0b2631;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+      margin: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    background-color: #fff;
+    -webkit-font-feature-settings: "tnum","tnum";
+    -moz-font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum","tnum"
+}
+
+@font-face {
+    font-family: regular;
+    src: local("regular"),url(/font/Poppins-Regular.4b4ebe20.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: medium;
+    src: local("medium"),url(/font/Poppins-Medium.a52d0bf0.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: semiBold;
+    src: local("semiBold"),url(/font/Poppins-SemiBold.98512bf8.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: light;
+    src: local("light"),url(/font/Poppins-Light.8b20023e.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: bold;
+    src: local("bold"),url(/font/Poppins-Bold.8001a01b.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: interBold;
+    src: local("interBold"),url(/font/Inter-Bold.a4d688de.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: interRegular;
+    src: local("interRegular"),url(/font/Inter-Regular.b85a5d42.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: interSemiBold;
+    src: local("interSemiBold"),url(/font/Inter-SemiBold.7b1d4c41.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: interMedium;
+    src: local("interMedium"),url(/font/Inter-Medium.8fdaf020.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: muli-medium;
+    src: local("muli-medium"),url(/font/Mulish-Medium.eeed5413.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: muli-regular;
+    src: local("muli-regular"),url(/font/Mulish-Regular.a4c4b1ab.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: muli-bold;
+    src: local("muli-bold"),url(/font/Mulish-Bold.0a4236f1.ttf) format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: muli-semiBold;
+    src: local("muli-semiBold"),url(/font/Mulish-SemiBold.89b626ee.ttf) format("truetype");
+    font-display: swap
+}
+
+.menu-item .menu-item_text{
+  font-family: regular, sans-serif;
+  color: #808191;
+}
+
+.menu-item .menu-item_text.active{
+  font-family: semiBold, sans-serif;
+  color: white;
+}
