@@ -29,10 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row h-screen`}
       >
-        <div className={`overflow-hidden sidebarWrapper transition-all shrink-0 max-w-[260px] min-w-[260px] w-[260px]`}>
+        <div className={`overflow-hidden sidebarWrapper transition-all shrink-0 min-w-[260px] w-[20%] bg-[#0b2631]`}>
           <Aside />
         </div>
-        <div className="flex-1 contentRight transition-all bg-[#0b2631] overflow-auto">
+        <div className="flex-1 contentRight transition-all bg-[#0b2631] overflow-auto w-[80%]">
             <Header/>
             {children}
         </div>

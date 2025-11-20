@@ -116,6 +116,26 @@ body {
     font-display: swap
 }
 
+.font-SemiBold{
+  font-family: semiBold, sans-serif;
+}
+
+.font-Regular{
+  font-family: regular, sans-serif;
+}
+
+.font-Light{
+  font-family: light, sans-serif;
+}
+
+.font-Medium{
+  font-family: medium, sans-serif;
+}
+
+.font-Bold{
+  font-family: bold, sans-serif;
+}
+
 .menu-item .menu-item_text{
   font-family: regular, sans-serif;
   color: #808191;
@@ -124,4 +144,60 @@ body {
 .menu-item .menu-item_text.active{
   font-family: semiBold, sans-serif;
   color: white;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation-fadein{
+  animation: fadein 0.5s ease forwards;
+}
+
+.animation{
+  animation: .4s ease;
+}
+
+.animation2{
+  transition: transform .5s ease;
+}
+
+.readButton > div {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.readButton > div:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #33bf71;
+  transition: all 0.3s ease;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.readButton > div:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0c3a54;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.readButton > div:hover:before {
+  left: 0;
 }

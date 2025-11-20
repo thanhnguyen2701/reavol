@@ -9,11 +9,11 @@ const Aside = () => {
     const pathname = usePathname();
 
     return (
-        <div className='p-5 sidebar fixed top-0 left-0  h-full transition-all bg-[#0b2631]'>
+        <div className='p-5 sidebar fixed top-0 left-0  h-full transition-all bg-[#0b2631] w-[20%]'>
             <div className='pl-5'>
-                <div className='img'>
+                <div className='img w-full'>
                     <Image src="/ic_logo_reavol.svg" alt="" width={200}
-                        height={100} />
+                        height={100}/>
                 </div>
                 <div className='mt-9 mr-[13px] mb-5 ml-0'>
                     <span className='text-[11px]/[11px] font-semibold tracking-[1.5px] text-[#808191] opacity-50 mix-blend-normal'>MENU</span>
