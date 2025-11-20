@@ -195,55 +195,55 @@ export default function Home() {
           <div className="mt-15 text-[28px]/[28px]! font-medium! text-white font-Medium">Blog sách</div>
           <div className="mt-2.5 text-[32px]/[40px]! font-semibold! mb-7.5! text-white font-SemiBold">Nơi sẻ chia mọi kiến thức về sách</div>
         </div>
-      </div>
-      <div className="flex flex-wrap -mx-[15px]">
-        <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-          <Link href={'/'}>
-            <div className="aspect-[1.43] relative w-full">
-              <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
-              </div>
-              <div>
-                <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
-                <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br/>
-                  - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br/>
-                  - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+        <div className="flex flex-wrap -mx-[15px]">
+          <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
+            <Link href={'/'}>
+              <div className="aspect-[1.43] relative w-full">
+                <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
+                  <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                </div>
+                <div>
+                  <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
+                  <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br />
+                    - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br />
+                    - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        </div>
-        <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-          <Link href={'/'}>
-            <div className="aspect-[1.43] relative w-full">
-              <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
-              </div>
-              <div>
-                <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
-                <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br/>
-                  - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br/>
-                  - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+            </Link>
+          </div>
+          <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
+            <Link href={'/'}>
+              <div className="aspect-[1.43] relative w-full">
+                <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
+                  <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                </div>
+                <div>
+                  <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
+                  <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br />
+                    - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br />
+                    - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        </div>
-        <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-          <Link href={'/'}>
-            <div className="aspect-[1.43] relative w-full">
-              <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
-              </div>
-              <div>
-                <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
-                <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br/>
-                  - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br/>
-                  - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+            </Link>
+          </div>
+          <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
+            <Link href={'/'}>
+              <div className="aspect-[1.43] relative w-full">
+                <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
+                  <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                </div>
+                <div>
+                  <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
+                  <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br />
+                    - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br />
+                    - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
