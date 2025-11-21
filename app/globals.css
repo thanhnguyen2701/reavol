@@ -136,6 +136,10 @@ body {
   font-family: bold, sans-serif;
 }
 
+.font-InterRegular{
+  font-family: interRegular, sans-serif;
+}
+
 .menu-item .menu-item_text{
   font-family: regular, sans-serif;
   color: #808191;

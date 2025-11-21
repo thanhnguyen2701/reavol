@@ -53,12 +53,66 @@ const Footer = () => {
                                 <div className='mt-[35px] flex'>
                                     <div className='cursor-pointer'>
                                         <div>
-                                            <Image src={'/imgbin_app-google.svg'} width={156} height={55} alt=''/>
+                                            <Image src={'/imgbin_app-google.svg'} width={156} height={55} alt='' />
                                         </div>
                                     </div>
                                     <div className='cursor-pointer ml-5'>
                                         <div>
-                                            <Image src={'/imgbin_app-store.svg'} width={156} height={55} alt=''/>
+                                            <Image src={'/imgbin_app-store.svg'} width={156} height={55} alt='' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex-none w-7/12 max-w-[58.333333%] relative min-h-px px-[15px]'>
+                            <div className='mt-[131px] flex flex-wrap -mx-[15px]'>
+                                <div className='flex justify-center relative flex-none w-1/3 max-w-[33.333333%] min-h-px px-[15px]'>
+                                    <div>
+                                        <h4 className='font-semibold text-[24px]/[36px] text-[#33bf71] font-SemiBold mt-0 mb-2'>VỀ CHÚNG TÔI</h4>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/introduce'} className='font-InterRegular text-[18px]/[36px] text-white'>Giới thiệu</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/introduce'} className='font-InterRegular text-[18px]/[36px] text-white'>Gia nhập đội ngũ của chúng tôi</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/introduce'} className='font-InterRegular text-[18px]/[36px] text-white'>Liên hệ</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'http://online.gov.vn/Home/WebDetails/100610'} className='font-InterRegular text-[18px]/[36px] text-white cursor-pointer mt-2.5'>
+                                                <Image src={'/logoSaleNoti.avif'} width={270} height={110} alt='' />
+                                            </Link>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div className='flex justify-center relative flex-none w-2/3 max-w-[66.666667%] min-h-px px-[15px]'>
+                                    <div>
+                                        <h4 className='font-semibold text-[24px]/[36px] text-[#33bf71] font-SemiBold mt-0 mb-2'>CHÍNH SÁCH</h4>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/privacy'} className='font-InterRegular text-[18px]/[36px] text-white'>Điều khoản,Chính sách</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/payment-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách thanh toán</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/complaint-handling-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách xử lý khiếu nại</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/return-refund-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách đổi trả và hoàn tiền</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/warranty-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách bảo hành</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/checking-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách kiểm hàng</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/information-privacy-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách bảo mật thông tin</Link>
+                                        </div>
+                                        <div className='mt-4 font-InterRegular text-[18px]/[36px] text-white'>
+                                            <Link href={'/protection-policy'} className='font-InterRegular text-[18px]/[36px] text-white'>Chính sách bảo vệ dữ liệu cá nhân Vinaphone</Link>
                                         </div>
                                     </div>
                                 </div>
