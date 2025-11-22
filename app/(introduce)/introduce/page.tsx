@@ -8,7 +8,9 @@ const Introduce = () => {
         <div className={styles.container}>
           <div className='flex justify-between pt-5'>
             <div className='my-auto max-0 cursor-pointer'>
-              <Image src={'/icon_logoReavol.svg'} width={150} height={50} alt='' />
+              <Link href='/'>
+                <Image src={'/icon_logoReavol.svg'} width={150} height={50} alt='' />
+              </Link>
             </div>
             <div className='mt-10'>
               <span className='cursor-pointer text-white text-[24px]/[130%] font-semibold'>Đăng nhập</span>

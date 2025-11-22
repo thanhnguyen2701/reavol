@@ -24,7 +24,7 @@ const Layout = ({
                 <div className={`overflow-hidden sidebarWrapper transition-all shrink-0 min-w-[260px] w-[20%] bg-[#0b2631]`}>
                     <Aside />
                 </div>
-                <div className="flex-1 contentRight transition-all bg-[#0b2631] overflow-auto w-[80%]">
+                <div className="flex-1 contentRight transition-all bg-[#0b2631] overflow-auto hide-scrollbar w-[80%]">
                     <Header />
                     {children}
                 </div>

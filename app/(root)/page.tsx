@@ -1,10 +1,26 @@
-import BookItem from "@/components/BookItem";
-import BookItem2 from "@/components/BookItem2";
+import BookItemComponent from "@/components/BookItemComponent";
+import BookItemComponent2 from "@/components/BookItemComponent2";
 import SelectionItem from "@/components/SelectionItem";
+import { getBlogData, getHomeData } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const { data: homeData } = await getHomeData();
+
+  const { data: blogData } = await getBlogData();
+
+  const type4Data = homeData.find(item => item.type === 4);
+  const type0Data = homeData.find(item => item.type === 0);
+  const type1Data = homeData.find(item => item.type === 1);
+  const type3Data = homeData.find(item => item.type === 3);
+  const type7Data = homeData.find(item => item.type === 7);
+  const selections = type4Data?.selections;
+  const freeBook = type0Data?.freeBook;
+  const forYou = type3Data?.forYou;
+  const freeList = type1Data?.freeList;
+  const newest = type7Data?.newest;
+
   return (
     <div>
       <div className="m-5">
@@ -12,16 +28,28 @@ export default function Home() {
           <div className="col relative min-h-px pr-[15px] pl-[15px] w-[66.6666667%]">
             <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">Khám phá</div>
 
-            <div className="overflow-hidden w-full h-[500px] rounded-[20px]">
-              <Image src='/banner.jpg' width={1000} height={500} alt='image' className="h-full object-cover transition-transform duration-300 hover:scale-120" />
+            <div className="overflow-hidden w-full rounded-[20px]">
+              <Link href={`/blogs/${blogData.newest[0].slug}`}>
+                <Image src={blogData.newest[0].media.originUrl} width={1000} height={500} alt='image' className="h-full object-cover transition-transform duration-300 hover:scale-120" />
+              </Link>
             </div>
           </div>
           <div className="col relative min-h-px pr-[15px] pl-[15px] w-[33.3333333%] h-full">
             <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">Hôm nay</div>
 
             <div className="relative">
-              <div className="overflow-hidden w-full h-[500px] rounded-[10px]">
-                <Image src='/new_mediumtX3.jpg' width={470} height={500} alt='image' className="h-full object-cover transition-transform duration-300 hover:scale-120" />
+              <div className="overflow-hidden w-full rounded-[10px]">
+                {freeBook && (
+                  <Link href={`/blogs/freeBook/${freeBook.slug}`}>
+                    <Image
+                      src={freeBook.media.originUrl}
+                      width={470}
+                      height={500}
+                      alt="image"
+                      className="h-full object-cover transition-transform duration-300 hover:scale-120"
+                    />
+                  </Link>
+                )}
               </div>
               <div className="absolute top-0 w-full bg-[rgba(0,0,0,0.1)]">
                 <div className="flex items-center w-[70%] justify-center ml-10">
@@ -48,76 +76,49 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-wrap -mx-[15px]">
-          <div className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
-          <div className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
-          <div className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
-          <div className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
+          {
+            forYou?.slice(0, 4).map((item) => (
+              <div key={item.id} className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
+                <BookItemComponent item={item} />
+              </div>
+            ))
+          }
         </div>
       </div>
       <div className="m-5">
         <div className="text-[28px]/[28px] text-white font-medium font-Medium">Xu hướng</div>
         <div className="mt-5 flex justify-between">
           <div className="text-[32px]/[40px] font-semibold text-white font-SemiBold">Sách hay trong tuần</div>
-          <Link href={'/'} className="my-auto ml-auto touch-manipulation">
+          <Link href={'/trending'} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
           </Link>
         </div>
         <div className="flex flex-wrap -mx-[15px]">
-          <div className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
-          <div className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
-          <div className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
-          <div className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-            <BookItem />
-          </div>
+          {
+            freeList?.slice(0, 4).map((item) => (
+              <div key={item.id} className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
+                <BookItemComponent item={item} />
+              </div>
+            ))
+          }
         </div>
 
       </div>
       <div className="mt-18 mx-5 mb-5">
         <div className="mt-[41px] flex justify-between">
           <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">Top sách miễn phí</div>
-          <Link href={'/'} className="my-auto ml-auto touch-manipulation">
+          <Link href={'/bookfree'} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
           </Link>
         </div>
         <div className="mt-[30px] p-0! flex flex-wrap -mx-[15px]">
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
-          <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <BookItem2 />
-          </div>
+          {
+            freeList?.slice(0, 8).map((item) => (
+              <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                <BookItemComponent2 item={item} />
+              </div>
+            ))
+          }
         </div>
       </div>
       <div className="mt-18 mx-5 mb-5">
@@ -125,18 +126,19 @@ export default function Home() {
           <div className="text-[28px]/[28px] font-medium text-white font-Medium">Tuyển chọn</div>
           <div className="flex mb-8 justify-between">
             <div className="text-[32px]/[40px] font-semibold text-white mt-2.5 font-SemiBold">Đọc sách mọi lúc mọi nơi</div>
-            <Link href={'/'} className="my-auto ml-auto">
+            <Link href={'/selection'} className="my-auto ml-auto">
               <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
             </Link>
           </div>
         </div>
         <div className="p-0! flex flex-wrap -mx-[15px]">
-          <div className="pb-6! basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <SelectionItem/>
-          </div>
-          <div className="pb-6! basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-            <SelectionItem/>
-          </div>
+          {
+            selections?.slice(0, 2).map((item) => (
+              <div key={item.id} className="pb-6! basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                <SelectionItem item={item} />
+              </div>
+            ))
+          }
         </div>
       </div>
       <div className="m-5">
@@ -150,30 +152,19 @@ export default function Home() {
               </Link>
             </div>
             <div>
-              <div className="relative aspect-[3.09] w-full mb-5">
-                <Image src="/banner.jpg" width={1500} height={500} alt="" className="object-cover rounded-[10px]" />
+              <div className="relative aspect-[3.09] w-full mb-5 ">
+                <Image src="/new_mediumiEc.jpg" width={1500} height={500} alt="" className="object-cover rounded-[10px] max-h-[350px]" />
               </div>
             </div>
           </div>
           <div className="mt-7.5 p-0! flex flex-wrap -mx-[15px]">
-            <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-              <BookItem2 />
-            </div>
-            <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-              <BookItem2 />
-            </div>
-            <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-              <BookItem2 />
-            </div>
-            <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-              <BookItem2 />
-            </div>
-            <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-              <BookItem2 />
-            </div>
-            <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-              <BookItem2 />
-            </div>
+            {
+              newest?.slice(0, 6).map((item) => (
+                <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent2 item={item} />
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -183,54 +174,24 @@ export default function Home() {
           <div className="mt-2.5 text-[32px]/[40px]! font-semibold! mb-7.5! text-white font-SemiBold">Nơi sẻ chia mọi kiến thức về sách</div>
         </div>
         <div className="flex flex-wrap -mx-[15px]">
-          <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-            <Link href={'/'}>
-              <div className="aspect-[1.43] relative w-full">
-                <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                  <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
-                </div>
-                <div>
-                  <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
-                  <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br />
-                    - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br />
-                    - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
+          {
+            blogData.newest.map((item) => (
+              <div key={item.id} className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
+                <Link href={`/blogs/${item.slug}`}>
+                  <div className="aspect-[1.43] relative w-full">
+                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
+                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                    </div>
+                    <div>
+                      <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
+                      <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-          <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-            <Link href={'/'}>
-              <div className="aspect-[1.43] relative w-full">
-                <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                  <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
-                </div>
-                <div>
-                  <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
-                  <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br />
-                    - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br />
-                    - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-            <Link href={'/'}>
-              <div className="aspect-[1.43] relative w-full">
-                <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                  <Image src="/new_mediumPQv.jpg" width={500} height={500} alt="" className="object-cover rounded-[10px]" />
-                </div>
-                <div>
-                  <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">👉 Soạn YOLO125V gửi 888 để tận hưởng 7GB data/ngày + DATA VÔ HẠN truy cập app MyTV cho "mọt phim" và Reavol cho "mọt sách" 🎞📚</div>
-                  <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">- 7 GB data/ngày (hết dung lượng dừng truy cập). <br />
-                    - Truy cập MyTV add-on VTVCAB (140 kênh truyền hình bao gồm VTVCAB)<br />
-                    - 1 tài khoản sử dụng các nội dung tại ứng dụng đọc sách Reavol
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
+            ))
+          }
         </div>
       </div>
     </div>

@@ -1,7 +1,12 @@
-import BookItem2 from "@/components/BookItem2"
+import BookItemComponent2 from "@/components/BookItemComponent2"
+import { getHomeData } from "@/lib/api";
 import Image from "next/image"
 
-const CollectionPage = () => {
+const CollectionPage = async () => {
+    const { data: homeData } = await getHomeData();
+
+    const type3Data = homeData.find(item => item.type === 3);
+    const forYou = type3Data?.forYou;
     return (
         <div className="m-5">
             <div className="mt-2.5">
@@ -13,66 +18,13 @@ const CollectionPage = () => {
                 </div>
             </div>
             <div className="flex flex-wrap -mx-[15px]">
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
-                <div className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                    <BookItem2 />
-                </div>
+                {
+                    forYou?.map((item) => (
+                        <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                            <BookItemComponent2 item={item} />
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
