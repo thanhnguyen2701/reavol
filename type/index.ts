@@ -129,3 +129,53 @@ export interface ApiResponse {
   data: DataItem[];
   message: string;
 }
+
+export interface BookDetails {
+  deleted: boolean;
+  id: number;
+  title: string;
+  subTitle: string;
+  author: string;
+  contributor: string;
+  aboutTheBook: string;
+  whoShouldRead: string;
+  aboutTheAuthor: string;
+  bgColor: string;
+  bgColor1: string;
+  slug: string;
+  type: number
+  price: number;
+  hot: boolean;
+  totalWords: boolean;
+  sort: number;
+  media: Media;
+  languageType: string;
+  viewCount: number;
+  bought: boolean;
+  rating: number;
+  totalChapter: number;
+  favorite: boolean
+  chapters: Chapter[];
+  public: boolean;
+}
+
+export interface Chapter {
+  deleted: boolean;
+  id: number;
+  title: string;
+  articleId: number;
+  status: number;
+  sort: number;
+  audio: Media;
+  cipherText: string;
+}
+
+export interface BookDetailsResponse {
+  data: BookDetails;
+  message: string;
+}
+
+export interface RelatedBooksDataResponse {
+  data: BookItem[];
+  message: string;
+}

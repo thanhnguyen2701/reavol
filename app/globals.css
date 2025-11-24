@@ -140,6 +140,10 @@ body {
   font-family: interRegular, sans-serif;
 }
 
+.font-InterBold{
+  font-family: interBold, sans-serif;
+}
+
 .menu-item .menu-item_text{
   font-family: regular, sans-serif;
   color: #808191;
@@ -261,4 +265,13 @@ cubic-bezier(.71, -.46, .88, .6), opacity .1s;
 div.blog-content>p {
   margin-top: 0;
   margin-bottom: 1em;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
 }

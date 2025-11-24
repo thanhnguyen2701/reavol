@@ -4,8 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-
-const Aside = () => {
+import BookFreeIcon from '../public/bookfree.svg';const Aside = () => {
     const pathname = usePathname();
 
     return (
@@ -38,7 +37,7 @@ const Aside = () => {
                             <div className='flex h-fit'>
                                 <div className='flex items-center'>
                                     <div className={`w-8 h-8 ${pathname === '/introduce' ? 'bg-[#33bf71] active' : 'bg-[#1c465d]'}  rounded-xl mr-4 mb-auto mt-auto px-2 py-0 flex justify-center`}>
-                                        <Image src={'/Home.svg'} width={20} height={20} alt='' />
+                                        <Image src={'/ic_puzzle.svg'} width={20} height={20} alt='' />
                                     </div>
                                 </div>
                                 <span className={`menu-item_text ${pathname === '/introduce' ? 'active' : ''} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}>Giới thiệu Reavol</span>
@@ -62,7 +61,7 @@ const Aside = () => {
                             <div className='flex h-fit'>
                                 <div className='flex items-center'>
                                     <div className={`w-8 h-8 ${pathname === '/bookfree' ? 'bg-[#33bf71] active' : 'bg-[#1c465d]'}  rounded-xl mr-4 mb-auto mt-auto px-2 py-0 flex justify-center`}>
-                                        <Image src={'/Home.svg'} width={20} height={20} alt='' />
+                                        <Image src={'/bookfree.svg'} width={20} height={20} alt='' className='fill-white'/>
                                     </div>
                                 </div>
                                 <span className={`menu-item_text ${pathname === '/bookfree' ? 'active' : ''} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}>Sách miễn phí</span>
