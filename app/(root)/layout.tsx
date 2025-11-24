@@ -11,7 +11,7 @@ const Layout = ({
     return (
         <>
             <div className={`flex flex-row min-h-screen`} >
-                <div className={`overflow-hidden sidebarWrapper transition-all shrink-0 min-w-[260px] w-[20%] bg-[#0b2631]`}>
+                <div className={`overflow-hidden sidebarWrapper transition-all shrink-0 min-w-[76px] md:min-w-[260px] w-[20%] bg-[#0b2631]`}>
                     <Aside />
                 </div>
                 <div className="flex-1 contentRight transition-all bg-[#0b2631] overflow-auto hide-scrollbar w-[80%]">

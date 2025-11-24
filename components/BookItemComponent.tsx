@@ -18,8 +18,8 @@ const BookItemComponent = ({item}:{item: BookItem}) => {
                     </div>
                     <div className="mx-[1.9rem] mt-[5px]">
                       <span className="text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[18px] text-[#b7b9d2] traking-[0.5px] mix-blend-normal font-normal font-Regular">
-                      { item.subTitle.length > 40 ?
-                      item.subTitle.slice(0, 40) + "..." : item.subTitle}
+                      { item.subTitle.length > 75 ?
+                      item.subTitle.slice(0, 75) + "..." : item.subTitle}
                       </span>
                     </div>
                     <div className="ml-[1.9rem] items-center w-[76%] mt-2.5">

@@ -24,40 +24,54 @@ export default async function Home() {
   return (
     <div>
       <div className="m-5">
-        <div className="flex flex-wrap -mr-[15px] -ml-[15px]">
-          <div className="col relative min-h-px pr-[15px] pl-[15px] w-[66.6666667%]">
-            <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">Khám phá</div>
+        <div className="flex flex-wrap -mx-[15px] h-[560px]">
+          <div className="px-[15px] w-2/3 flex flex-col">
+            <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">
+              Khám phá
+            </div>
 
-            <div className="overflow-hidden w-full rounded-[20px]">
+            <div className="relative flex-1 overflow-hidden rounded-[20px]">
               <Link href={`/blogs/${blogData.newest[0].slug}`}>
-                <Image src={blogData.newest[0].media.originUrl} width={1000} height={500} alt='image' className="h-full object-cover transition-transform duration-300 hover:scale-120" />
+                <Image
+                  src={blogData.newest[0].media.originUrl}
+                  fill
+                  alt="image"
+                  className="object-cover transition-transform duration-300 hover:scale-125"
+                />
               </Link>
             </div>
           </div>
-          <div className="col relative min-h-px px-[15px] w-[33.3333333%] h-full">
-            <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">Hôm nay</div>
 
-            <div className="relative">
-              <div className="overflow-hidden w-full rounded-[10px]">
+          <div className="px-[15px] w-1/3 flex flex-col">
+            <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">
+              Hôm nay
+            </div>
+
+            <div className="relative flex-1">
+              <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] z-10"></div>
+              <div className="relative w-full h-full rounded-[10px] overflow-hidden">
                 {freeBook && (
                   <Link href={`/blogs/freeBook/${freeBook.slug}`}>
                     <Image
                       src={freeBook.media.originUrl}
-                      width={470}
-                      height={500}
+                      fill
                       alt="image"
-                      className="h-full object-cover transition-transform duration-300 hover:scale-120"
+                      className="object-cover transition-transform duration-300 hover:scale-125"
                     />
                   </Link>
                 )}
               </div>
-              <div className="absolute top-0 w-full bg-[rgba(0,0,0,0.1)]">
+
+              <div className="absolute top-0 w-full">
                 <div className="flex items-center w-[70%] justify-center ml-10">
-                  <span className="font-semibold text-[30px]/[36px] tracking-[0.3px] mt-10 text-white font-SemiBold">15 Phút đọc sách mỗi ngày</span>
+                  <span className="font-semibold text-[30px]/[36px] tracking-[0.3px] mt-10 text-white font-SemiBold">
+                    15 Phút đọc sách mỗi ngày
+                  </span>
                 </div>
               </div>
-              <div className="absolute bottom-0 w-full bg-[rgba(0,0,0,0.1)] flex justify-between items-end px-10 py-6">
-                <div className="text-white text-[12px]/[12px] tracking-[0.5px] opacity-80 font-normal font-Regular">
+
+              <div className="absolute bottom-0 w-full flex justify-between items-end px-10 py-6 z-12">
+                <div className="text-white! text-[12px]/[12px] tracking-[0.5px] opacity-80 font-Regular">
                   53K đọc • 1 ngày trước
                 </div>
                 <div className="rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] tracking-[0.5px] text-white py-[5px] px-2.5">
