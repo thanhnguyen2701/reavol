@@ -72,6 +72,21 @@ export interface Blog {
   owner: Owner;
 }
 
+export interface BlogDetails {
+  createdAt: string;
+  deleted: boolean;
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  content: string;
+  media: Media;
+  categoryId: number;
+  ownerId: number;
+  category: Category;
+  owner: Owner;
+}
+
 // response type
 export interface BlogResponse {
   data: {
@@ -80,4 +95,8 @@ export interface BlogResponse {
     newest: Blog[];
     popular: Blog[];
   };
+}
+
+export interface BlogDetailsResponse {
+  data: BlogDetails;
 }

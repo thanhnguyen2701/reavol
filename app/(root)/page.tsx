@@ -34,7 +34,7 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-          <div className="col relative min-h-px pr-[15px] pl-[15px] w-[33.3333333%] h-full">
+          <div className="col relative min-h-px px-[15px] w-[33.3333333%] h-full">
             <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">Hôm nay</div>
 
             <div className="relative">

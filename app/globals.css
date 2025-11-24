@@ -257,3 +257,8 @@ cubic-bezier(.71, -.46, .88, .6), opacity .1s;
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
+
+div.blog-content>p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
