@@ -2,7 +2,7 @@ import { getBlogDetailsData } from '@/lib/api';
 import Image from 'next/image';
 
 interface PageProps {
-    params: { slug: string }; // slug được Next.js truyền tự động
+    params: { slug: string };
 }
 
 const PostPage = async ({ params }: PageProps) => {
@@ -24,8 +24,8 @@ const PostPage = async ({ params }: PageProps) => {
                         </span>
                     </div>
                     <div>
-                        <div className='mt-5 font-semibold text-[18px]/[40px] text-[#2fbc6d]'>Sự kiện</div>
-                        <div className='mt-2.5 font-semibold text-[40px]/[45px] text-white'>{blogData?.title}</div>
+                        <div className='mt-5 font-semibold text-[18px]/[40px] text-[#2fbc6d]'>{blogData.category.title}</div>
+                        <div className='mt-2.5 font-semibold lg:text-[40px]/[45px] md:text-[36px]/[40px] text-[28px]/[36px] text-white'>{blogData?.title}</div>
                         <div className='mt-[33px] font-normal text-[16px]/[30px] text-white blog-content'  dangerouslySetInnerHTML={{ __html: blogData.content }}/>
                     </div>
                 </div>
