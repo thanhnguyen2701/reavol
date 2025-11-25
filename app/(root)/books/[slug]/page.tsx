@@ -26,8 +26,8 @@ const BookPage = async (props: PageProps) => {
 
 
     return (
-        <div className='m-5 flex'>
-            <div className='h-full m-0 w-[65%] bg-[#042c43] border border-[rgba(255,255,255,0.59)] box-border rounded-[20px] mt-12 flex flex-wrap overflow-hidden'>
+        <div className='m-5 lg:flex'>
+            <div className='h-full m-0 lg:w-[65%] md:w-full bg-[#042c43] border border-[rgba(255,255,255,0.59)] box-border rounded-[20px] mt-12 flex flex-wrap overflow-hidden'>
                 <div className='w-full p-0'>
                     <div className='relative aspect-[1.01]'>
                         <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0'>
@@ -105,9 +105,9 @@ const BookPage = async (props: PageProps) => {
                     </div>
                 </div>
             </div>
-            <div className="w-[35%] m-0! py-8 pr-0 pl-8 flex flex-wrap">
+            <div className="lg:w-[35%] md:w-full m-0! py-8 pr-0 lg:pl-8 flex flex-wrap">
                 <div className="container">
-                    <div className="flex flex-wrap -mx-[15px]">
+                    <div className="hidden lg:flex flex-wrap -mx-[15px]">
                         <div className="text-white text-[20px]/[36px] tracking-[.5px] font-bold pt-1.5 text-center w-full">Có thể bạn quan tâm</div>
                         {
                             relatedBookData.slice(0, 3).map((item) => (
@@ -132,7 +132,44 @@ const BookPage = async (props: PageProps) => {
                                                     <span className="mix-blend-normal font-normal tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px]">{item.author}</span>
                                                 </div>
                                                 <div className="mx-[1.9rem] mt-[5px]">
-                                                    <span className="text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[15px] tracking-[.5px] text-[#b7b9d2] mix-blend-normal font-normal">{item.subTitle}</span>
+                                                    <span className="line-clamp-2 text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[15px] tracking-[.5px] text-[#b7b9d2] mix-blend-normal font-normal">{item.subTitle}</span>
+                                                </div>
+                                                <div className="ml-[1.9rem] items-center w-[76%] mt-2.5">
+                                                    <span className="font-normal text-[12px]/[12px] tracking-[.5px] text-[#808191] mix-blend-normal">53K views • 2 weeks ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <div className="flex lg:hidden flex-wrap -mx-[15px]">
+                        <div className="text-white text-[20px]/[36px] tracking-[.5px] font-bold pt-1.5 text-center w-full">Có thể bạn quan tâm</div>
+                        {
+                            relatedBookData.slice(0, 4).map((item) => (
+                                <div key={item.id} className="mt-12 flex justify-center flex-none w-1/2 max-w-1/2 relative min-h-px px-[15px]">
+                                    <Link href={`/books/${item.slug}`} className="w-full touch-manipulation">
+                                        <div className="bg-[#242730] p-0 rounded-[20px]">
+                                            <div className="w-full aspect-[.994] relative">
+                                                <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0 rounded-tr-[10px] rounded-tl-[10px]'>
+                                                    <Image src={item.media.originUrl} sizes="100vw" width={1500} height={770} alt='' className='rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover' />
+                                                </span>
+                                                <div className="absolute w-[65px] right-5 bottom-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white p-2.5 tracking-[.5px]">
+                                                    <div>
+                                                        <span className="rounded-tr-[10px] rounded-tl-[10px] font-medium text-[10px]/[10px] tracking-[.5px] text-white">15 phút</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="text-white h-[153px] w-full pt-5">
+                                                <div className="flex items-end w-[80%] ml-[1.9rem]">
+                                                    <span className="text-[16px]/[26px] text-ellipsis overflow-hidden whitespace-nowrap tracking-[0.3px] text-white font-medium">{item.title}</span>
+                                                </div>
+                                                <div className="flex items-end w-[75%] tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px] ml-[1.9rem] mt-[5px]">
+                                                    <span className="mix-blend-normal font-normal tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px]">{item.author}</span>
+                                                </div>
+                                                <div className="mx-[1.9rem] mt-[5px]">
+                                                    <span className="line-clamp-2 text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[15px] tracking-[.5px] text-[#b7b9d2] mix-blend-normal font-normal">{item.subTitle}</span>
                                                 </div>
                                                 <div className="ml-[1.9rem] items-center w-[76%] mt-2.5">
                                                     <span className="font-normal text-[12px]/[12px] tracking-[.5px] text-[#808191] mix-blend-normal">53K views • 2 weeks ago</span>
