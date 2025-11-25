@@ -18,7 +18,7 @@ const TrendingPage = async () => {
         <div className="mt-0 p-0! flex flex-wrap -mx-[15px]">
           {
             freeList?.map((item) => (
-              <div key={item.id} className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
+              <div key={item.id} className="mt-8 lg:basis-[25%] md:basis-1/3 basis-1/2 lg:max-w-[25%] md:max-w-1/3 max-w-1/2 relative w-full min-h-px px-[15px]">
                 <BookItemComponent item={item} />
               </div>
             ))
