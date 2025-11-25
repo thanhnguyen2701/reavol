@@ -15,8 +15,8 @@ const CollectionPage = async () => {
                     <span className='box-border block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 absolute inset-0  rounded-[20px]'>
                         {
                             forYou ?
-                            <Image src={forYou[0].media.originUrl} width={1496} height={505} alt='' className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center" />
-                            : <></>
+                                <Image src={forYou[0].media.originUrl} width={1496} height={505} alt='' className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center hover:scale-125 transition-all duration-500" />
+                                : <></>
                         }
                     </span>
                 </div>

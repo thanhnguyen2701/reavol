@@ -394,7 +394,7 @@ const Introduce = () => {
                   <div className='w-full flex flex-col grow relative max-w-full min-h-px'>
                     <div className='relative flex items-center min-h-8'>
                       <div className='flex-auto max-w-full'>
-                        <input type="text" placeholder="Tên đăng ký *" id="basic_name" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-300' />
+                        <input type="text" placeholder="Tên đăng ký *" id="basic_name" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500' />
                       </div>
                     </div>
                   </div>
@@ -403,7 +403,7 @@ const Introduce = () => {
                   <div className='w-full flex flex-col grow relative max-w-full min-h-px'>
                     <div className='relative flex items-center min-h-8'>
                       <div className='flex-auto max-w-full'>
-                        <input type="text" placeholder="Số điện thoại *" id="basic_phone" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-300' />
+                        <input type="text" placeholder="Số điện thoại *" id="basic_phone" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500' />
                       </div>
                     </div>
                   </div>
@@ -412,7 +412,7 @@ const Introduce = () => {
                   <div className='w-full flex flex-col grow relative max-w-full min-h-px'>
                     <div className='relative flex items-center min-h-8'>
                       <div className='flex-auto max-w-full'>
-                        <input type="text" placeholder="Email *" id="basic_email" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-300' />
+                        <input type="text" placeholder="Email *" id="basic_email" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500' />
                       </div>
                     </div>
                   </div>
@@ -421,7 +421,7 @@ const Introduce = () => {
                   <div className='w-full flex flex-col grow relative max-w-full min-h-px'>
                     <div className='relative flex items-center min-h-8'>
                       <div className='flex-auto max-w-full'>
-                        <input type="text" placeholder="Địa chỉ *" id="basic_address" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-300' />
+                        <input type="text" placeholder="Địa chỉ *" id="basic_address" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500' />
                       </div>
                     </div>
                   </div>
@@ -430,7 +430,7 @@ const Introduce = () => {
                   <div className='w-full flex flex-col grow relative max-w-full min-h-px'>
                     <div className='relative flex items-center min-h-8'>
                       <div className='flex-auto max-w-full'>
-                        <input type="text" placeholder="Công việc hiện tại *" id="basic_working" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-300' />
+                        <input type="text" placeholder="Công việc hiện tại *" id="basic_working" value="" className='text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500' />
                       </div>
                     </div>
                   </div>

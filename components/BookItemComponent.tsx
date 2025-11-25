@@ -7,7 +7,7 @@ const BookItemComponent = ({ item }: { item: BookItem }) => {
     <Link href={`/books/${item.slug}`}>
       <div className="w-full bg-[#0d2d3a] p-0 rounded-[20px] relative inline-block overflow-hidden">
         <div className="bg-cover aspect-[1.61] relative animation-fadein overflow-hidden">
-          <Image src={item.media.originUrl} width={350} height={220} alt='image' className="object-cover h-[220px] transition-transform duration-300 hover:scale-120" />
+          <Image src={item.media.originUrl} width={350} height={220} alt='image' className="object-cover h-[220px] transition-transform duration-500 hover:scale-120" />
           <div className="absolute right-5 top-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white px-2.5 py-[5px] tracking-[0.5px]">
             <span className="font-medium text-[10px]/[10px] traking-[0.5px] text-white">7 phút</span></div>
         </div>

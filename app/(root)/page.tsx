@@ -36,7 +36,7 @@ export default async function Home() {
                   src={blogData.newest[0].media.originUrl}
                   fill
                   alt="image"
-                  className="object-cover transition-transform duration-300 hover:scale-125"
+                  className="object-cover transition-transform duration-500 hover:scale-125"
                 />
               </Link>
             </div>
@@ -47,7 +47,7 @@ export default async function Home() {
               Hôm nay
             </div>
 
-            <div className="relative flex-1  aspect-2/1">
+            <div className="relative flex-1  aspect-2/1 group">
               <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] z-10"></div>
               <div className="relative w-full h-full rounded-[10px] overflow-hidden">
                 {freeBook && (
@@ -56,7 +56,7 @@ export default async function Home() {
                       src={freeBook.media.originUrl}
                       fill
                       alt="image"
-                      className="object-cover transition-transform duration-300 hover:scale-125"
+                      className="object-cover transition-transform duration-500 group-hover:scale-125"
                     />
                   </Link>
                 )}
@@ -220,8 +220,12 @@ export default async function Home() {
               </Link>
             </div>
             <div>
-              <div className="relative aspect-[3.09] w-full mb-5 ">
-                <Image src="/new_mediumiEc.jpg" width={1500} height={500} alt="" className="object-cover rounded-[10px] max-h-[350px]" />
+              <div className="relative aspect-[3.09]! w-full mb-5 overflow-hidden rounded-[10px]">
+                {
+                  newest ?
+                    <Image src={newest[0].media.originUrl} width={2000} height={500} alt="" className="object-cover object-center w-full h-full  transition-all duration-500 hover:scale-125" />
+                    : <></>
+                }
               </div>
             </div>
           </div>
@@ -256,8 +260,8 @@ export default async function Home() {
               <div key={item.id} className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
                 <Link href={`/blogs/${item.slug}`}>
                   <div className="aspect-[1.43] relative w-full">
-                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                    <div className="relative overflow-hidden rounded-[10px] h-full w-full">
+                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
                     </div>
                     <div>
                       <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
@@ -277,7 +281,7 @@ export default async function Home() {
                 <Link href={`/blogs/${item.slug}`}>
                   <div className="aspect-[1.43] relative w-full">
                     <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
                     </div>
                     <div>
                       <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
@@ -296,8 +300,8 @@ export default async function Home() {
               <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px] pb-5">
                 <Link href={`/blogs/${item.slug}`}>
                   <div className="aspect-[1.43] relative w-full">
-                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] inline-block">
-                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover rounded-[10px]" />
+                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px]">
+                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all duration-500 hover:scale-125" />
                     </div>
                     <div>
                       <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
