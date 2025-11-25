@@ -17,7 +17,7 @@ const SelectionPage = async () => {
                 <div className="mt-0 p-0! flex flex-wrap -mx-[15px]">
                     {
                         selections?.map((item) => (
-                            <div key={item.id} className="pb-6! flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]">
+                            <div key={item.id} className="pb-6! flex-none w-full md:w-1/2 max-w-full md:max-w-[50%] relative min-h-px px-[15px]">
                                 <SelectionItem item={item} />
                                 <div className="mt-5 border border-[#1e475a]"></div>
                             </div>
