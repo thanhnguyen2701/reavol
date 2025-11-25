@@ -1,18 +1,47 @@
-import { getBooksDetailsData, getHomeData, getRelatedBooksData } from "@/lib/api";
+'use client';
+
+import { getBooksDetailsData, getRelatedBooksData } from "@/lib/api";
+import { ApiResponse } from "@/type";
 import Image from "next/image"
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-interface PageProps {
-    params: { slug: string }; // slug được Next.js truyền tự động
-}
-const BookPage = async (props: PageProps) => {
-    const params = await props.params;   // ✅ unwrap promise
-    const slug = params.slug;
-    const { data: homeData } = await getHomeData();
-    const type5Data = homeData.find(item => item.type === 5);
-    const type1Data = homeData.find(item => item.type === 1);
-    const type3Data = homeData.find(item => item.type === 3);
-    const type7Data = homeData.find(item => item.type === 7);
+const BookPage = async () => {
+    const {slug} = useParams();
+    // const { data: homeData } = await getHomeData();
+    const [data, setData] = useState<ApiResponse | null>(null);
+    const [isLoading, setIsLoading] = useState<Boolean>(true);
+
+    useEffect(() => {
+        const fetchHomeData = async () => {
+            try {
+                const res = await fetch(
+                    "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
+                    {
+                        method: "GET",
+                        cache: "no-store",
+                    }
+                );
+
+                if (!res.ok) throw new Error("Failed to fetch home data");
+
+                const json = await res.json();
+                setData(json);
+            } catch (err) {
+                console.error(err);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchHomeData();
+    }, [])
+
+    const type5Data = data?.data.find(item => item.type === 5);
+    const type1Data = data?.data.find(item => item.type === 1);
+    const type3Data = data?.data.find(item => item.type === 3);
+    const type7Data = data?.data.find(item => item.type === 7);
     const forYou = type3Data?.forYou;
     const freeList = type1Data?.freeList;
     const newest = type7Data?.newest;

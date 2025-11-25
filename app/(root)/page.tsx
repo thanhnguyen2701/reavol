@@ -1,20 +1,73 @@
+'use client';
+
 import BookItemComponent from "@/components/BookItemComponent";
 import BookItemComponent2 from "@/components/BookItemComponent2";
+import Loading from "@/components/Loading";
 import SelectionItem from "@/components/SelectionItem";
-import { getBlogData, getHomeData } from "@/lib/api";
+import { ApiResponse } from "@/type";
+import { BlogResponse } from "@/type/blog";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default async function Home() {
-  const { data: homeData } = await getHomeData();
+export default function Home() {
+  const [homeData, setHomeData] = useState<ApiResponse | null>(null);
+  const [blogData, setBlogData] = useState<BlogResponse | null>(null);
+  const [isHomeLoading, setIsHomeLoading] = useState<Boolean>(true);
+  const [isBlogLoading, setIsBlogLoading] = useState<Boolean>(true);
 
-  const { data: blogData } = await getBlogData();
+  useEffect(() => {
+    const fetchHomeData = async () => {
+      try {
+        const res = await fetch(
+          "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
+          {
+            method: "GET",
+            cache: "no-store",
+          }
+        );
 
-  const type4Data = homeData.find(item => item.type === 4);
-  const type0Data = homeData.find(item => item.type === 0);
-  const type1Data = homeData.find(item => item.type === 1);
-  const type3Data = homeData.find(item => item.type === 3);
-  const type7Data = homeData.find(item => item.type === 7);
+        if (!res.ok) throw new Error("Failed to fetch home data");
+
+        const json = await res.json();
+        setHomeData(json);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setIsHomeLoading(false);
+      }
+    };
+
+    const fetchBlogData = async () => {
+      try {
+        const res = await fetch(
+          "https://api.reavol.vn/api/v1/blog/get-blog-for-web",
+          {
+            method: "GET",
+            cache: "no-store",
+          }
+        );
+
+        if (!res.ok) throw new Error("Failed to fetch blog data");
+
+        const json = await res.json();
+        setBlogData(json);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setIsBlogLoading(false);
+      }
+    };
+
+    fetchHomeData();
+    fetchBlogData();
+  }, []);
+
+  const type4Data = homeData?.data.find(item => item.type === 4);
+  const type0Data = homeData?.data.find(item => item.type === 0);
+  const type1Data = homeData?.data.find(item => item.type === 1);
+  const type3Data = homeData?.data.find(item => item.type === 3);
+  const type7Data = homeData?.data.find(item => item.type === 7);
   const selections = type4Data?.selections;
   const freeBook = type0Data?.freeBook;
   const forYou = type3Data?.forYou;
@@ -31,14 +84,19 @@ export default async function Home() {
             </div>
 
             <div className="relative flex-1 overflow-hidden rounded-[20px] aspect-2/1">
-              <Link href={`/blogs/${blogData.newest[0].slug}`}>
-                <Image
-                  src={blogData.newest[0].media.originUrl}
-                  fill
-                  alt="image"
-                  className="object-cover transition-transform duration-500 hover:scale-125"
-                />
-              </Link>
+              {
+                isBlogLoading === false && blogData ?
+                  <Link href={`/blogs/${blogData.data.newest[0].slug}`}>
+                    <Image
+                      src={blogData.data.newest[0].media.originUrl}
+                      fill
+                      alt="image"
+                      className="object-cover transition-transform duration-500 hover:scale-125"
+                    />
+                  </Link>
+                  :
+                  <Loading />
+              }
             </div>
           </div>
 
@@ -50,16 +108,19 @@ export default async function Home() {
             <div className="relative flex-1  aspect-2/1 group">
               <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] z-10"></div>
               <div className="relative w-full h-full rounded-[10px] overflow-hidden">
-                {freeBook && (
-                  <Link href={`/blogs/freeBook/${freeBook.slug}`}>
-                    <Image
-                      src={freeBook.media.originUrl}
-                      fill
-                      alt="image"
-                      className="object-cover transition-transform duration-500 group-hover:scale-125"
-                    />
-                  </Link>
-                )}
+                {
+                  isBlogLoading == false && freeBook ?
+                    <Link href={`/blogs/freeBook/${freeBook.slug}`}>
+                      <Image
+                        src={freeBook.media.originUrl}
+                        fill
+                        alt="image"
+                        className="object-cover transition-transform duration-500 group-hover:scale-125"
+                      />
+                    </Link>
+                    :
+                    <Loading />
+                }
               </div>
 
               <div className="absolute top-0 w-full">
@@ -91,29 +152,38 @@ export default async function Home() {
         </div>
         <div className="flex-wrap -mx-[15px] hidden lg:flex">
           {
-            forYou?.slice(0, 4).map((item) => (
-              <div key={item.id} className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              forYou?.slice(0, 4).map((item) => (
+                <div key={item.id} className="mt-[30px] basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="flex-wrap -mx-[15px] hidden md:flex lg:hidden">
           {
-            forYou?.slice(0, 3).map((item) => (
-              <div key={item.id} className="mt-[30px] basis-[33.333333%] max-w-[33.3333333%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              forYou?.slice(0, 3).map((item) => (
+                <div key={item.id} className="mt-[30px] basis-[33.333333%] max-w-[33.3333333%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="flex flex-wrap -mx-[15px] md:hidden lg:hidden">
           {
-            forYou?.slice(0, 2).map((item) => (
-              <div key={item.id} className="mt-[30px] basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              forYou?.slice(0, 2).map((item) => (
+                <div key={item.id} className="mt-[30px] basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
       </div>
@@ -127,29 +197,38 @@ export default async function Home() {
         </div>
         <div className="flex-wrap -mx-[15px] hidden lg:flex">
           {
-            freeList?.slice(0, 4).map((item) => (
-              <div key={item.id} className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              freeList?.slice(0, 4).map((item) => (
+                <div key={item.id} className="mt-8 basis-[25%] max-w-[25%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="flex-wrap -mx-[15px] hidden md:flex lg:hidden">
           {
-            freeList?.slice(0, 3).map((item) => (
-              <div key={item.id} className="mt-8 basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              freeList?.slice(0, 3).map((item) => (
+                <div key={item.id} className="mt-8 basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="flex-wrap -mx-[15px] flex md:hidden lg:hidden">
           {
-            freeList?.slice(0, 2).map((item) => (
-              <div key={item.id} className="mt-8 basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              freeList?.slice(0, 2).map((item) => (
+                <div key={item.id} className="mt-8 basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
 
@@ -163,20 +242,26 @@ export default async function Home() {
         </div>
         <div className="mt-[30px] p-0! flex-wrap -mx-[15px] hidden md:flex">
           {
-            freeList?.slice(0, 8).map((item) => (
-              <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                <BookItemComponent2 item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              freeList?.slice(0, 8).map((item) => (
+                <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                  <BookItemComponent2 item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="mt-[30px] p-0! flex flex-wrap -mx-[15px] md:hidden">
           {
-            freeList?.slice(0, 6).map((item) => (
-              <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px]">
-                <BookItemComponent2 item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              freeList?.slice(0, 6).map((item) => (
+                <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px]">
+                  <BookItemComponent2 item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
       </div>
@@ -192,20 +277,26 @@ export default async function Home() {
         </div>
         <div className="p-0! flex-wrap -mx-[15px] hidden md:flex">
           {
-            selections?.slice(0, 2).map((item) => (
-              <div key={item.id} className="pb-6! basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                <SelectionItem item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              selections?.slice(0, 2).map((item) => (
+                <div key={item.id} className="pb-6! basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                  <SelectionItem item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="p-0! flex-wrap -mx-[15px] flex md:hidden">
           {
-            selections?.slice(0, 2).map((item) => (
-              <div key={item.id} className="pb-6! w-full max-w-full relative min-h-px px-[15px]">
-                <SelectionItem item={item} />
-              </div>
-            ))
+            isHomeLoading === false ?
+              selections?.slice(0, 2).map((item) => (
+                <div key={item.id} className="pb-6! w-full max-w-full relative min-h-px px-[15px]">
+                  <SelectionItem item={item} />
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
       </div>
@@ -222,29 +313,38 @@ export default async function Home() {
             <div>
               <div className="relative aspect-[3.09]! w-full mb-5 overflow-hidden rounded-[10px]">
                 {
-                  newest ?
+                  isHomeLoading === false &&
+                    newest ?
                     <Image src={newest[0].media.originUrl} width={2000} height={500} alt="" className="object-cover object-center w-full h-full  transition-all duration-500 hover:scale-125" />
-                    : <></>
+                    :
+                    <Loading />
+
                 }
               </div>
             </div>
           </div>
           <div className="mt-7.5 p-0! flex-wrap -mx-[15px] hidden md:flex">
             {
-              newest?.slice(0, 6).map((item) => (
-                <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                  <BookItemComponent2 item={item} />
-                </div>
-              ))
+              isHomeLoading === false ?
+                newest?.slice(0, 6).map((item) => (
+                  <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                    <BookItemComponent2 item={item} />
+                  </div>
+                ))
+                :
+                <Loading />
             }
           </div>
           <div className="mt-7.5 p-0! flex-wrap -mx-[15px] flex md:hidden">
             {
-              newest?.slice(0, 6).map((item) => (
-                <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px]">
-                  <BookItemComponent2 item={item} />
-                </div>
-              ))
+              isHomeLoading === false ?
+                newest?.slice(0, 6).map((item) => (
+                  <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px]">
+                    <BookItemComponent2 item={item} />
+                  </div>
+                ))
+                :
+                <Loading />
             }
           </div>
         </div>
@@ -256,62 +356,71 @@ export default async function Home() {
         </div>
         <div className="flex-wrap -mx-[15px] hidden lg:flex">
           {
-            blogData.blogs.slice(0, 3).map((item) => (
-              <div key={item.id} className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
-                <Link href={`/blogs/${item.slug}`}>
-                  <div className="aspect-[1.43] relative w-full">
-                    <div className="relative overflow-hidden rounded-[10px] h-full w-full">
-                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
-                    </div>
-                    <div>
-                      <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
-                      <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+            isHomeLoading === false && blogData ?
+              blogData.data.blogs.slice(0, 3).map((item) => (
+                <div key={item.id} className="basis-[33.333333%] max-w-[33.333333%] relative w-full min-h-px px-[15px]">
+                  <Link href={`/blogs/${item.slug}`}>
+                    <div className="aspect-[1.43] relative w-full">
+                      <div className="relative overflow-hidden rounded-[10px] h-full w-full">
+                        <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
+                      </div>
+                      <div>
+                        <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
+                        <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))
+                  </Link>
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="flex-wrap -mx-[15px] hidden md:flex lg:hidden">
           {
-            blogData.blogs.slice(0, 2).map((item) => (
-              <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
-                <Link href={`/blogs/${item.slug}`}>
-                  <div className="aspect-[1.43] relative w-full">
-                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
-                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
-                    </div>
-                    <div>
-                      <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
-                      <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+            isHomeLoading === false && blogData ?
+              blogData.data.blogs.slice(0, 2).map((item) => (
+                <div key={item.id} className="basis-[50%] max-w-[50%] relative w-full min-h-px px-[15px]">
+                  <Link href={`/blogs/${item.slug}`}>
+                    <div className="aspect-[1.43] relative w-full">
+                      <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
+                        <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
+                      </div>
+                      <div>
+                        <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
+                        <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))
+                  </Link>
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
         <div className="flex-wrap -mx-[15px] flex md:hidden lg:hidden">
           {
-            blogData.blogs.slice(0, 2).map((item) => (
-              <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px] pb-5">
-                <Link href={`/blogs/${item.slug}`}>
-                  <div className="aspect-[1.43] relative w-full">
-                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px]">
-                      <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all duration-500 hover:scale-125" />
-                    </div>
-                    <div>
-                      <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
-                      <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+            isHomeLoading === false && blogData ?
+              blogData.data.blogs.slice(0, 2).map((item) => (
+                <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px] pb-5">
+                  <Link href={`/blogs/${item.slug}`}>
+                    <div className="aspect-[1.43] relative w-full">
+                      <div className="relative overflow-hidden my-0 mx-auto rounded-[10px]">
+                        <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all duration-500 hover:scale-125" />
+                      </div>
+                      <div>
+                        <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-[5px] py-0 px-[15px] font-SemiBold">{item.title}</div>
+                        <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))
+                  </Link>
+                </div>
+              ))
+              :
+              <Loading />
           }
         </div>
       </div>

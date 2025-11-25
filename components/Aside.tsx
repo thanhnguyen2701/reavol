@@ -95,8 +95,7 @@ const Aside = () => {
                     </ul>
                 </div>
             </div>
-            <div className='md:hidden fixed w-[76px] z-15 h-[50%] p-4.5! flex-[0_0_20%] min-h-[55%]
-bg-[rgba(3,42,58,0.92)] max-w-full min-w-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-r-[22px] rounded-l-none transition-all duration-200'>
+            <div className="md:hidden fixed w-[76px] z-15 h-[50%] p-4.5! flex-[0_0_20%] min-h-[55%] bg-[rgba(3,42,58,0.92)] max-w-full min-w-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-r-[22px] rounded-l-none transition-all duration-200">
                 <div className='h-full overflow-y-scroll block overflow-x-hidden -mt-[.1px] pt-[.1px] items-center'>
                     <div className='pl-0'>
                         <Link href={'/'}>
