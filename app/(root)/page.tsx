@@ -293,10 +293,10 @@ export default async function Home() {
         <div className="flex-wrap -mx-[15px] flex md:hidden lg:hidden">
           {
             blogData.blogs.slice(0, 2).map((item) => (
-              <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px]">
+              <div key={item.id} className="w-full max-w-full relative min-h-px px-[15px] pb-5">
                 <Link href={`/blogs/${item.slug}`}>
                   <div className="aspect-[1.43] relative w-full">
-                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] h-full w-full inline-block">
+                    <div className="relative overflow-hidden my-0 mx-auto rounded-[10px] inline-block">
                       <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover rounded-[10px]" />
                     </div>
                     <div>
