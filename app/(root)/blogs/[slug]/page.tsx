@@ -1,37 +1,22 @@
 'use client';
 
 import Loading from '@/components/Loading';
-import { BlogDetailsResponse } from '@/type/blog';
+import { fetchBlogDetails } from '@/redux/features/blogDetailsSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const PostPage = () => {
     const { slug } = useParams();
-    const [data, setData] = useState<BlogDetailsResponse | null>(null);
-    const [isLoading, setIsLoading] = useState<Boolean>(true);
+    const dispatch = useAppDispatch();
+
+    const data = useAppSelector((state) => state.blogDetails.details);
+    const isLoading = useAppSelector((state) => state.blogDetails.isLoading);
 
     useEffect(() => {
-        const fetchBlogData = async () => {
-            try {
-                const res = await fetch(`https://api.reavol.vn/api/v1/blog/detail/${slug}`, {
-                    method: "GET",
-                    cache: "no-store",
-                });
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setData(json);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchBlogData();
-    }, []);
+        dispatch(fetchBlogDetails(String(slug)));
+    }, [dispatch]);
 
     return (
         isLoading === false && data ?

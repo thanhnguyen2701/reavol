@@ -2,39 +2,17 @@
 
 import BookItemComponent from '@/components/BookItemComponent'
 import Loading from '@/components/Loading';
-import { ApiResponse } from '@/type';
-import { useEffect, useState } from 'react';
+import { fetchHomeData } from '@/redux/features/homeSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
+import { useEffect } from 'react';
 
 const TrendingPage = () => {
-   const [data, setData] = useState<ApiResponse | null>(null);
-    const [isLoading, setIsLoading] = useState<Boolean>(true);
+  const dispatch = useAppDispatch();
+  const { data, isLoading } = useAppSelector(state => state.home);
+  useEffect(() => {
+    dispatch(fetchHomeData());
+  }, [dispatch]);
 
-    useEffect(() => {
-        const fetchHomeData = async () => {
-            try {
-                const res = await fetch(
-                    "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setData(json);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchHomeData();
-    },[])
-
-  
   const type1Data = data?.data.find(item => item.type === 1);
 
   const freeList = type1Data?.freeList;
@@ -48,13 +26,13 @@ const TrendingPage = () => {
         </div>
         <div className="mt-0 p-0! flex flex-wrap -mx-[15px]">
           {
-            isLoading===false ? freeList?.map((item) => (
+            !isLoading ? freeList?.map((item) => (
               <div key={item.id} className="mt-8 lg:basis-[25%] md:basis-1/3 basis-1/2 lg:max-w-[25%] md:max-w-1/3 max-w-1/2 relative w-full min-h-px px-[15px]">
                 <BookItemComponent item={item} />
               </div>
             ))
-            :
-            <Loading/>
+              :
+              <Loading />
           }
         </div>
       </div>

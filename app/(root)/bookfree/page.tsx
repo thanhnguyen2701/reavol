@@ -2,38 +2,18 @@
 
 import BookItemComponent2 from "@/components/BookItemComponent2"
 import Loading from "@/components/Loading";
-import { ApiResponse } from "@/type";
+import { fetchHomeData } from "@/redux/features/homeSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const BookFreePage = () => {
-    const [data, setData] = useState<ApiResponse | null>(null);
-    const [isLoading, setIsLoading] = useState<Boolean>(true);
-
-    useEffect(() => {
-        const fetchHomeData = async () => {
-            try {
-                const res = await fetch(
-                    "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setData(json);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchHomeData();
-    },[])
+   const dispatch = useAppDispatch();
+     const { data, isLoading } = useAppSelector(state => state.home);
+     useEffect(() => {
+       dispatch(fetchHomeData());
+     }, [dispatch]);
+   
 
     const type1Data = data?.data.find(item => item.type === 1);
     const freeList = type1Data?.freeList;

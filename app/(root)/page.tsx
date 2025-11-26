@@ -4,64 +4,22 @@ import BookItemComponent from "@/components/BookItemComponent";
 import BookItemComponent2 from "@/components/BookItemComponent2";
 import Loading from "@/components/Loading";
 import SelectionItem from "@/components/SelectionItem";
-import { ApiResponse } from "@/type";
-import { BlogResponse } from "@/type/blog";
+import { fetchBlogData } from "@/redux/features/blogSlice";
+import { fetchHomeData } from "@/redux/features/homeSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [homeData, setHomeData] = useState<ApiResponse | null>(null);
-  const [blogData, setBlogData] = useState<BlogResponse | null>(null);
-  const [isHomeLoading, setIsHomeLoading] = useState<Boolean>(true);
-  const [isBlogLoading, setIsBlogLoading] = useState<Boolean>(true);
 
+  const dispatch = useAppDispatch();
+  const { data: homeData, isLoading: isHomeLoading } = useAppSelector(state => state.home);
+  const { data: blogData, isLoading: isBlogLoading } = useAppSelector(state => state.blog);
   useEffect(() => {
-    const fetchHomeData = async () => {
-      try {
-        const res = await fetch(
-          "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
-          {
-            method: "GET",
-            cache: "no-store",
-          }
-        );
-
-        if (!res.ok) throw new Error("Failed to fetch home data");
-
-        const json = await res.json();
-        setHomeData(json);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setIsHomeLoading(false);
-      }
-    };
-
-    const fetchBlogData = async () => {
-      try {
-        const res = await fetch(
-          "https://api.reavol.vn/api/v1/blog/get-blog-for-web",
-          {
-            method: "GET",
-            cache: "no-store",
-          }
-        );
-
-        if (!res.ok) throw new Error("Failed to fetch blog data");
-
-        const json = await res.json();
-        setBlogData(json);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setIsBlogLoading(false);
-      }
-    };
-
-    fetchHomeData();
-    fetchBlogData();
-  }, []);
+    dispatch(fetchHomeData());
+    dispatch(fetchBlogData())
+  }, [dispatch]);
 
   const type4Data = homeData?.data.find(item => item.type === 4);
   const type0Data = homeData?.data.find(item => item.type === 0);

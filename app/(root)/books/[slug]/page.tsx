@@ -1,41 +1,31 @@
 'use client';
 
 import Loading from "@/components/Loading";
-import { ApiResponse, BookDetailsResponse, RelatedBooksDataResponse } from "@/type";
+import { fetchBookDetails } from "@/redux/features/bookDetailsSlice";
+import { fetchRelatedBooks } from "@/redux/features/bookRelatedSlice";
+import { fetchHomeData } from "@/redux/features/homeSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image"
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const BookPage = () => {
     const { slug } = useParams();
-    const [homeData, setHomeData] = useState<ApiResponse | null>(null);
-    const [detailsData, setDetailsData] = useState<BookDetailsResponse | null>(null);
-    const [isDetailsLoading, setIsDetailsLoading] = useState<Boolean>(true);
-    const [relatedData, setRelatedData] = useState<RelatedBooksDataResponse | null>(null);
-    const [isRelatedLoading, setIsRelatedLoading] = useState<Boolean>(true);
+
+    const dispatch = useAppDispatch();
+
+    const homeData = useAppSelector((state) => state.home.data);
+
+    const detailsData = useAppSelector((state) => state.bookDetails.details);
+    const detailsLoading = useAppSelector((state) => state.bookDetails.isLoading);
+
+    const relatedData = useAppSelector((state) => state.bookRelated.related);
+    const relatedLoading = useAppSelector((state) => state.bookRelated.isLoading);
 
     useEffect(() => {
-        const fetchHomeData = async () => {
-            try {
-                const res = await fetch(
-                    "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setHomeData(json);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-        fetchHomeData();
-    }, [])
+        dispatch(fetchHomeData());
+    }, [dispatch]);
 
     const type5Data = homeData?.data.find(item => item.type === 5);
     const type1Data = homeData?.data.find(item => item.type === 1);
@@ -49,58 +39,16 @@ const BookPage = () => {
     const book = forYou?.find(item => item.slug === slug) || freeList?.find(item => item.slug === slug) || newest?.find(item => item.slug === slug) || trending?.find(item => item.slug === slug);
 
     useEffect(() => {
-        const fetchDetailsData = async (id: number) => {
-            try {
-                const res = await fetch(
-                    `https://api.reavol.vn/api/v1/article/get-detail-article?articleId=${id}`,
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setDetailsData(json);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsDetailsLoading(false);
-            }
-        };
-
-        const fetchRelatedData = async (id: number) => {
-            try {
-                const res = await fetch(
-                    `https://api.reavol.vn/api/v1/article/get-related-article?articleId=${id}`,
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setRelatedData(json);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsRelatedLoading(false);
-            }
-        };
-
-        if (book) {
-            fetchDetailsData(book.id);
-            fetchRelatedData(book.id);
-        }
-    }, [book])
+    if (book) {
+      dispatch(fetchBookDetails(book.id));
+      dispatch(fetchRelatedBooks(book.id));
+    }
+  }, [book, dispatch]);
 
     return (
         <div className='m-5 lg:flex'>
             {
-                isDetailsLoading === false && detailsData ?
+                detailsLoading === false && detailsData ?
                     <div className='h-full m-0 lg:w-[65%] md:w-full bg-[#042c43] border border-[rgba(255,255,255,0.59)] box-border rounded-[20px] mt-12 flex flex-wrap overflow-hidden'>
                         <div className='w-full p-0'>
                             <div className='relative aspect-[1.01]'>
@@ -147,7 +95,7 @@ const BookPage = () => {
                                             <Link href={''} className="w-full flex touch-manipulation">
                                                 <div className="flex justify-center items-center">
                                                     <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0'>
-                                                        <Image src={'/app-store.svg'} width={30} height={30} alt="" className="object-cover align-middle !rounded-tl-[inherit] !rounded-tr-[inherit]" />
+                                                        <Image src={'/app-store.svg'} width={30} height={30} alt="" className="object-cover align-middle rounded-tl-[inherit]! rounded-tr-[inherit]!" />
                                                     </span>
                                                 </div>
                                                 <div className="pl-[15px] pt-2">
@@ -178,7 +126,7 @@ const BookPage = () => {
                     <Loading />
             }
             {
-                isRelatedLoading === false && relatedData ?
+                relatedLoading === false && relatedData ?
                     <div className="lg:w-[35%] md:w-full m-0! py-8 pr-0 lg:pl-8 flex flex-wrap">
                         <div className="container">
                             <div className="hidden lg:flex flex-wrap -mx-[15px]">

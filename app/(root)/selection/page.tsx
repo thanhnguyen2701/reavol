@@ -2,38 +2,16 @@
 
 import Loading from "@/components/Loading";
 import SelectionItem from "@/components/SelectionItem"
-import { ApiResponse } from "@/type";
-import { useEffect, useState } from "react";
+import { fetchHomeData } from "@/redux/features/homeSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { useEffect } from "react";
 
 const SelectionPage = () => {
-    const [data, setData] = useState<ApiResponse | null>(null);
-    const [isLoading, setIsLoading] = useState<Boolean>(true);
-
+    const dispatch = useAppDispatch();
+    const { data, isLoading } = useAppSelector(state => state.home);
     useEffect(() => {
-        const fetchHomeData = async () => {
-            try {
-                const res = await fetch(
-                    "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) throw new Error("Failed to fetch home data");
-
-                const json = await res.json();
-                setData(json);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchHomeData();
-    },[])
-
+        dispatch(fetchHomeData());
+    }, [dispatch]);
 
     const type4Data = data?.data.find(item => item.type === 4);
     const selections = type4Data?.selections;
@@ -53,8 +31,8 @@ const SelectionPage = () => {
                                 <div className="mt-5 border border-[#1e475a]"></div>
                             </div>
                         ))
-                        : 
-                        <Loading/>
+                            :
+                            <Loading />
                     }
                 </div>
             </div>
