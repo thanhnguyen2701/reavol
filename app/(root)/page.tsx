@@ -33,9 +33,9 @@ export default function Home() {
   const newest = type7Data?.newest;
 
   const responsiveConfig = [
-    { key: "lg", items: 4, className: "hidden lg:flex" },
-    { key: "md", items: 3, className: "hidden md:flex lg:hidden" },
-    { key: "sm", items: 2, className: "flex md:hidden" },
+    { key: "lg", items: 4, col: 4, className: "hidden lg:flex" },
+    { key: "md", items: 3, col: 3, className: "hidden md:flex lg:hidden" },
+    { key: "sm", items: 2, col: 2, className: "flex md:hidden" },
   ];
 
   const responsiveConfig2 = [
@@ -127,13 +127,13 @@ export default function Home() {
         </div>
         {
           !isHomeLoading ?
-            responsiveConfig.map(({ key, items, className }) => (
-              <div key={key} className={`flex flex-wrap -mx-4 ${className}`}>
+            responsiveConfig.map(({ key, items, col, className }) => (
+              <div key={key} className={`flex-wrap -mx-4 ${className}`}>
                 {
                   forYou?.slice(0, items).map((item) => (
                     <div
                       key={item.id}
-                      className={`mt-[30px] basis-1/${items} max-w-1/${items} relative w-full min-h-px px-4`}
+                      className={`mt-[30px] basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
                     >
                       <BookItemComponent item={item} />
                     </div>
@@ -155,13 +155,13 @@ export default function Home() {
         </div>
         {
           !isHomeLoading ?
-            responsiveConfig.map(({ key, items, className }) => (
-              <div key={key} className={`flex flex-wrap -mx-4 ${className}`}>
+            responsiveConfig.map(({ key, items, col, className }) => (
+              <div key={key} className={`flex-wrap -mx-4 ${className}`}>
                 {
                   freeList?.slice(0, items).map((item) => (
                     <div
                       key={item.id}
-                      className={`mt-[30px] basis-1/${items} max-w-1/${items} relative w-full min-h-px px-4`}
+                      className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4 mt-[30px]`}
                     >
                       <BookItemComponent item={item} />
                     </div>

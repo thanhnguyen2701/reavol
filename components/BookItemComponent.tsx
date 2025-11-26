@@ -9,7 +9,7 @@ const BookItemComponent = ({ item }: { item: BookItem }) => {
         <div className="bg-cover aspect-[1.61] relative animation-fadein overflow-hidden">
           <Image src={item.media.originUrl} width={350} height={220} alt='image' className="object-cover h-55 transition-transform duration-500 hover:scale-120" />
           <div className="absolute right-5 top-5 rounded-[7px] bg-[#242730] opacity-50 px-2.5 py-1.5 tracking-[0.5px]">
-            <span className="font-medium text-[10px]/[10px] traking-[0.5px] text-white">7 phút</span>
+            <span className="font-medium text-[10px]/[10px] tracking-[0.5px] text-white">7 phút</span>
           </div>
         </div>
         <div className="aspect-[1.69] flex items-center w-full">

@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="hide-scrollbar overflow-auto">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased hide-scrollbar`}>
         <ReduxProvider>
           {children}
