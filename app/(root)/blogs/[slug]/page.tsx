@@ -36,7 +36,7 @@ const PostPage = () => {
                         <div>
                             <div className='mt-5 font-semibold text-[18px]/[40px] text-[#2fbc6d]'>{data?.data.category.title}</div>
                             <div className='mt-2.5 font-semibold lg:text-[40px]/[45px] md:text-[36px]/[40px] text-[28px]/[36px] text-white'>{data?.data.title}</div>
-                            <div className='mt-[33px] font-normal text-[16px]/[30px] text-white blog-content' dangerouslySetInnerHTML={{ __html: data?.data.content }} />
+                            <div className='mt-8 font-normal text-[16px]/[30px] text-white blog-content' dangerouslySetInnerHTML={{ __html: data?.data.content }} />
                         </div>
                     </div>
                 </div>

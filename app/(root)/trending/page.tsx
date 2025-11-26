@@ -24,10 +24,10 @@ const TrendingPage = () => {
           <div className="text-[40px]/[50px] font-semibold text-white mt-2.5">Sách hay trong tuần
           </div>
         </div>
-        <div className="mt-0 p-0! flex flex-wrap -mx-[15px]">
+        <div className="mt-0 p-0! flex flex-wrap -mx-4">
           {
             !isLoading ? freeList?.map((item) => (
-              <div key={item.id} className="mt-8 lg:basis-[25%] md:basis-1/3 basis-1/2 lg:max-w-[25%] md:max-w-1/3 max-w-1/2 relative w-full min-h-px px-[15px]">
+              <div key={item.id} className="mt-8 lg:basis-1/4 md:basis-1/3 basis-1/2 lg:max-w-1/4 md:max-w-1/3 max-w-1/2 relative w-full min-h-px px-4">
                 <BookItemComponent item={item} />
               </div>
             ))

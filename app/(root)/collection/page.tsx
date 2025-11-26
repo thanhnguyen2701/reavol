@@ -5,14 +5,14 @@ import Loading from "@/components/Loading";
 import { fetchHomeData } from "@/redux/features/homeSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image"
-import { useEffect} from "react";
+import { useEffect } from "react";
 
 const CollectionPage = () => {
-  const dispatch = useAppDispatch();
-  const { data, isLoading } = useAppSelector(state => state.home);
-  useEffect(() => {
-    dispatch(fetchHomeData());
-  }, [dispatch]);
+    const dispatch = useAppDispatch();
+    const { data, isLoading } = useAppSelector(state => state.home);
+    useEffect(() => {
+        dispatch(fetchHomeData());
+    }, [dispatch]);
 
 
     const type3Data = data?.data.find(item => item.type === 3);
@@ -32,10 +32,10 @@ const CollectionPage = () => {
                     </span>
                 </div>
             </div>
-            <div className="flex flex-wrap -mx-[15px]">
+            <div className="flex flex-wrap -mx-4">
                 {
                     isLoading === false ? forYou?.map((item) => (
-                        <div key={item.id} className="basis-full md:basis-[50%] max-w-full md:max-w-[50%] relative w-full min-h-px px-[15px]">
+                        <div key={item.id} className="basis-full md:basis-1/2 max-w-full md:max-w-1/2 relative w-full min-h-px px-4">
                             <BookItemComponent2 item={item} />
                         </div>
                     ))

@@ -16,15 +16,15 @@ const Introduce = () => {
               <span className='cursor-pointer text-white text-[24px]/[130%] font-semibold'>Đăng nhập</span>
             </div>
           </div>
-          <div className={`flex flex-wrap -mx-[15px]`}>
-            <div className={`text-white mt-[70px] relative w-full min-h-px px-[15px] md:w-1/2`}>
+          <div className={`flex flex-wrap -mx-4`}>
+            <div className={`text-white mt-[70px] relative w-full min-h-px px-4 md:w-1/2`}>
               <p className='lg:text-[50px]/[140%] md:text-[46px]/[120%] text-[42px]/[110%] font-bold w-[600px] md:w-[500px] mt-0 lg:mb-[1em] mb-[.5em]'>KHƠI NGUỒN TRI THỨC VÀ SÁNG TẠO CÙNG REAVOL</p>
               <p className='lg:mt-[82px] font-normal lg:text-[30px]/[160%] md:text-[28px]/[140%] text-[24px]/[120%] lg:mb-[1em] mb-[.5em]'>Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn mang đến cho người dùng những sản phẩm chất lượng cùng trải nghiệm tuyệt vời</p>
               <div className='lg:mt-[35px] flex items-center justify-center w-[438px] lg:h-[92px] h-20 bg-[#43b871] rounded-[10px]'>
                 <span className='font-bold text-[24px] text-white'>Bắt đầu ngay</span>
               </div>
             </div>
-            <div className={`md:mt-[119px] mt-10 relative aspect-square md:aspect-[.794979079] w-full min-h-px px-[15px] md:w-1/2`}>
+            <div className={`md:mt-[119px] mt-10 relative aspect-square md:aspect-[.794979079] w-full min-h-px px-4 md:w-1/2`}>
               <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0'>
                 <Image src={'/ic_silver.avif'} sizes="100vw" width={570} height={720} alt='' className='pl-[74px] align-middle' />
               </span>
@@ -37,8 +37,8 @@ const Introduce = () => {
           <div className='lg:pt-[150px] pt-[100px]'>
             <div className='font-semibold text-[24px]/[130%] text-[#43b871] text-center'>TIỆN ÍCH</div>
             <div className='mt-6 font-semibold text-[36px]/[130%] text-[#163b56] text-center'>Khám phá mọi điều hay</div>
-            <div className='mt-[90px] flex flex-wrap -mx-[15px]'>
-              <div className='flex-none w-1/2 md:w-1/4 max-w-[50%] md:max-w-[25%] relative min-h-px px-[15px]'>
+            <div className='mt-[90px] flex flex-wrap -mx-4'>
+              <div className='flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4'>
                 <div className='font-normal text-[24px]/[36px] text-[#163b56] text-center flex justify-center h-[52px]'>
                   <Image src={'/ic_agenda.svg'} width={52} height={52} alt='' />
                 </div>
@@ -47,7 +47,7 @@ const Introduce = () => {
                   <span className='line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]'>Trên 2500 cuốn sách</span>
                 </div>
               </div>
-              <div className='flex-none w-1/2 md:w-1/4 max-w-[50%] md:max-w-[25%] relative min-h-px px-[15px]'>
+              <div className='flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4'>
                 <div className='font-normal text-[24px]/[36px] text-[#163b56] text-center flex justify-center h-[52px]'>
                   <Image src={'/ic_headphones.svg'} width={52} height={52} alt='' />
                 </div>
@@ -56,7 +56,7 @@ const Introduce = () => {
                   <span className='line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]'>Giọng đọc tự nhiên, truyền cảm hứng</span>
                 </div>
               </div>
-              <div className='flex-none w-1/2 md:w-1/4 max-w-[50%] md:max-w-[25%] relative min-h-px px-[15px]'>
+              <div className='flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4'>
                 <div className='font-normal text-[24px]/[36px] text-[#163b56] text-center flex justify-center h-[52px]'>
                   <Image src={'/ic_play-button.svg'} width={52} height={52} alt='' />
                 </div>
@@ -65,7 +65,7 @@ const Introduce = () => {
                   <span className='line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]'>Nghe sách miễn phí không có quảng cáo</span>
                 </div>
               </div>
-              <div className='flex-none w-1/2 md:w-1/4 max-w-[50%] md:max-w-[25%] relative min-h-px px-[15px]'>
+              <div className='flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4'>
                 <div className='font-normal text-[24px]/[36px] text-[#163b56] text-center flex justify-center h-[52px]'>
                   <Image src={'/ic_hands.svg'} width={52} height={52} alt='' />
                 </div>
@@ -76,8 +76,8 @@ const Introduce = () => {
               </div>
             </div>
           </div>
-          <div className='mt-[150px] flex flex-wrap -mx-[15px]'>
-            <div className='flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+          <div className='mt-[150px] flex flex-wrap -mx-4'>
+            <div className='flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <p className='font-semibold text-[24px]/[130%] text-[#43b871] mt-0 mb-[1em]'>LỰA CHỌN TỐT NHẤT</p>
               <h3 className='font-bold text-[48px]/[130%] text-[#163b56] lg:w-[70%] font-[poppins] mt-0 mb-[0.5em]'>Đọc - Nghe sách mỗi khi</h3>
               <div>
@@ -119,7 +119,7 @@ const Introduce = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+            <div className='flex flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <div className='relative hidden lg:block lg:left-5 xl:left-30'>
                 <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
                   <Image src={'/ic_select_listen.avif'} width={513} height={716} alt='' />
@@ -132,15 +132,15 @@ const Introduce = () => {
               </div>
             </div>
           </div>
-          <div className='mt-[175px] lg:pb-25 pb-15 flex flex-wrap -mx-[15px]'>
-            <div className='flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+          <div className='mt-[175px] lg:pb-25 pb-15 flex flex-wrap -mx-4'>
+            <div className='flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <div>
                 <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
                   <Image src={'/ic_silver_dots.avif'} width={465} height={653} alt='' />
                 </span>
               </div>
             </div>
-            <div className='flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+            <div className='flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <p className='font-semibold text-[24px]/[130%] text-[#43b871] font-[poppins] mt-0 mb-[1em]'>NỘI DUNG HẤP DẪN</p>
               <h3 className='mt-6 font-bold text-[48px]/[130%] text-[#163b56] font-[poppins] mb-[0.5em]'>Xây dựng thói quen đọc sách mỗi ngày</h3>
               <div className='lg:mt-15 font-normal text-[20px]/[30px] tracking-[.005em] text-[#163b56]'>Tại Trại sáng tác của Reavol, các bạn có thể đăng tải những tác phẩm của mình và kiếm tiền từ chính tác phẩm đó. Hãy đăng kí làm Cộng tác viên của Reavol ngay hôm nay để có thể mang tác phẩm của mình đến gần hơn với những người yêu sách!</div>
@@ -259,13 +259,13 @@ const Introduce = () => {
       </div>
       <div className='bg-white lg:pb-[150px] md:pb-25 pb-10'>
         <div className={styles.container}>
-          <div className='flex flex-wrap -mx-[15px]'>
-            <div className='md:mt-[231px] mt-[150px] flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+          <div className='flex flex-wrap -mx-4'>
+            <div className='md:mt-[231px] mt-[150px] flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
                 <Image src={'/icon_investment.avif'} width={540} height={560} alt='' />
               </span>
             </div>
-            <div className='lg:mt-[150px] md:mt-25 mt-15 flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+            <div className='lg:mt-[150px] md:mt-25 mt-15 flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <div className='lg:w-[450px]'>
                 <span className='font-bold lg:text-[48px]/[130%] md:text-[40px]/[115%] text-[36px]/[100%] text-[#163b56]'>Đầu tư nhỏ, phát triển nhanh</span>
               </div>
@@ -325,7 +325,7 @@ const Introduce = () => {
       </div>
       <div className='bg-white!'>
         <div className={styles.container}>
-          <div className='flex flex-wrap -mx-[15px]'>
+          <div className='flex flex-wrap -mx-4'>
             <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
               <Image src='/icon_community.avif' width={1140} height={451.7} alt='' />
             </span>
@@ -337,15 +337,15 @@ const Introduce = () => {
           <h5 className='font-semibold text-[36px]/[130%] text-[#43b871] mt-0 mb-[0.5em]'>QUYỀN LỢI CỦA KOCS</h5>
         </div>
         <div className={styles.container}>
-          <div className='mt-15 flex flex-wrap -mx-[15px]'>
-            <div className='flex-none w-1/2 max-w-[50%]'>
+          <div className='mt-15 flex flex-wrap -mx-4'>
+            <div className='flex-none w-1/2 max-w-1/2'>
               <div>
                 <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
                   <Image src='/ic_interest.avif' width={540} height={350} alt='' />
                 </span>
               </div>
             </div>
-            <div className='flex-none w-1/2 max-w-[50%]'>
+            <div className='flex-none w-1/2 max-w-1/2'>
               <div>
                 <div className='flex items-center mt-9'>
                   <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
@@ -378,8 +378,8 @@ const Introduce = () => {
       </div>
       <div className='bg-white'>
         <div className={styles.container}>
-          <div className='lg:pb-[242px] pb-20 flex flex-wrap -mx-[15px]'>
-            <div className='flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px]'>
+          <div className='lg:pb-[242px] pb-20 flex flex-wrap -mx-4'>
+            <div className='flex-none w-1/2 max-w-1/2 relative min-h-px px-4'>
               <h6 className='lg:pt-[150px] pt-25 font-semibold lg:text-[36px]/[130%] text-[30px]/[110%] md:w-[450px] text-[#43b871] mt-0 mb-[.5em]'>ĐĂNG KÝ TÀI KHOẢN KOCS</h6>
               <h5 className='mt-6 font-bold lg:text-[48px]/[140%] md:text-[44px]/[130%] text-[40px]/[110%] text-[#163b56] w-[80%] mb-[.5em]'>Bạn đã sẵn sàng gia tăng thu nhập cùng Reavol KOCs?</h5>
               <div className='mt-[21px]'>
@@ -388,7 +388,7 @@ const Introduce = () => {
                 </span>
               </div>
             </div>
-            <div className='flex-none w-1/2 max-w-[50%] relative min-h-px px-[15px] lg:mt-[271px] mt-30'>
+            <div className='flex-none w-1/2 max-w-1/2 relative min-h-px px-4 lg:mt-[271px] mt-30'>
               <form id='basic' className='box-border m-0 p-0 text-[rgba(0,0,0,0.85)] text-[14px]/[1.5715]'>
                 <div className='gap-y-0 flex-col box-border p-0 text-[rgba(0,0,0,0.85)] text-[14px]/[1.5715] mb-6 align-top flex flex-wrap'>
                   <div className='w-full flex flex-col grow relative max-w-full min-h-px'>
@@ -444,7 +444,7 @@ const Introduce = () => {
                       <div className='flex-auto max-w-full'>
                         <div className='w-full box-border m-0 p-0 text-[rgba(0,0,0,0.85)] text-[14px]/[1.5715] inline-block'>
                           <div className='m-0 flex flex-wrap'>
-                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-[41.666667%] max-w-[41.666667%] relative min-h-px px-[15px]'>
+                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-5/12 max-w-5/12 relative min-h-px px-4'>
                               <label className='w-full text-[14px] m-0 p-0 text-[rgba(0,0,0,0.85)] inline-flex items-baseline cursor-pointer'>
                                 <span className='w-4 h-4 justify-between flex items-center box-border m-0 p-0 text-[rgba(0,0,0,0.85)] text-[14px] relative top-[.2em] leading-1 whitespace-nowrap outline-none cursor-pointer'>
                                   <input type="checkbox" className='leading-normal w-3.5 h-3.5 box-border p-0 touch-manipulation absolute top-0 left-0 right-0 bottom-0 z-1 cursor-pointer overflow-visible m-0 text-[rgba(0,0,0,0.85)] text-[14px]' />
@@ -460,7 +460,7 @@ const Introduce = () => {
                                 </span>
                               </label>
                             </div>
-                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-[41.666667%] max-w-[41.666667%] relative min-h-px px-[15px] ml-auto'>
+                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-5/12 max-w-5/12 relative min-h-px px-4 ml-auto'>
                               <label className='w-full text-[14px] m-0 p-0 text-[rgba(0,0,0,0.85)] inline-flex items-baseline cursor-pointer'>
                                 <span className='w-4 h-4 justify-between flex items-center box-border m-0 p-0 text-[rgba(0,0,0,0.85)] text-[14px] relative top-[.2em] leading-1 whitespace-nowrap outline-none cursor-pointer'>
                                   <input type="checkbox" className='leading-normal w-3.5 h-3.5 box-border p-0 touch-manipulation absolute top-0 left-0 right-0 bottom-0 z-1 cursor-pointer overflow-visible m-0 text-[rgba(0,0,0,0.85)] text-[14px]' />
@@ -476,7 +476,7 @@ const Introduce = () => {
                                 </span>
                               </label>
                             </div>
-                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-[41.666667%] max-w-[41.666667%] relative min-h-px px-[15px]'>
+                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-5/12 max-w-5/12 relative min-h-px px-4'>
                               <label className='w-full text-[14px] m-0 p-0 text-[rgba(0,0,0,0.85)] inline-flex items-baseline cursor-pointer'>
                                 <span className='w-4 h-4 justify-between flex items-center box-border m-0 p-0 text-[rgba(0,0,0,0.85)] text-[14px] relative top-[.2em] leading-1 whitespace-nowrap outline-none cursor-pointer'>
                                   <input type="checkbox" className='leading-normal w-3.5 h-3.5 box-border p-0 touch-manipulation absolute top-0 left-0 right-0 bottom-0 z-1 cursor-pointer overflow-visible m-0 text-[rgba(0,0,0,0.85)] text-[14px]' />
@@ -492,7 +492,7 @@ const Introduce = () => {
                                 </span>
                               </label>
                             </div>
-                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-[41.666667%] max-w-[41.666667%] relative min-h-px px-[15px] ml-auto'>
+                            <div className='border border-[#33bf71] box-border rounded-[10px] h-[49px] w-[236px] flex items-center lg:mt-[39px] mt-5 flex-none basis-5/12 max-w-5/12 relative min-h-px px-4 ml-auto'>
                               <label className='w-full text-[14px] m-0 p-0 text-[rgba(0,0,0,0.85)] inline-flex items-baseline cursor-pointer'>
                                 <span className='w-4 h-4 justify-between flex items-center box-border m-0 p-0 text-[rgba(0,0,0,0.85)] text-[14px] relative top-[.2em] leading-1 whitespace-nowrap outline-none cursor-pointer'>
                                   <input type="checkbox" className='leading-normal w-3.5 h-3.5 box-border p-0 touch-manipulation absolute top-0 left-0 right-0 bottom-0 z-1 cursor-pointer overflow-visible m-0 text-[rgba(0,0,0,0.85)] text-[14px]' />
@@ -518,7 +518,7 @@ const Introduce = () => {
                   <div className='w-full flex flex-col grow relative min-h-px'>
                     <div className='relative flex items-center min-h-8'>
                       <div className='flex-auto max-w-full '>
-                        <button type='submit' className='h-15 w-full lg:mt-14 bg-[#43b871] border-none text-white leading-[1.5715] relative inline-block font-normal whitespace-nowrap text-center cursor-pointer touch-manipulation py-1 px-[15px] text-[14px]'>
+                        <button type='submit' className='h-15 w-full lg:mt-14 bg-[#43b871] border-none text-white leading-[1.5715] relative inline-block font-normal whitespace-nowrap text-center cursor-pointer touch-manipulation py-1 px-4 text-[14px]'>
                           <span className='font-bold text-[24px]/[160%] text-white'>Gửi ngay</span>
                         </button>
                       </div>
@@ -532,8 +532,8 @@ const Introduce = () => {
       </div>
       <div className='bg-[#044063]'>
         <div className={styles.container}>
-          <div className='pb-24 flex flex-wrap -mx-[15px]'>
-            <div className='mt-[95px] flex-none w-5/12 max-w-[41.666667%] relative min-h-px px-[15px]'>
+          <div className='pb-24 flex flex-wrap -mx-4'>
+            <div className='mt-[95px] flex-none w-5/12 max-w-5/12 relative min-h-px px-4'>
               <div>
                 <span className='box-border inline-block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 relative max-w-full'>
                   <Image src='/ic_footer.svg' width={197} height={64} alt='' />
@@ -575,22 +575,22 @@ const Introduce = () => {
                 </div>
               </div>
             </div>
-            <div className='flex-none w-7/12 max-w-[58.333333%] relative min-h-px px-[15px]'>
-              <div className='mt-[122px] flex flex-wrap -mx-[15px]'>
-                <div className='mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-[33.333333%] relative min-h-px px-[15px]'>
+            <div className='flex-none w-7/12 max-w-7/12 relative min-h-px px-4'>
+              <div className='mt-[122px] flex flex-wrap -mx-4'>
+                <div className='mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-1/3 relative min-h-px px-4'>
                   <h4 className='font-semibold md:text-[24px]/[36px] text-[20px]/[28px] text-white'>Ứng dụng</h4>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Thể loại</div>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Cộng tác viên</div>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Lợi ích của đọc</div>
                 </div>
-                <div className='mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-[33.333333%] relative min-h-px px-[15px]'>
+                <div className='mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-1/3 relative min-h-px px-4'>
                   <h4 className='font-semibold md:text-[24px]/[36px] text-[20px]/[28px] text-white'>Chính sách</h4>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Thanh toán</div>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Dịch vụ</div>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Thẻ đọc sách</div>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Trợ giúp</div>
                 </div>
-                <div className='mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-[33.333333%] relative min-h-px px-[15px]'>
+                <div className='mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-1/3 relative min-h-px px-4'>
                   <h4 className='font-semibold md:text-[24px]/[36px] text-[20px]/[28px] text-white'>Về chúng tôi</h4>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Giới thiệu</div>
                   <div className='mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white'>Website</div>

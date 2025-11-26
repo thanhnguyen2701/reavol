@@ -16,7 +16,7 @@ const Aside = () => {
                                 height={100} />
                         </Link>
                     </div>
-                    <div className='mt-9 mr-[13px] mb-5 ml-0'>
+                    <div className='mt-9 mr-3 mb-5 ml-0'>
                         <span className='text-[11px]/[11px] font-semibold tracking-[1.5px] text-[#808191] opacity-50 mix-blend-normal'>MENU</span>
                     </div>
                     <ul>
@@ -95,11 +95,11 @@ const Aside = () => {
                     </ul>
                 </div>
             </div>
-            <div className="md:hidden fixed w-[76px] z-15 h-[50%] p-4.5! flex-[0_0_20%] min-h-[55%] bg-[rgba(3,42,58,0.92)] max-w-full min-w-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-r-[22px] rounded-l-none transition-all duration-200">
+            <div className="md:hidden fixed w-19 z-15 h-1/2 p-4.5! flex-[0_0_20%] min-h-[55%] bg-[rgba(3,42,58,0.92)] max-w-full min-w-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)] rounded-r-[22px] rounded-l-none transition-all duration-200">
                 <div className='h-full overflow-y-scroll block overflow-x-hidden -mt-[.1px] pt-[.1px] items-center'>
                     <div className='pl-0'>
                         <Link href={'/'}>
-                            <div className='mt-[1.1rem] bg-[#1c465d] rounded-[7px] w-8 h-[31px] flex justify-center items-center'>
+                            <div className='mt-4.5 bg-[#1c465d] rounded-[7px] w-8 h-8 flex justify-center items-center'>
                                 <span className='box-border inline-block overflow-hidden w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 relative max-w-full'>
                                     <Image src={'/ic_logo_R.svg'} width={13} height={17} alt='' className='' />
                                 </span>

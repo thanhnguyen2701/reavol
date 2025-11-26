@@ -39,11 +39,16 @@ const BookPage = () => {
     const book = forYou?.find(item => item.slug === slug) || freeList?.find(item => item.slug === slug) || newest?.find(item => item.slug === slug) || trending?.find(item => item.slug === slug);
 
     useEffect(() => {
-    if (book) {
-      dispatch(fetchBookDetails(book.id));
-      dispatch(fetchRelatedBooks(book.id));
-    }
-  }, [book, dispatch]);
+        if (book) {
+            dispatch(fetchBookDetails(book.id));
+            dispatch(fetchRelatedBooks(book.id));
+        }
+    }, [book, dispatch]);
+
+    const responsiveConfig = [
+        { key: "lg", items: 3, col: 1, className: "hidden lg:flex" },
+        { key: "md", items: 4, col: 2, className: "flex lg:hidden" },
+    ];
 
     return (
         <div className='m-5 lg:flex'>
@@ -81,7 +86,7 @@ const BookPage = () => {
                                                 detailsData.data.chapters.map((item, index) => (
                                                     <div className="m-0! flex flex-wrap">
                                                         <div className="w-[3%] text-center text-white text-[16px]/[24px] tracking-[.5px]">{index + 1}</div>
-                                                        <div className="text-white text-[16px]/[24px] tracking-[.5px] flex-none w-[83.333333%] max-w-[83.333333%] relative min-h-px px-[15px]">{item.title}</div>
+                                                        <div className="text-white text-[16px]/[24px] tracking-[.5px] flex-none w-5/6 max-w-5/6 relative min-h-px px-4">{item.title}</div>
                                                     </div>
                                                 ))
                                             }
@@ -90,28 +95,28 @@ const BookPage = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-[18px]/[30px] font-[poppins] tracking-[.5px] text-white text-center pb-5 pt-7.5 mt-0 mb-[.5em] font-medium">Tải app để đọc bản tóm tắt đầy đủ</h4>
-                                    <div className="mt-[35px] flex pb-7.5 justify-center">
-                                        <div className="bg-black rounded-[10px] w-[189px] h-[63px] flex px-3">
+                                    <div className="mt-9 flex pb-7.5 justify-center">
+                                        <div className="bg-black rounded-[10px] w-47 h-16 flex px-3">
                                             <Link href={''} className="w-full flex touch-manipulation">
                                                 <div className="flex justify-center items-center">
                                                     <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0'>
                                                         <Image src={'/app-store.svg'} width={30} height={30} alt="" className="object-cover align-middle rounded-tl-[inherit]! rounded-tr-[inherit]!" />
                                                     </span>
                                                 </div>
-                                                <div className="pl-[15px] pt-2">
+                                                <div className="pl-4 pt-2">
                                                     <h6 className="font-medium text-[14px]/[21px] text-white mt-0! mb-0! w-full!">Download on the</h6>
                                                     <h5 className="mb-0! font-semibold text-[18px]/[27px] text-white mt-0">App Store</h5>
                                                 </div>
                                             </Link>
                                         </div>
-                                        <div className="ml-[27px] bg-black rounded-[10px] w-[189px] h-[63px] flex px-3">
+                                        <div className="ml-7 bg-black rounded-[10px] w-47 h-16 flex px-3">
                                             <Link href={''} className="w-full flex touch-manipulation">
                                                 <div className="flex justify-center items-center rounded-tl-[20px]! rounded-tr-[20px]!">
                                                     <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 rounded-tl-[20px]! rounded-tr-[20px]!'>
                                                         <Image src={'/playstore.svg'} width={30} height={30} alt="" className="object-cover align-middle rounded-tl-[20px]! rounded-tr-[20px]!" />
                                                     </span>
                                                 </div>
-                                                <div className="pl-[15px] pt-2">
+                                                <div className="pl-4 pt-2">
                                                     <h6 className="font-medium text-[14px]/[21px] text-white mt-0! mb-0! w-full!">GET IT ON</h6>
                                                     <h5 className="mb-0! font-semibold text-[18px]/[27px] text-white mt-0">Google Play</h5>
                                                 </div>
@@ -129,80 +134,47 @@ const BookPage = () => {
                 relatedLoading === false && relatedData ?
                     <div className="lg:w-[35%] md:w-full m-0! py-8 pr-0 lg:pl-8 flex flex-wrap">
                         <div className="container">
-                            <div className="hidden lg:flex flex-wrap -mx-[15px]">
-                                <div className="text-white text-[20px]/[36px] tracking-[.5px] font-bold pt-1.5 text-center w-full">Có thể bạn quan tâm</div>
-                                {
-                                    relatedData.data.slice(0, 3).map((item) => (
-                                        <div key={item.id} className="mt-12 flex justify-center flex-none w-full max-w-full relative min-h-px px-[15px]">
-                                            <Link href={`/books/${item.slug}`} className="w-full touch-manipulation">
-                                                <div className="bg-[#242730] p-0 rounded-[20px]">
-                                                    <div className="w-full aspect-[.994] relative">
-                                                        <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0 rounded-tr-[10px] rounded-tl-[10px]'>
-                                                            <Image src={item.media.originUrl} sizes="100vw" width={1500} height={770} alt='' className='rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover' />
-                                                        </span>
-                                                        <div className="absolute w-[65px] right-5 bottom-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white p-2.5 tracking-[.5px]">
-                                                            <div>
-                                                                <span className="rounded-tr-[10px] rounded-tl-[10px] font-medium text-[10px]/[10px] tracking-[.5px] text-white">15 phút</span>
+                            {
+                                responsiveConfig.map(({ key, items, col, className }) => (
+                                    <div key={key} className={`${className} flex-wrap -mx-4`}>
+                                        <div className="text-white text-[20px]/[36px] tracking-[.5px] font-bold pt-1.5 text-center w-full">Có thể bạn quan tâm</div>
+                                        {
+                                            relatedData.data.slice(0, items).map((item) => (
+                                                <div key={item.id} className={`mt-12 flex justify-center basis-1/${col} max-w-1/${col} relative min-h-px px-4`}>
+                                                    <Link href={`/books/${item.slug}`} className="w-full touch-manipulation">
+                                                        <div className="bg-[#242730] p-0 rounded-[20px]">
+                                                            <div className="w-full aspect-[.994] relative">
+                                                                <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0 rounded-tr-[10px] rounded-tl-[10px]'>
+                                                                    <Image src={item.media.originUrl} sizes="100vw" width={1500} height={770} alt='' className='rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover' />
+                                                                </span>
+                                                                <div className="absolute w-16 right-5 bottom-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white p-2.5 tracking-[.5px]">
+                                                                    <div>
+                                                                        <span className="rounded-tr-[10px] rounded-tl-[10px] font-medium text-[10px]/[10px] tracking-[.5px] text-white">15 phút</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="h-38 w-full pt-5">
+                                                                <div className="flex items-end w-[80%] ml-7.5">
+                                                                    <span className="text-[16px]/[26px] text-ellipsis overflow-hidden whitespace-nowrap tracking-[0.3px] text-white font-medium">{item.title}</span>
+                                                                </div>
+                                                                <div className="flex items-end w-[75%] tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px] ml-7.5 mt-1.5">
+                                                                    <span className="mix-blend-normal font-normal tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px]">{item.author}</span>
+                                                                </div>
+                                                                <div className="mx-7.5 mt-1.5">
+                                                                    <span className="line-clamp-2 text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[15px] tracking-[.5px] text-[#b7b9d2] mix-blend-normal font-normal">{item.subTitle}</span>
+                                                                </div>
+                                                                <div className="ml-7.5 items-center w-[76%] mt-2.5">
+                                                                    <span className="font-normal text-[12px]/[12px] tracking-[.5px] text-[#808191] mix-blend-normal">53K views • 2 weeks ago</span>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="text-white h-[153px] w-full pt-5">
-                                                        <div className="flex items-end w-[80%] ml-[1.9rem]">
-                                                            <span className="text-[16px]/[26px] text-ellipsis overflow-hidden whitespace-nowrap tracking-[0.3px] text-white font-medium">{item.title}</span>
-                                                        </div>
-                                                        <div className="flex items-end w-[75%] tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px] ml-[1.9rem] mt-[5px]">
-                                                            <span className="mix-blend-normal font-normal tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px]">{item.author}</span>
-                                                        </div>
-                                                        <div className="mx-[1.9rem] mt-[5px]">
-                                                            <span className="line-clamp-2 text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[15px] tracking-[.5px] text-[#b7b9d2] mix-blend-normal font-normal">{item.subTitle}</span>
-                                                        </div>
-                                                        <div className="ml-[1.9rem] items-center w-[76%] mt-2.5">
-                                                            <span className="font-normal text-[12px]/[12px] tracking-[.5px] text-[#808191] mix-blend-normal">53K views • 2 weeks ago</span>
-                                                        </div>
-                                                    </div>
+                                                    </Link>
                                                 </div>
-                                            </Link>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                            <div className="flex lg:hidden flex-wrap -mx-[15px]">
-                                <div className="text-white text-[20px]/[36px] tracking-[.5px] font-bold pt-1.5 text-center w-full">Có thể bạn quan tâm</div>
-                                {
-                                    relatedData.data.slice(0, 4).map((item) => (
-                                        <div key={item.id} className="mt-12 flex justify-center flex-none w-1/2 max-w-1/2 relative min-h-px px-[15px]">
-                                            <Link href={`/books/${item.slug}`} className="w-full touch-manipulation">
-                                                <div className="bg-[#242730] p-0 rounded-[20px]">
-                                                    <div className="w-full aspect-[.994] relative">
-                                                        <span className='box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0 rounded-tr-[10px] rounded-tl-[10px]'>
-                                                            <Image src={item.media.originUrl} sizes="100vw" width={1500} height={770} alt='' className='rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover' />
-                                                        </span>
-                                                        <div className="absolute w-[65px] right-5 bottom-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white p-2.5 tracking-[.5px]">
-                                                            <div>
-                                                                <span className="rounded-tr-[10px] rounded-tl-[10px] font-medium text-[10px]/[10px] tracking-[.5px] text-white">15 phút</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="text-white h-[153px] w-full pt-5">
-                                                        <div className="flex items-end w-[80%] ml-[1.9rem]">
-                                                            <span className="text-[16px]/[26px] text-ellipsis overflow-hidden whitespace-nowrap tracking-[0.3px] text-white font-medium">{item.title}</span>
-                                                        </div>
-                                                        <div className="flex items-end w-[75%] tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px] ml-[1.9rem] mt-[5px]">
-                                                            <span className="mix-blend-normal font-normal tracking-[.5px] text-[#b7b9d2] text-[13px]/[13px]">{item.author}</span>
-                                                        </div>
-                                                        <div className="mx-[1.9rem] mt-[5px]">
-                                                            <span className="line-clamp-2 text-ellipsis overflow-hidden whitespace-pre-wrap text-[13px]/[15px] tracking-[.5px] text-[#b7b9d2] mix-blend-normal font-normal">{item.subTitle}</span>
-                                                        </div>
-                                                        <div className="ml-[1.9rem] items-center w-[76%] mt-2.5">
-                                                            <span className="font-normal text-[12px]/[12px] tracking-[.5px] text-[#808191] mix-blend-normal">53K views • 2 weeks ago</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                                            ))
+                                        }
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                     :
