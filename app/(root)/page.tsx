@@ -24,31 +24,31 @@ export default function Home() {
     dispatch(fetchBlogData());
   }, [dispatch]);
 
-  const type4Data = homeData?.data.find((item) => item.type === 4);
-  const type0Data = homeData?.data.find((item) => item.type === 0);
-  const type1Data = homeData?.data.find((item) => item.type === 1);
-  const type3Data = homeData?.data.find((item) => item.type === 3);
-  const type7Data = homeData?.data.find((item) => item.type === 7);
-  const selections = type4Data?.selections;
-  const freeBook = type0Data?.freeBook;
-  const forYou = type3Data?.forYou;
-  const freeList = type1Data?.freeList;
-  const newest = type7Data?.newest;
+  const selectionsData = homeData?.data.find((item) => item.type === 4);
+  const freeBookData = homeData?.data.find((item) => item.type === 0);
+  const freeListData = homeData?.data.find((item) => item.type === 1);
+  const forYouData = homeData?.data.find((item) => item.type === 3);
+  const newestData = homeData?.data.find((item) => item.type === 7);
+  const selections = selectionsData?.selections;
+  const freeBook = freeBookData?.freeBook;
+  const forYou = forYouData?.forYou;
+  const freeList = freeListData?.freeList;
+  const newest = newestData?.newest;
 
   const responsiveConfig = [
-    { key: "lg", items: 4, col: 'basis-[25%] max-w-[25%]', className: "hidden lg:flex" },
-    { key: "md", items: 3, col: 'basis-[33.333333%] max-w-[33.333333%]', className: "hidden md:flex lg:hidden" },
-    { key: "sm", items: 2, col: 'basis-[50%] max-w-[50%]', className: "flex md:hidden" },
+    { key: "lg", items: 4, col: 'basis-1/4 max-w-1/4', className: "hidden lg:flex" },
+    { key: "md", items: 3, col: 'basis-1/3 max-w-1/3', className: "hidden md:flex lg:hidden" },
+    { key: "sm", items: 2, col: 'basis-1/2 max-w-1/2', className: "flex md:hidden" },
   ];
 
   const responsiveConfig2 = [
-    { key: "md", items: 8, col: 'basis-[50%] max-w-[50%]', className: "hidden md:flex" },
+    { key: "md", items: 8, col: 'basis-1/2 max-w-1/2', className: "hidden md:flex" },
     { key: "sm", items: 6, col: 'basis-full max-w-full', className: "flex md:hidden" },
   ];
 
   const responsiveConfig3 = [
-    { key: "lg", items: 3, col: 'basis-[33.333333%] max-w-[33.333333%]', className: "hidden lg:flex" },
-    { key: "md", items: 2, col: 'basis-[50%] max-w-[50%]', className: "hidden md:flex lg:hidden" },
+    { key: "lg", items: 3, col: 'basis-1/3 max-w-1/3', className: "hidden lg:flex" },
+    { key: "md", items: 2, col: 'basis-1/2 max-w-1/2', className: "hidden md:flex lg:hidden" },
     { key: "sm", items: 2, col: 'basis-full max-w-full', className: "flex md:hidden" },
   ];
 

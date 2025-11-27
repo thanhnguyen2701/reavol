@@ -24,7 +24,6 @@ const BookFreePage = () => {
           SÁCH MIỄN PHÍ
         </div>
         <div className="relative aspect-square md:aspect-[2.96] w-full mt-8 mb-20">
-          <span className="box-border block overflow-hidden w-[initial] h-[initial] opacity-100 m-0 p-0 absolute inset-0 rounded-[20px]">
             {isLoading === false && freeList ? (
               <Image
                 src={freeList[0].media.originUrl}
@@ -36,7 +35,6 @@ const BookFreePage = () => {
             ) : (
               <Loading />
             )}
-          </span>
         </div>
       </div>
       <div className="flex flex-wrap -mx-4">

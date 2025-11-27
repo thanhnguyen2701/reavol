@@ -51,7 +51,7 @@ const BookPage = () => {
 
   const responsiveConfig = [
     { key: "lg", items: 3, col: 'basis-full max-w-full', className: "hidden lg:flex" },
-    { key: "md", items: 4, col: 'basis-[50%] max-w-[50%]', className: "flex lg:hidden" },
+    { key: "md", items: 4, col: 'basis-1/2 max-w-1/2', className: "flex lg:hidden" },
   ];
 
   return (
@@ -60,7 +60,6 @@ const BookPage = () => {
         <div className="h-full m-0 lg:w-[65%] md:w-full bg-[#042c43] border border-[rgba(255,255,255,0.59)] box-border rounded-[20px] mt-12 flex flex-wrap overflow-hidden">
           <div className="w-full p-0">
             <div className="relative aspect-[1.01]">
-              <span className="box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0">
                 <Image
                   src={detailsData.data.media.originUrl}
                   sizes="100vw"
@@ -69,7 +68,6 @@ const BookPage = () => {
                   alt=""
                   className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
                 />
-              </span>
             </div>
             <div>
               <div className="px-12.5 pt-12.5 pb-0 items-center  box-border justify-between! flex!">
@@ -131,7 +129,6 @@ const BookPage = () => {
                   <div className="bg-black rounded-[10px] w-47 h-16 flex px-3">
                     <Link href={""} className="w-full flex touch-manipulation">
                       <div className="flex justify-center items-center">
-                        <span className="box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0">
                           <Image
                             src={"/app-store.svg"}
                             width={30}
@@ -139,7 +136,6 @@ const BookPage = () => {
                             alt=""
                             className="object-cover align-middle rounded-tl-[inherit]! rounded-tr-[inherit]!"
                           />
-                        </span>
                       </div>
                       <div className="pl-4 pt-2">
                         <h6 className="font-medium text-[14px]/[21px] text-white mt-0! mb-0! w-full!">
@@ -154,7 +150,6 @@ const BookPage = () => {
                   <div className="ml-7 bg-black rounded-[10px] w-47 h-16 flex px-3">
                     <Link href={""} className="w-full flex touch-manipulation">
                       <div className="flex justify-center items-center rounded-tl-[20px]! rounded-tr-[20px]!">
-                        <span className="box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 rounded-tl-[20px]! rounded-tr-[20px]!">
                           <Image
                             src={"/playstore.svg"}
                             width={30}
@@ -162,7 +157,6 @@ const BookPage = () => {
                             alt=""
                             className="object-cover align-middle rounded-tl-[20px]! rounded-tr-[20px]!"
                           />
-                        </span>
                       </div>
                       <div className="pl-4 pt-2">
                         <h6 className="font-medium text-[14px]/[21px] text-white mt-0! mb-0! w-full!">
@@ -201,7 +195,6 @@ const BookPage = () => {
                     >
                       <div className="bg-[#242730] p-0 rounded-[20px]">
                         <div className="w-full aspect-[.994] relative">
-                          <span className="box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0 rounded-tr-[10px] rounded-tl-[10px]">
                             <Image
                               src={item.media.originUrl}
                               sizes="100vw"
@@ -210,7 +203,6 @@ const BookPage = () => {
                               alt=""
                               className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
                             />
-                          </span>
                           <div className="absolute w-16 right-5 bottom-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white p-2.5 tracking-[.5px]">
                             <div>
                               <span className="rounded-tr-[10px] rounded-tl-[10px] font-medium text-[10px]/[10px] tracking-[.5px] text-white">

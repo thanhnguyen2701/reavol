@@ -23,7 +23,6 @@ const PostPage = () => {
       <div className="flex flex-wrap m-0!">
         <div className="p-0 flex-none w-full max-w-full relative min-h-px">
           <div className="aspect-[1.95] mt-10 relative rounded-[20px]">
-            <span className="box-border block overflow-hidden w-[initial] h-[initial] bg-none opacity-100 m-0 p-0 absolute inset-0 rounded-[20px]">
               {data ? (
                 <Image
                   src={data?.data.media.originUrl}
@@ -36,7 +35,6 @@ const PostPage = () => {
               ) : (
                 <></>
               )}
-            </span>
           </div>
           <div>
             <div className="mt-5 font-semibold text-[18px]/[40px] text-[#2fbc6d]">

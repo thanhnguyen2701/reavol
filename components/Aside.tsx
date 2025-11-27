@@ -178,7 +178,6 @@ const Aside = () => {
           <div className="pl-0">
             <Link href={"/"}>
               <div className="mt-4.5 bg-[#1c465d] rounded-[7px] w-8 h-8 flex justify-center items-center">
-                <span className="box-border inline-block overflow-hidden w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 relative max-w-full">
                   <Image
                     src={"/ic_logo_R.svg"}
                     width={13}
@@ -186,7 +185,6 @@ const Aside = () => {
                     alt=""
                     className=""
                   />
-                </span>
               </div>
             </Link>
             <ul className="pt-12.5 overflow-x-hidden rounded-r-[inherit]!">
