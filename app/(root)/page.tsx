@@ -36,20 +36,20 @@ export default function Home() {
   const newest = type7Data?.newest;
 
   const responsiveConfig = [
-    { key: "lg", items: 4, col: 4, className: "hidden lg:flex" },
-    { key: "md", items: 3, col: 3, className: "hidden md:flex lg:hidden" },
-    { key: "sm", items: 2, col: 2, className: "flex md:hidden" },
+    { key: "lg", items: 4, col: 'basis-[25%] max-w-[25%]', className: "hidden lg:flex" },
+    { key: "md", items: 3, col: 'basis-[33.333333%] max-w-[33.333333%]', className: "hidden md:flex lg:hidden" },
+    { key: "sm", items: 2, col: 'basis-[50%] max-w-[50%]', className: "flex md:hidden" },
   ];
 
   const responsiveConfig2 = [
-    { key: "md", items: 8, col: 2, className: "hidden md:flex" },
-    { key: "sm", items: 6, col: 1, className: "flex md:hidden" },
+    { key: "md", items: 8, col: 'basis-[50%] max-w-[50%]', className: "hidden md:flex" },
+    { key: "sm", items: 6, col: 'basis-full max-w-full', className: "flex md:hidden" },
   ];
 
   const responsiveConfig3 = [
-    { key: "lg", items: 3, col: 3, className: "hidden lg:flex" },
-    { key: "md", items: 2, col: 2, className: "hidden md:flex lg:hidden" },
-    { key: "sm", items: 2, col: 1, className: "flex md:hidden" },
+    { key: "lg", items: 3, col: 'basis-[33.333333%] max-w-[33.333333%]', className: "hidden lg:flex" },
+    { key: "md", items: 2, col: 'basis-[50%] max-w-[50%]', className: "hidden md:flex lg:hidden" },
+    { key: "sm", items: 2, col: 'basis-full max-w-full', className: "flex md:hidden" },
   ];
 
   return (
@@ -139,7 +139,7 @@ export default function Home() {
               {forYou?.slice(0, items).map((item) => (
                 <div
                   key={item.id}
-                  className={`mt-[30px] basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                  className={`mt-[30px] ${col} relative w-full min-h-px px-4`}
                 >
                   <BookItemComponent item={item} />
                 </div>
@@ -173,7 +173,7 @@ export default function Home() {
               {freeList?.slice(0, items).map((item) => (
                 <div
                   key={item.id}
-                  className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4 mt-[30px]`}
+                  className={`${col} relative w-full min-h-px px-4 mt-[30px]`}
                 >
                   <BookItemComponent item={item} />
                 </div>
@@ -207,7 +207,7 @@ export default function Home() {
               {freeList?.slice(0, items).map((item) => (
                 <div
                   key={item.id}
-                  className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                  className={`${col} relative w-full min-h-px px-4`}
                 >
                   <BookItemComponent2 item={item} />
                 </div>
@@ -240,7 +240,7 @@ export default function Home() {
               {selections?.slice(0, 2).map((item) => (
                 <div
                   key={item.id}
-                  className={`pb-6! basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                  className={`pb-6! ${col} relative w-full min-h-px px-4`}
                 >
                   <SelectionItem item={item} />
                 </div>
@@ -292,7 +292,7 @@ export default function Home() {
                 {newest?.slice(0, 6).map((item) => (
                   <div
                     key={item.id}
-                    className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                    className={`${col} relative w-full min-h-px px-4`}
                   >
                     <BookItemComponent2 item={item} />
                   </div>
@@ -319,7 +319,7 @@ export default function Home() {
               {blogData.data.blogs.slice(0, items).map((item) => (
                 <div
                   key={item.id}
-                  className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                  className={`${col} relative w-full min-h-px px-4`}
                 >
                   <Link href={`/blogs/${item.slug}`}>
                     <div className="aspect-[1.43] relative w-full">

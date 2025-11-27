@@ -50,8 +50,8 @@ const BookPage = () => {
   }, [book, dispatch]);
 
   const responsiveConfig = [
-    { key: "lg", items: 3, col: 1, className: "hidden lg:flex" },
-    { key: "md", items: 4, col: 2, className: "flex lg:hidden" },
+    { key: "lg", items: 3, col: 'basis-full max-w-full', className: "hidden lg:flex" },
+    { key: "md", items: 4, col: 'basis-[50%] max-w-[50%]', className: "flex lg:hidden" },
   ];
 
   return (
@@ -193,7 +193,7 @@ const BookPage = () => {
                 {relatedData.data.slice(0, items).map((item) => (
                   <div
                     key={item.id}
-                    className={`mt-12 flex justify-center basis-1/${col} max-w-1/${col} relative min-h-px px-4`}
+                    className={`mt-12 flex justify-center ${col} relative min-h-px px-4`}
                   >
                     <Link
                       href={`/books/${item.slug}`}
