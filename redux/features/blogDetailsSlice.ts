@@ -7,12 +7,12 @@ export const fetchBlogDetails = createAsyncThunk(
   async (slug: string) => {
     const res = await fetch(
       `https://api.reavol.vn/api/v1/blog/detail/${slug}`,
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
 
     const json = await res.json();
     return json as BlogDetailsResponse;
-  }
+  },
 );
 
 interface BlogDetailsState {

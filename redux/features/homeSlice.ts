@@ -6,11 +6,11 @@ export const fetchHomeData = createAsyncThunk(
   async () => {
     const res = await fetch(
       "https://api.reavol.vn/api/v1/home/get-home-data?page=0&unLock=false",
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
     const json = await res.json();
     return json as ApiResponse;
-  }
+  },
 );
 
 interface HomeState {

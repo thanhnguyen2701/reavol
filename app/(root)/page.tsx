@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import BookItemComponent from "@/components/BookItemComponent";
 import BookItemComponent2 from "@/components/BookItemComponent2";
@@ -12,20 +12,23 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home() {
-
   const dispatch = useAppDispatch();
-  const { data: homeData, isLoading: isHomeLoading } = useAppSelector(state => state.home);
-  const { data: blogData, isLoading: isBlogLoading } = useAppSelector(state => state.blog);
+  const { data: homeData, isLoading: isHomeLoading } = useAppSelector(
+    (state) => state.home,
+  );
+  const { data: blogData, isLoading: isBlogLoading } = useAppSelector(
+    (state) => state.blog,
+  );
   useEffect(() => {
     dispatch(fetchHomeData());
-    dispatch(fetchBlogData())
+    dispatch(fetchBlogData());
   }, [dispatch]);
 
-  const type4Data = homeData?.data.find(item => item.type === 4);
-  const type0Data = homeData?.data.find(item => item.type === 0);
-  const type1Data = homeData?.data.find(item => item.type === 1);
-  const type3Data = homeData?.data.find(item => item.type === 3);
-  const type7Data = homeData?.data.find(item => item.type === 7);
+  const type4Data = homeData?.data.find((item) => item.type === 4);
+  const type0Data = homeData?.data.find((item) => item.type === 0);
+  const type1Data = homeData?.data.find((item) => item.type === 1);
+  const type3Data = homeData?.data.find((item) => item.type === 3);
+  const type7Data = homeData?.data.find((item) => item.type === 7);
   const selections = type4Data?.selections;
   const freeBook = type0Data?.freeBook;
   const forYou = type3Data?.forYou;
@@ -59,19 +62,18 @@ export default function Home() {
             </div>
 
             <div className="relative flex-1 overflow-hidden rounded-[20px] aspect-2/1">
-              {
-                isBlogLoading === false && blogData ?
-                  <Link href={`/blogs/${blogData.data.newest[0].slug}`}>
-                    <Image
-                      src={blogData.data.newest[0].media.originUrl}
-                      fill
-                      alt="image"
-                      className="object-cover transition-transform duration-500 hover:scale-125"
-                    />
-                  </Link>
-                  :
-                  <Loading />
-              }
+              {isBlogLoading === false && blogData ? (
+                <Link href={`/blogs/${blogData.data.newest[0].slug}`}>
+                  <Image
+                    src={blogData.data.newest[0].media.originUrl}
+                    fill
+                    alt="image"
+                    className="object-cover transition-transform duration-500 hover:scale-125"
+                  />
+                </Link>
+              ) : (
+                <Loading />
+              )}
             </div>
           </div>
 
@@ -83,19 +85,18 @@ export default function Home() {
             <div className="relative flex-1  aspect-2/1 group">
               <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] z-10"></div>
               <div className="relative w-full h-full rounded-[10px] overflow-hidden">
-                {
-                  isBlogLoading == false && freeBook ?
-                    <Link href={`/blogs/freeBook/${freeBook.slug}`}>
-                      <Image
-                        src={freeBook.media.originUrl}
-                        fill
-                        alt="image"
-                        className="object-cover transition-transform duration-500 group-hover:scale-125"
-                      />
-                    </Link>
-                    :
-                    <Loading />
-                }
+                {isBlogLoading == false && freeBook ? (
+                  <Link href={`/blogs/freeBook/${freeBook.slug}`}>
+                    <Image
+                      src={freeBook.media.originUrl}
+                      fill
+                      alt="image"
+                      className="object-cover transition-transform duration-500 group-hover:scale-125"
+                    />
+                  </Link>
+                ) : (
+                  <Loading />
+                )}
               </div>
 
               <div className="absolute top-0 w-full">
@@ -120,192 +121,234 @@ export default function Home() {
       </div>
       <div className="mt-18 mx-5 mb-5">
         <div className="mt-10 flex justify-between">
-          <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">Tuyển tập sách hay cho bạn</div>
-          <Link href={'/collection'} className="my-auto ml-auto touch-manipulation">
-            <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
+          <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">
+            Tuyển tập sách hay cho bạn
+          </div>
+          <Link
+            href={"/collection"}
+            className="my-auto ml-auto touch-manipulation"
+          >
+            <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
+              Xem tất cả
+            </span>
           </Link>
         </div>
-        {
-          !isHomeLoading ?
-            responsiveConfig.map(({ key, items, col, className }) => (
-              <div key={key} className={`flex-wrap -mx-4 ${className}`}>
-                {
-                  forYou?.slice(0, items).map((item) => (
-                    <div
-                      key={item.id}
-                      className={`mt-[30px] basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
-                    >
-                      <BookItemComponent item={item} />
-                    </div>
-                  ))
-                }
-              </div>
-            ))
-            :
-            <Loading />
-        }
+        {!isHomeLoading ? (
+          responsiveConfig.map(({ key, items, col, className }) => (
+            <div key={key} className={`flex-wrap -mx-4 ${className}`}>
+              {forYou?.slice(0, items).map((item) => (
+                <div
+                  key={item.id}
+                  className={`mt-[30px] basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                >
+                  <BookItemComponent item={item} />
+                </div>
+              ))}
+            </div>
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
       <div className="m-5">
-        <div className="text-[28px]/[28px] text-white font-medium font-Medium">Xu hướng</div>
+        <div className="text-[28px]/[28px] text-white font-medium font-Medium">
+          Xu hướng
+        </div>
         <div className="mt-5 flex justify-between">
-          <div className="text-[32px]/[40px] font-semibold text-white font-SemiBold">Sách hay trong tuần</div>
-          <Link href={'/trending'} className="my-auto ml-auto touch-manipulation">
-            <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
+          <div className="text-[32px]/[40px] font-semibold text-white font-SemiBold">
+            Sách hay trong tuần
+          </div>
+          <Link
+            href={"/trending"}
+            className="my-auto ml-auto touch-manipulation"
+          >
+            <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
+              Xem tất cả
+            </span>
           </Link>
         </div>
-        {
-          !isHomeLoading ?
-            responsiveConfig.map(({ key, items, col, className }) => (
-              <div key={key} className={`flex-wrap -mx-4 ${className}`}>
-                {
-                  freeList?.slice(0, items).map((item) => (
-                    <div
-                      key={item.id}
-                      className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4 mt-[30px]`}
-                    >
-                      <BookItemComponent item={item} />
-                    </div>
-                  ))
-                }
-              </div>
-            ))
-            :
-            <Loading />
-        }
+        {!isHomeLoading ? (
+          responsiveConfig.map(({ key, items, col, className }) => (
+            <div key={key} className={`flex-wrap -mx-4 ${className}`}>
+              {freeList?.slice(0, items).map((item) => (
+                <div
+                  key={item.id}
+                  className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4 mt-[30px]`}
+                >
+                  <BookItemComponent item={item} />
+                </div>
+              ))}
+            </div>
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
       <div className="mt-18 mx-5 mb-5">
         <div className="mt-10 flex justify-between">
-          <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">Top sách miễn phí</div>
-          <Link href={'/bookfree'} className="my-auto ml-auto touch-manipulation">
-            <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
+          <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">
+            Top sách miễn phí
+          </div>
+          <Link
+            href={"/bookfree"}
+            className="my-auto ml-auto touch-manipulation"
+          >
+            <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
+              Xem tất cả
+            </span>
           </Link>
         </div>
-        {
-          !isHomeLoading ?
-            responsiveConfig2.map(({ key, items, col, className }) => (
-              <div key={key} className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}>
-                {
-                  freeList?.slice(0, items).map((item) => (
-                    <div
-                      key={item.id}
-                      className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
-                    >
-                      <BookItemComponent2 item={item} />
-                    </div>
-                  ))
-                }
-              </div>
-            ))
-            :
-            <Loading />
-        }
+        {!isHomeLoading ? (
+          responsiveConfig2.map(({ key, items, col, className }) => (
+            <div
+              key={key}
+              className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}
+            >
+              {freeList?.slice(0, items).map((item) => (
+                <div
+                  key={item.id}
+                  className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                >
+                  <BookItemComponent2 item={item} />
+                </div>
+              ))}
+            </div>
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
       <div className="mt-18 mx-5 mb-5">
         <div>
-          <div className="text-[28px]/[28px] font-medium text-white font-Medium">Tuyển chọn</div>
+          <div className="text-[28px]/[28px] font-medium text-white font-Medium">
+            Tuyển chọn
+          </div>
           <div className="flex mb-8 justify-between">
-            <div className="text-[32px]/[40px] font-semibold text-white mt-2.5 font-SemiBold">Đọc sách mọi lúc mọi nơi</div>
-            <Link href={'/selection'} className="my-auto ml-auto">
-              <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
+            <div className="text-[32px]/[40px] font-semibold text-white mt-2.5 font-SemiBold">
+              Đọc sách mọi lúc mọi nơi
+            </div>
+            <Link href={"/selection"} className="my-auto ml-auto">
+              <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
+                Xem tất cả
+              </span>
             </Link>
           </div>
         </div>
-        {
-          isHomeLoading === false ?
-            responsiveConfig2.map(({ key, col, className }) => (
-              <div key={key} className={`p-0! flex-wrap -mx-4 ${className}`}>
-                {
-                  selections?.slice(0, 2).map((item) => (
-                    <div
-                      key={item.id}
-                      className={`pb-6! basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
-                    >
-                      <SelectionItem item={item} />
-                    </div>
-                  ))
-                }
-              </div>
-            ))
-            :
-            <Loading />
-        }
+        {isHomeLoading === false ? (
+          responsiveConfig2.map(({ key, col, className }) => (
+            <div key={key} className={`p-0! flex-wrap -mx-4 ${className}`}>
+              {selections?.slice(0, 2).map((item) => (
+                <div
+                  key={item.id}
+                  className={`pb-6! basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                >
+                  <SelectionItem item={item} />
+                </div>
+              ))}
+            </div>
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
       <div className="m-5">
         <div>
           <div className="mt-15">
-            <div className="text-[28px]/[28px] font-medium text-white font-Medium">Sách mới cập nhật</div>
+            <div className="text-[28px]/[28px] font-medium text-white font-Medium">
+              Sách mới cập nhật
+            </div>
             <div className="flex justify-between">
-              <div className="text-[32px]/[40px] font-semibold mb-7.5 text-white mt-4 font-SemiBold">Mỗi ngày một phong cách đọc sách</div>
-              <Link href={'/booknew'} className="my-auto ml-auto">
-                <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">Xem tất cả</span>
+              <div className="text-[32px]/[40px] font-semibold mb-7.5 text-white mt-4 font-SemiBold">
+                Mỗi ngày một phong cách đọc sách
+              </div>
+              <Link href={"/booknew"} className="my-auto ml-auto">
+                <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
+                  Xem tất cả
+                </span>
               </Link>
             </div>
             <div>
               <div className="relative aspect-[3.09]! w-full mb-5 overflow-hidden rounded-[10px]">
-                {
-                  isHomeLoading === false &&
-                    newest ?
-                    <Image src={newest[0].media.originUrl} width={2000} height={500} alt="" className="object-cover object-center w-full h-full  transition-all duration-500 hover:scale-125" />
-                    :
-                    <Loading />
-
-                }
+                {isHomeLoading === false && newest ? (
+                  <Image
+                    src={newest[0].media.originUrl}
+                    width={2000}
+                    height={500}
+                    alt=""
+                    className="object-cover object-center w-full h-full  transition-all duration-500 hover:scale-125"
+                  />
+                ) : (
+                  <Loading />
+                )}
               </div>
             </div>
           </div>
-          {
-            isHomeLoading === false ?
-              responsiveConfig2.map(({ key, col, className }) => (
-                <div key={key} className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}>
-                  {
-                    newest?.slice(0, 6).map((item) => (
-                      <div
-                        key={item.id}
-                        className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
-                      >
-                        <BookItemComponent2 item={item} />
-                      </div>
-                    ))
-                  }
-                </div>
-              ))
-              :
-              <Loading />
-          }
+          {isHomeLoading === false ? (
+            responsiveConfig2.map(({ key, col, className }) => (
+              <div
+                key={key}
+                className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}
+              >
+                {newest?.slice(0, 6).map((item) => (
+                  <div
+                    key={item.id}
+                    className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                  >
+                    <BookItemComponent2 item={item} />
+                  </div>
+                ))}
+              </div>
+            ))
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
       <div className="m-5">
         <div>
-          <div className="mt-15 text-[28px]/[28px]! font-medium! text-white font-Medium">Blog sách</div>
-          <div className="mt-2.5 text-[32px]/[40px]! font-semibold! mb-7.5! text-white font-SemiBold">Nơi sẻ chia mọi kiến thức về sách</div>
+          <div className="mt-15 text-[28px]/[28px]! font-medium! text-white font-Medium">
+            Blog sách
+          </div>
+          <div className="mt-2.5 text-[32px]/[40px]! font-semibold! mb-7.5! text-white font-SemiBold">
+            Nơi sẻ chia mọi kiến thức về sách
+          </div>
         </div>
-        {
-          !isBlogLoading && blogData ?
-            responsiveConfig3.map(({ key, items, col, className }) => (
-              <div key={key} className={`flex-wrap -mx-4 ${className}`}>
-                {
-                  blogData.data.blogs.slice(0, items).map((item) => (
-                    <div key={item.id} className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}>
-                      <Link href={`/blogs/${item.slug}`}>
-                        <div className="aspect-[1.43] relative w-full">
-                          <div className="relative overflow-hidden rounded-[10px] h-full w-full">
-                            <Image src={item.media.originUrl} width={500} height={500} alt="" className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125" />
-                          </div>
-                          <div>
-                            <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-1.5 py-0 px-4 font-SemiBold">{item.title}</div>
-                            <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">{item.description}
-                            </div>
-                          </div>
+        {!isBlogLoading && blogData ? (
+          responsiveConfig3.map(({ key, items, col, className }) => (
+            <div key={key} className={`flex-wrap -mx-4 ${className}`}>
+              {blogData.data.blogs.slice(0, items).map((item) => (
+                <div
+                  key={item.id}
+                  className={`basis-1/${col} max-w-1/${col} relative w-full min-h-px px-4`}
+                >
+                  <Link href={`/blogs/${item.slug}`}>
+                    <div className="aspect-[1.43] relative w-full">
+                      <div className="relative overflow-hidden rounded-[10px] h-full w-full">
+                        <Image
+                          src={item.media.originUrl}
+                          width={500}
+                          height={500}
+                          alt=""
+                          className="object-cover object-center w-full h-full rounded-[10px] transition-all hover:scale-125"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-ellipsis whitespace-nowrap overflow-hidden text-white text-[16px]/[26px] font-semibold tracking-[0.3px] my-1.5 py-0 px-4 font-SemiBold">
+                          {item.title}
                         </div>
-                      </Link>
+                        <div className="text-ellipsis whitespace-pre-wrap overflow-hidden text-[#b7b9d2] text-[13px]/[26px] font-medium tracking-[.3px] mix-blend-normal py-0 px-2.5 font-Medium -webkit-box line-clamp-3">
+                          {item.description}
+                        </div>
+                      </div>
                     </div>
-                  ))
-                }
-              </div>
-            ))
-            :
-            <Loading />
-        }
+                  </Link>
+                </div>
+              ))}
+            </div>
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
     </div>
   );

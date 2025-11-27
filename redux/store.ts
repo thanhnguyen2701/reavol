@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import homeReducer from "./features/homeSlice";
-import blogDetailsReducer from './features/blogDetailsSlice'
-import blogReducer from './features/blogSlice'
-import bookDetailsReducer from './features/bookDetailsSlice'
-import bookRelatedReducer from './features/bookRelatedSlice'
+import blogDetailsReducer from "./features/blogDetailsSlice";
+import blogReducer from "./features/blogSlice";
+import bookDetailsReducer from "./features/bookDetailsSlice";
+import bookRelatedReducer from "./features/bookRelatedSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ export const store = configureStore({
     bookDetails: bookDetailsReducer,
     bookRelated: bookRelatedReducer,
     blogDetails: blogDetailsReducer,
-    blog: blogReducer
+    blog: blogReducer,
   },
 });
 

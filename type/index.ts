@@ -143,7 +143,7 @@ export interface BookDetails {
   bgColor: string;
   bgColor1: string;
   slug: string;
-  type: number
+  type: number;
   price: number;
   hot: boolean;
   totalWords: boolean;
@@ -154,7 +154,7 @@ export interface BookDetails {
   bought: boolean;
   rating: number;
   totalChapter: number;
-  favorite: boolean
+  favorite: boolean;
   chapters: Chapter[];
   public: boolean;
 }

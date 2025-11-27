@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "REAVOL",
-  description: "REAVOL - Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn mang đến cho người dùng những sản phẩm chất lượng cùng trải nghiệm tuyệt vời",
+  description:
+    "REAVOL - Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn mang đến cho người dùng những sản phẩm chất lượng cùng trải nghiệm tuyệt vời",
 };
 
 export default function RootLayout({
@@ -25,10 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="hide-scrollbar overflow-auto">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased hide-scrollbar`}>
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased hide-scrollbar`}
+      >
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

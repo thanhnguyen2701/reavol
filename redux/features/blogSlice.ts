@@ -6,11 +6,11 @@ export const fetchBlogData = createAsyncThunk(
   async () => {
     const res = await fetch(
       "https://api.reavol.vn/api/v1/blog/get-blog-for-web",
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
     const json = await res.json();
     return json as BlogResponse;
-  }
+  },
 );
 
 interface BlogState {

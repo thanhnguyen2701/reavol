@@ -19,137 +19,175 @@
   }
 }
 
-html{
+html {
   background: #0b2631;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-      margin: 0;
-    color: rgba(0,0,0,.85);
-    font-size: 14px;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-    font-variant: tabular-nums;
-    line-height: 1.5715;
-    background-color: #fff;
-    -webkit-font-feature-settings: "tnum","tnum";
-    -moz-font-feature-settings: "tnum","tnum";
-    font-feature-settings: "tnum","tnum"
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica Neue,
+    Arial,
+    Noto Sans,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  background-color: #fff;
+  -webkit-font-feature-settings: "tnum", "tnum";
+  -moz-font-feature-settings: "tnum", "tnum";
+  font-feature-settings: "tnum", "tnum";
 }
 
 @font-face {
-    font-family: regular;
-    src: local("regular"),url(/font/Poppins-Regular.4b4ebe20.ttf) format("truetype");
-    font-display: swap
+  font-family: regular;
+  src:
+    local("regular"),
+    url(/font/Poppins-Regular.4b4ebe20.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: medium;
-    src: local("medium"),url(/font/Poppins-Medium.a52d0bf0.ttf) format("truetype");
-    font-display: swap
+  font-family: medium;
+  src:
+    local("medium"),
+    url(/font/Poppins-Medium.a52d0bf0.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: semiBold;
-    src: local("semiBold"),url(/font/Poppins-SemiBold.98512bf8.ttf) format("truetype");
-    font-display: swap
+  font-family: semiBold;
+  src:
+    local("semiBold"),
+    url(/font/Poppins-SemiBold.98512bf8.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: light;
-    src: local("light"),url(/font/Poppins-Light.8b20023e.ttf) format("truetype");
-    font-display: swap
+  font-family: light;
+  src:
+    local("light"),
+    url(/font/Poppins-Light.8b20023e.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: bold;
-    src: local("bold"),url(/font/Poppins-Bold.8001a01b.ttf) format("truetype");
-    font-display: swap
+  font-family: bold;
+  src:
+    local("bold"),
+    url(/font/Poppins-Bold.8001a01b.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: interBold;
-    src: local("interBold"),url(/font/Inter-Bold.a4d688de.ttf) format("truetype");
-    font-display: swap
+  font-family: interBold;
+  src:
+    local("interBold"),
+    url(/font/Inter-Bold.a4d688de.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: interRegular;
-    src: local("interRegular"),url(/font/Inter-Regular.b85a5d42.ttf) format("truetype");
-    font-display: swap
+  font-family: interRegular;
+  src:
+    local("interRegular"),
+    url(/font/Inter-Regular.b85a5d42.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: interSemiBold;
-    src: local("interSemiBold"),url(/font/Inter-SemiBold.7b1d4c41.ttf) format("truetype");
-    font-display: swap
+  font-family: interSemiBold;
+  src:
+    local("interSemiBold"),
+    url(/font/Inter-SemiBold.7b1d4c41.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: interMedium;
-    src: local("interMedium"),url(/font/Inter-Medium.8fdaf020.ttf) format("truetype");
-    font-display: swap
+  font-family: interMedium;
+  src:
+    local("interMedium"),
+    url(/font/Inter-Medium.8fdaf020.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: muli-medium;
-    src: local("muli-medium"),url(/font/Mulish-Medium.eeed5413.ttf) format("truetype");
-    font-display: swap
+  font-family: muli-medium;
+  src:
+    local("muli-medium"),
+    url(/font/Mulish-Medium.eeed5413.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: muli-regular;
-    src: local("muli-regular"),url(/font/Mulish-Regular.a4c4b1ab.ttf) format("truetype");
-    font-display: swap
+  font-family: muli-regular;
+  src:
+    local("muli-regular"),
+    url(/font/Mulish-Regular.a4c4b1ab.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: muli-bold;
-    src: local("muli-bold"),url(/font/Mulish-Bold.0a4236f1.ttf) format("truetype");
-    font-display: swap
+  font-family: muli-bold;
+  src:
+    local("muli-bold"),
+    url(/font/Mulish-Bold.0a4236f1.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: muli-semiBold;
-    src: local("muli-semiBold"),url(/font/Mulish-SemiBold.89b626ee.ttf) format("truetype");
-    font-display: swap
+  font-family: muli-semiBold;
+  src:
+    local("muli-semiBold"),
+    url(/font/Mulish-SemiBold.89b626ee.ttf) format("truetype");
+  font-display: swap;
 }
 
-.font-SemiBold{
+.font-SemiBold {
   font-family: semiBold, sans-serif;
 }
 
-.font-Regular{
+.font-Regular {
   font-family: regular, sans-serif;
 }
 
-.font-Light{
+.font-Light {
   font-family: light, sans-serif;
 }
 
-.font-Medium{
+.font-Medium {
   font-family: medium, sans-serif;
 }
 
-.font-Bold{
+.font-Bold {
   font-family: bold, sans-serif;
 }
 
-.font-InterRegular{
+.font-InterRegular {
   font-family: interRegular, sans-serif;
 }
 
-.font-InterBold{
+.font-InterBold {
   font-family: interBold, sans-serif;
 }
 
-.menu-item .menu-item_text{
+.menu-item .menu-item_text {
   font-family: regular, sans-serif;
   color: #808191;
 }
 
-.menu-item .menu-item_text.active{
+.menu-item .menu-item_text.active {
   font-family: semiBold, sans-serif;
   color: white;
 }
@@ -163,16 +201,16 @@ body {
   }
 }
 
-.animation-fadein{
+.animation-fadein {
   animation: fadein 0.5s ease forwards;
 }
 
-.animation{
-  animation: .4s ease;
+.animation {
+  animation: 0.4s ease;
 }
 
-.animation2{
-  transition: transform .5s ease;
+.animation2 {
+  transition: transform 0.5s ease;
 }
 
 .readButton > div {
@@ -210,47 +248,48 @@ body {
   left: 0;
 }
 
-label.ant-form-item-required:before{
+label.ant-form-item-required:before {
   display: inline-block;
-    margin-right: 4px;
-    color: #ff4d4f;
-    font-size: 14px;
-    font-family: SimSun, sans-serif;
-    line-height: 1;
-    content: "*";
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
 }
 
-span.ant-checkbox-inner{
+span.ant-checkbox-inner {
   position: relative;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 16px;
-    height: 16px;
-    direction: ltr;
-    background-color: #fff;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-    border-collapse: separate;
-    transition: all .3s;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  direction: ltr;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  border-collapse: separate;
+  transition: all 0.3s;
 }
 
-span.ant-checkbox-inner:after{
+span.ant-checkbox-inner:after {
   position: absolute;
-    top: 50%;
-    left: 22%;
-    display: table;
-    width: 5.71428571px;
-    height: 9.14285714px;
-    border: 2px solid #fff;
-    border-top: 0;
-    border-left: 0;
-    -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
-    transform: rotate(45deg) scale(0) translate(-50%, -50%);
-    opacity: 0;
-    transition: all .1s 
-cubic-bezier(.71, -.46, .88, .6), opacity .1s;
-    content: " ";
+  top: 50%;
+  left: 22%;
+  display: table;
+  width: 5.71428571px;
+  height: 9.14285714px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  opacity: 0;
+  transition:
+    all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),
+    opacity 0.1s;
+  content: " ";
 }
 
 .hide-scrollbar {
@@ -262,20 +301,20 @@ cubic-bezier(.71, -.46, .88, .6), opacity .1s;
   display: none; /* Chrome, Safari, Edge */
 }
 
-div.blog-content>p {
+div.blog-content > p {
   margin-top: 0;
   margin-bottom: 1em;
 }
 
 .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1140px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }

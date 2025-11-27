@@ -6,11 +6,11 @@ export const fetchRelatedBooks = createAsyncThunk(
   async (id: number) => {
     const res = await fetch(
       `https://api.reavol.vn/api/v1/article/get-related-article?articleId=${id}`,
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
     const json = await res.json();
     return json as RelatedBooksDataResponse;
-  }
+  },
 );
 
 interface BookRelatedState {

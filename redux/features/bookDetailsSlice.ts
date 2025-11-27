@@ -7,12 +7,12 @@ export const fetchBookDetails = createAsyncThunk(
   async (id: number) => {
     const res = await fetch(
       `https://api.reavol.vn/api/v1/article/get-detail-article?articleId=${id}`,
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
 
     const json = await res.json();
     return json as BookDetailsResponse;
-  }
+  },
 );
 
 interface BookDetailsState {
