@@ -1,4 +1,3 @@
-import { BookDetailsResponse } from "@/type";
 import { BlogDetailsResponse } from "@/type/blog";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
