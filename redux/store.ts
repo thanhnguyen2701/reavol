@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, legacy_createStore as createStore } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 
-import { homeReducer } from "./reducers/homeReducer";
+import { homeReducer } from "../api/home/reducer";
 import blogDetailsReducer from "./features/blogDetailsSlice";
 import blogReducer from "./features/blogSlice";
 import bookDetailsReducer from "./features/bookDetailsSlice";

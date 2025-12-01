@@ -23,18 +23,18 @@ const PostPage = () => {
       <div className="flex flex-wrap m-0!">
         <div className="p-0 flex-none w-full max-w-full relative min-h-px">
           <div className="aspect-[1.95] mt-10 relative rounded-[20px]">
-              {data ? (
-                <Image
-                  src={data?.data.media.originUrl}
-                  sizes="100vw"
-                  width={1500}
-                  height={770}
-                  alt=""
-                  className="align-middle rounded-[20px] absolute inset-0 box-border p-0 border-none m-auto block bg-cover bg-top"
-                />
-              ) : (
-                <></>
-              )}
+            {data ? (
+              <Image
+                src={data?.data.media.originUrl}
+                sizes="100vw"
+                width={1500}
+                height={770}
+                alt=""
+                className="align-middle rounded-[20px] absolute inset-0 box-border p-0 border-none m-auto block bg-cover bg-top"
+              />
+            ) : (
+              <></>
+            )}
           </div>
           <div>
             <div className="mt-5 font-semibold text-[18px]/[40px] text-[#2fbc6d]">

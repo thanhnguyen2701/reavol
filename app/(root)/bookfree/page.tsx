@@ -24,17 +24,17 @@ const BookFreePage = () => {
           SÁCH MIỄN PHÍ
         </div>
         <div className="relative aspect-square md:aspect-[2.96] w-full mt-8 mb-20">
-            {isLoading === false && freeList ? (
-              <Image
-                src={freeList[0].media.originUrl}
-                width={1496}
-                height={505}
-                alt=""
-                className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center"
-              />
-            ) : (
-              <Loading />
-            )}
+          {isLoading === false && freeList ? (
+            <Image
+              src={freeList[0].media.originUrl}
+              width={1496}
+              height={505}
+              alt=""
+              className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center"
+            />
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
       <div className="flex flex-wrap -mx-4">
