@@ -10,15 +10,17 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import { selectHomeData, selectHomeLoading } from "@/api/home";
+import { selectBlogData, selectBlogLoading } from "@/api/blog";
 
 const Home = () => {
   const dispatch = useAppDispatch();
-  const { data: homeData, isLoading: isHomeLoading } = useAppSelector(
-    (state) => state.home,
-  );
-  const { data: blogData, isLoading: isBlogLoading } = useAppSelector(
-    (state) => state.blog,
-  );
+  const homeData = useAppSelector(selectHomeData);
+  const isHomeLoading = useAppSelector(selectHomeLoading);
+
+  const blogData = useAppSelector(selectBlogData);
+  const isBlogLoading = useAppSelector(selectBlogLoading);
+
   useEffect(() => {
     dispatch(fetchHomeData());
     dispatch(fetchBlogData());

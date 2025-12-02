@@ -6,15 +6,17 @@ import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import { useEffect } from "react";
+import { selectHomeData, selectHomeLoading } from "@/api/home";
 const BookFree = () => {
   const dispatch = useAppDispatch();
-  const { data, isLoading } = useAppSelector((state) => state.home);
+  const data = useAppSelector(selectHomeData);
+  const isLoading = useAppSelector(selectHomeLoading);
   useEffect(() => {
     dispatch(fetchHomeData());
   }, [dispatch]);
 
-  const type1Data = data?.data.find((item) => item.type === 1);
-  const freeList = type1Data?.freeList;
+  const freeListData = data?.data.find((item) => item.type === 1);
+  const freeList = freeListData?.freeList;
 
   return (
     <div className="m-5">
@@ -26,7 +28,7 @@ const BookFree = () => {
           {isLoading === false && freeList ? (
             <Image
               src={freeList[0].media.originUrl}
-              width={1496}
+              width={1800}
               height={505}
               alt=""
               className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center rounded-lg"

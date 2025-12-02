@@ -5,16 +5,19 @@ import SelectionItem from "@/components/SelectionItem";
 import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useEffect } from "react";
+import { selectHomeData, selectHomeLoading } from "@/api/home";
 
 const Selection = () => {
   const dispatch = useAppDispatch();
-  const { data, isLoading } = useAppSelector((state) => state.home);
+  const data = useAppSelector(selectHomeData);
+  const isLoading = useAppSelector(selectHomeLoading);
+
   useEffect(() => {
     dispatch(fetchHomeData());
   }, [dispatch]);
 
-  const type4Data = data?.data.find((item) => item.type === 4);
-  const selections = type4Data?.selections;
+  const selectionsData = data?.data.find((item) => item.type === 4);
+  const selections = selectionsData?.selections;
 
   return (
     <div className="m-5">

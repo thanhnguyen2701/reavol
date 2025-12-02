@@ -4,14 +4,15 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
+import { selectBlogDetails, selectBlogDetailsLoading } from "@/api/blogDetails";
 
 const Post = () => {
 
     const { slug } = useParams();
     const dispatch = useAppDispatch();
 
-    const data = useAppSelector((state) => state.blogDetails.details);
-    const isLoading = useAppSelector((state) => state.blogDetails.isLoading);
+    const data = useAppSelector(selectBlogDetails);
+    const isLoading = useAppSelector(selectBlogDetailsLoading);
 
     useEffect(() => {
         dispatch(fetchBlogDetails(String(slug)));
@@ -26,7 +27,7 @@ const Post = () => {
                             <Image
                                 src={data?.data.media.originUrl}
                                 sizes="100vw"
-                                width={1500}
+                                width={1800}
                                 height={770}
                                 alt=""
                                 className="align-middle rounded-[20px] absolute inset-0 box-border p-0 border-none m-auto block bg-cover bg-top"

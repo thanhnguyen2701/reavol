@@ -6,16 +6,20 @@ import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import { useEffect } from "react";
+import { selectHomeData, selectHomeLoading } from "@/api/home";
 
 const Collection = () => {
   const dispatch = useAppDispatch();
-  const { data, isLoading } = useAppSelector((state) => state.home);
+  const data = useAppSelector(selectHomeData);
+  const isLoading = useAppSelector(selectHomeLoading);
+
   useEffect(() => {
     dispatch(fetchHomeData());
   }, [dispatch]);
 
-  const type3Data = data?.data.find((item) => item.type === 3);
-  const forYou = type3Data?.forYou;
+  const forYouData = data?.data.find((item) => item.type === 3);
+  const forYou = forYouData?.forYou;
+
   return (
     <div className="m-5">
       <div className="mt-2.5">
@@ -26,7 +30,7 @@ const Collection = () => {
           {forYou ? (
             <Image
               src={forYou[0].media.originUrl}
-              width={1496}
+              width={1800}
               height={505}
               alt=""
               className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center hover:scale-125 transition-all duration-500"

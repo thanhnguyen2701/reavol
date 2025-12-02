@@ -9,7 +9,7 @@ const BookItemComponent = ({ item }: { item: BookItem }) => {
         <div className="bg-cover aspect-[1.61] relative animation-fadein overflow-hidden">
           <Image
             src={item.media.originUrl}
-            width={350}
+            width={500}
             height={220}
             alt="image"
             className="object-cover h-55 transition-transform duration-500 hover:scale-120"

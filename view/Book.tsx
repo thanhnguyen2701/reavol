@@ -9,32 +9,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
+import { selectHomeData } from "@/api/home";
+import { selectBookDetails } from "@/api/bookDetails";
+import { selectBlogDetailsLoading } from "@/api/blogDetails";
+import { selectRelatedBooks, selectRelatedBooksLoading } from "@/api/bookRelated";
 
 const Book = () => {
   const { slug } = useParams();
 
   const dispatch = useAppDispatch();
 
-  const homeData = useAppSelector((state) => state.home.data);
+  const homeData = useAppSelector(selectHomeData);
 
-  const detailsData = useAppSelector((state) => state.bookDetails.details);
-  const detailsLoading = useAppSelector((state) => state.bookDetails.isLoading);
+  const detailsData = useAppSelector(selectBookDetails);
+  const detailsLoading = useAppSelector(selectBlogDetailsLoading);
 
-  const relatedData = useAppSelector((state) => state.bookRelated.related);
-  const relatedLoading = useAppSelector((state) => state.bookRelated.isLoading);
+  const relatedData = useAppSelector(selectRelatedBooks);
+  const relatedLoading = useAppSelector(selectRelatedBooksLoading);
 
   useEffect(() => {
     dispatch(fetchHomeData());
   }, [dispatch]);
 
-  const type5Data = homeData?.data.find((item) => item.type === 5);
-  const type1Data = homeData?.data.find((item) => item.type === 1);
-  const type3Data = homeData?.data.find((item) => item.type === 3);
-  const type7Data = homeData?.data.find((item) => item.type === 7);
-  const forYou = type3Data?.forYou;
-  const freeList = type1Data?.freeList;
-  const newest = type7Data?.newest;
-  const trending = type5Data?.trending;
+  const trendingData = homeData?.data.find((item) => item.type === 5);
+  const freeListData = homeData?.data.find((item) => item.type === 1);
+  const forYouData = homeData?.data.find((item) => item.type === 3);
+  const newestData = homeData?.data.find((item) => item.type === 7);
+  const forYou = forYouData?.forYou;
+  const freeList = freeListData?.freeList;
+  const newest = newestData?.newest;
+  const trending = trendingData?.trending;
 
   const book =
     forYou?.find((item) => item.slug === slug) ||
@@ -63,7 +67,7 @@ const Book = () => {
               <Image
                 src={detailsData.data.media.originUrl}
                 sizes="100vw"
-                width={1500}
+                width={1800}
                 height={770}
                 alt=""
                 className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
@@ -198,7 +202,7 @@ const Book = () => {
                           <Image
                             src={item.media.originUrl}
                             sizes="100vw"
-                            width={1500}
+                            width={1800}
                             height={770}
                             alt=""
                             className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"

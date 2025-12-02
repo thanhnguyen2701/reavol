@@ -5,17 +5,20 @@ import Loading from "@/components/Loading";
 import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useEffect } from "react";
+import { selectHomeData, selectHomeLoading } from "@/api/home";
 
 const Trending = () => {
   const dispatch = useAppDispatch();
-  const { data, isLoading } = useAppSelector((state) => state.home);
+  const data = useAppSelector(selectHomeData);
+  const isLoading = useAppSelector(selectHomeLoading);
+
   useEffect(() => {
     dispatch(fetchHomeData());
   }, [dispatch]);
 
-  const type1Data = data?.data.find((item) => item.type === 1);
+  const freeListData = data?.data.find((item) => item.type === 1);
 
-  const freeList = type1Data?.freeList;
+  const freeList = freeListData?.freeList;
   return (
     <div className="m-5">
       <div>
