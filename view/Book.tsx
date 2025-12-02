@@ -12,10 +12,7 @@ import { useEffect } from "react";
 import { selectHomeData } from "@/api/home";
 import { selectBookDetails } from "@/api/bookDetails";
 import { selectBlogDetailsLoading } from "@/api/blogDetails";
-import {
-  selectRelatedBooks,
-  selectRelatedBooksLoading,
-} from "@/api/bookRelated";
+import { selectRelatedBooks, selectRelatedBooksLoading } from "@/api/bookRelated";
 
 const Book = () => {
   const { slug } = useParams();
@@ -88,9 +85,7 @@ const Book = () => {
             </div>
             <div>
               <div className="px-12.5 pt-12.5 pb-0 items-center  box-border justify-between! flex!">
-                <div className="text-white text-[30px] font-semibold">
-                  {detailsData.data.title}
-                </div>
+                <div className="text-white text-[30px] font-semibold">{detailsData.data.title}</div>
                 <div className="w-37.5 bg-[#33bf71] text-white rounded-[20px] text-center text-[20px] font-InterBold py-1.25 cursor-pointer">
                   Mua ngay
                 </div>
@@ -206,10 +201,7 @@ const Book = () => {
                     key={item.id}
                     className={`mt-12 flex justify-center ${col} relative min-h-px px-4`}
                   >
-                    <Link
-                      href={`/books/${item.slug}`}
-                      className="w-full touch-manipulation"
-                    >
+                    <Link href={`/books/${item.slug}`} className="w-full touch-manipulation">
                       <div className="bg-[#242730] p-0 rounded-[20px]">
                         <div className="w-full aspect-[.994] relative overflow-hidden">
                           <Image

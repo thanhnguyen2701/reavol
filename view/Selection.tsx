@@ -22,9 +22,7 @@ const Selection = () => {
   return (
     <div className="m-5">
       <div>
-        <div className="text-[28px]/[28px] font-medium text-white">
-          Tuyển chọn
-        </div>
+        <div className="text-[28px]/[28px] font-medium text-white">Tuyển chọn</div>
         <div className="flex mb-8 justify-between">
           <div className="text-[40px]/[50px] font-semibold text-white mt-2.5">
             Đọc sách mọi lúc mọi nơi

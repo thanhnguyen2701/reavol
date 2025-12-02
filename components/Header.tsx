@@ -15,24 +15,14 @@ const Header = () => {
                   className="text-white text-[16px]/[13px] font-Regular text-ellipsis touch-manipulation w-full transition-all duration-500 ease-in"
                 />
                 <span className="box-border ml-1 flex flex-none items-center">
-                  <Image
-                    src="/ic_search.svg"
-                    width={14}
-                    height={14}
-                    alt="logo"
-                  />
+                  <Image src="/ic_search.svg" width={14} height={14} alt="logo" />
                 </span>
               </div>
             </div>
           </div>
           <div className="w-[10%]">
             <div className="w-full flex items-center justify-center">
-              <Image
-                src="/icon_paddlock.svg"
-                width={34}
-                height={34}
-                alt="logo"
-              />
+              <Image src="/icon_paddlock.svg" width={34} height={34} alt="logo" />
             </div>
           </div>
           <div className="w-[30%]">
@@ -47,12 +37,7 @@ const Header = () => {
                 />
               </div>
               <div className="flex justify-start w-13">
-                <Image
-                  src="/img_notification.svg"
-                  width={27}
-                  height={27}
-                  alt="logo"
-                />
+                <Image src="/img_notification.svg" width={27} height={27} alt="logo" />
               </div>
             </div>
           </div>

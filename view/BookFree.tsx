@@ -21,9 +21,7 @@ const BookFree = () => {
   return (
     <div className="m-5">
       <div className="mt-2.5">
-        <div className="text-[30px] font-semibold text-white leading-7">
-          SÁCH MIỄN PHÍ
-        </div>
+        <div className="text-[30px] font-semibold text-white leading-7">SÁCH MIỄN PHÍ</div>
         <div className="relative aspect-square md:aspect-[2.96] w-full mt-8 mb-20 overflow-hidden rounded-lg">
           {isLoading === false && freeList ? (
             <Image

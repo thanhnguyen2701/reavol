@@ -10,12 +10,7 @@ const Introduce = () => {
           <div className="flex justify-between pt-5">
             <div className="my-auto max-0 cursor-pointer">
               <Link href="/">
-                <Image
-                  src={"/icon_logoReavol.svg"}
-                  width={150}
-                  height={50}
-                  alt=""
-                />
+                <Image src={"/icon_logoReavol.svg"} width={150} height={50} alt="" />
               </Link>
             </div>
             <div className="mt-10">
@@ -25,21 +20,16 @@ const Introduce = () => {
             </div>
           </div>
           <div className={`flex flex-wrap -mx-4`}>
-            <div
-              className={`text-white mt-[70px] relative w-full min-h-px px-4 md:w-1/2`}
-            >
+            <div className={`text-white mt-[70px] relative w-full min-h-px px-4 md:w-1/2`}>
               <p className="lg:text-[50px]/[140%] md:text-[46px]/[120%] text-[42px]/[110%] font-bold w-[600px] md:w-[500px] mt-0 lg:mb-[1em] mb-[.5em]">
                 KHƠI NGUỒN TRI THỨC VÀ SÁNG TẠO CÙNG REAVOL
               </p>
               <p className="lg:mt-[82px] font-normal lg:text-[30px]/[160%] md:text-[28px]/[140%] text-[24px]/[120%] lg:mb-[1em] mb-[.5em]">
-                Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn
-                mang đến cho người dùng những sản phẩm chất lượng cùng trải
-                nghiệm tuyệt vời
+                Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn mang đến cho người
+                dùng những sản phẩm chất lượng cùng trải nghiệm tuyệt vời
               </p>
               <div className="lg:mt-[35px] flex items-center justify-center w-[438px] lg:h-[92px] h-20 bg-[#43b871] rounded-[10px]">
-                <span className="font-bold text-[24px] text-white">
-                  Bắt đầu ngay
-                </span>
+                <span className="font-bold text-[24px] text-white">Bắt đầu ngay</span>
               </div>
             </div>
             <div
@@ -82,12 +72,7 @@ const Introduce = () => {
               </div>
               <div className="flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4">
                 <div className="font-normal text-[24px]/[36px] text-[#163b56] text-center flex justify-center h-[52px]">
-                  <Image
-                    src={"/ic_headphones.svg"}
-                    width={52}
-                    height={52}
-                    alt=""
-                  />
+                  <Image src={"/ic_headphones.svg"} width={52} height={52} alt="" />
                 </div>
                 <div className="text-center font-normal text-[24px]/[36px] text-[#163b56]">
                   <p className="mt-[41px] font-semibold text-[30px]/[45px] text-[43b871] mb-[1em]">
@@ -100,12 +85,7 @@ const Introduce = () => {
               </div>
               <div className="flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4">
                 <div className="font-normal text-[24px]/[36px] text-[#163b56] text-center flex justify-center h-[52px]">
-                  <Image
-                    src={"/ic_play-button.svg"}
-                    width={52}
-                    height={52}
-                    alt=""
-                  />
+                  <Image src={"/ic_play-button.svg"} width={52} height={52} alt="" />
                 </div>
                 <div className="text-center font-normal text-[24px]/[36px] text-[#163b56]">
                   <p className="mt-[41px] font-semibold text-[30px]/[45px] text-[43b871] mb-[1em]">
@@ -141,67 +121,37 @@ const Introduce = () => {
               </h3>
               <div>
                 <div>
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Học tập
                   </span>
                 </div>
                 <div>
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Lái xe
                   </span>
                 </div>
                 <div>
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Đi lại
                   </span>
                 </div>
                 <div>
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Làm việc
                   </span>
                 </div>
                 <div>
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Chạy bộ
                   </span>
                 </div>
                 <div>
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Thư giãn
                   </span>
@@ -210,32 +160,17 @@ const Introduce = () => {
             </div>
             <div className="flex flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <div className="relative hidden lg:block lg:left-5 xl:left-30">
-                <Image
-                  src={"/ic_select_listen.avif"}
-                  width={513}
-                  height={716}
-                  alt=""
-                />
+                <Image src={"/ic_select_listen.avif"} width={513} height={716} alt="" />
               </div>
               <div className="absolute aspect-[.610878661] -left-20 lg:-left-50 xl:-left-30">
-                <Image
-                  src={"/ic_select_read.avif"}
-                  width={438}
-                  height={716}
-                  alt=""
-                />
+                <Image src={"/ic_select_read.avif"} width={438} height={716} alt="" />
               </div>
             </div>
           </div>
           <div className="mt-[175px] lg:pb-25 pb-15 flex flex-wrap -mx-4">
             <div className="flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <div>
-                <Image
-                  src={"/ic_silver_dots.avif"}
-                  width={465}
-                  height={653}
-                  alt=""
-                />
+                <Image src={"/ic_silver_dots.avif"} width={465} height={653} alt="" />
               </div>
             </div>
             <div className="flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
@@ -246,15 +181,12 @@ const Introduce = () => {
                 Xây dựng thói quen đọc sách mỗi ngày
               </h3>
               <div className="lg:mt-15 font-normal text-[20px]/[30px] tracking-[.005em] text-[#163b56]">
-                Tại Trại sáng tác của Reavol, các bạn có thể đăng tải những tác
-                phẩm của mình và kiếm tiền từ chính tác phẩm đó. Hãy đăng kí làm
-                Cộng tác viên của Reavol ngay hôm nay để có thể mang tác phẩm
-                của mình đến gần hơn với những người yêu sách!
+                Tại Trại sáng tác của Reavol, các bạn có thể đăng tải những tác phẩm của mình và
+                kiếm tiền từ chính tác phẩm đó. Hãy đăng kí làm Cộng tác viên của Reavol ngay hôm
+                nay để có thể mang tác phẩm của mình đến gần hơn với những người yêu sách!
               </div>
               <div className="mt-[35px] mb-auto mx-auto flex lg:w-[438px] h-[92px] bg-[#43b871] rounded-[10px] items-center justify-center">
-                <span className="font-bold text-[24px]/[160%] text-white">
-                  Bắt đầu thử
-                </span>
+                <span className="font-bold text-[24px]/[160%] text-white">Bắt đầu thử</span>
               </div>
             </div>
           </div>
@@ -374,12 +306,7 @@ const Introduce = () => {
         <div className={styles.container}>
           <div className="flex flex-wrap -mx-4">
             <div className="md:mt-[231px] mt-[150px] flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
-              <Image
-                src={"/icon_investment.avif"}
-                width={540}
-                height={560}
-                alt=""
-              />
+              <Image src={"/icon_investment.avif"} width={540} height={560} alt="" />
             </div>
             <div className="lg:mt-[150px] md:mt-25 mt-15 flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <div className="lg:w-[450px]">
@@ -389,12 +316,7 @@ const Introduce = () => {
               </div>
               <div className="mt-8">
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
                       Mở khóa toàn bộ sách<b> 1 năm/trọn đời</b>
@@ -402,26 +324,15 @@ const Introduce = () => {
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Đọc và nghe hơn <b>2500 cuốn sách cùng 16 thể loại</b>{" "}
-                      khác nhau
+                      Đọc và nghe hơn <b>2500 cuốn sách cùng 16 thể loại</b> khác nhau
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
                       Dễ dàng tiếp thu tri thức từ<b> 5 cuồn sách mỗi ngày</b>
@@ -429,40 +340,24 @@ const Introduce = () => {
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Xem thỏa thích những video hay về sách<b> không</b> bị làm
-                      phiền bởi<b> quảng cáo</b>
+                      Xem thỏa thích những video hay về sách<b> không</b> bị làm phiền bởi
+                      <b> quảng cáo</b>
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      <b>Đọc miễn phí</b> chương đầu tiên với các{" "}
-                      <b>truyện độc quyền</b>
+                      <b>Đọc miễn phí</b> chương đầu tiên với các <b>truyện độc quyền</b>
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
                       Tham gia vào các sự kiện<b> kiếm Rtoken</b>
@@ -477,12 +372,7 @@ const Introduce = () => {
       <div className="bg-white!">
         <div className={styles.container}>
           <div className="flex flex-wrap -mx-4">
-            <Image
-              src="/icon_community.avif"
-              width={1140}
-              height={451.7}
-              alt=""
-            />
+            <Image src="/icon_community.avif" width={1140} height={451.7} alt="" />
           </div>
         </div>
       </div>
@@ -496,23 +386,13 @@ const Introduce = () => {
           <div className="mt-15 flex flex-wrap -mx-4">
             <div className="flex-none w-1/2 max-w-1/2">
               <div>
-                <Image
-                  src="/ic_interest.avif"
-                  width={540}
-                  height={350}
-                  alt=""
-                />
+                <Image src="/ic_interest.avif" width={540} height={350} alt="" />
               </div>
             </div>
             <div className="flex-none w-1/2 max-w-1/2">
               <div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4">
                     <span className="font-normal text-[20px]/[30px]">
                       Hưởng % hoa hồng trực tiếp từ mỗi đơn hàng
@@ -520,12 +400,7 @@ const Introduce = () => {
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4">
                     <span className="font-normal text-[20px]/[30px]">
                       Hỗ trợ KOCs xây dựng nội dung trên mạng xã hội
@@ -533,16 +408,10 @@ const Introduce = () => {
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
-                  <Image
-                    src="/ic_integrated.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                  />
+                  <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4">
                     <span className="font-normal text-[20px]/[30px]">
-                      Tham gia vào các chiến lược phát triển với các đối tác của
-                      Reavol.
+                      Tham gia vào các chiến lược phát triển với các đối tác của Reavol.
                     </span>
                   </div>
                 </div>
@@ -562,12 +431,7 @@ const Introduce = () => {
                 Bạn đã sẵn sàng gia tăng thu nhập cùng Reavol KOCs?
               </h5>
               <div className="mt-[21px]">
-                <Image
-                  src="/ic_loginKOCS.avif"
-                  width={540}
-                  height={540}
-                  alt=""
-                />
+                <Image src="/ic_loginKOCS.avif" width={540} height={540} alt="" />
               </div>
             </div>
             <div className="flex-none w-1/2 max-w-1/2 relative min-h-px px-4 lg:mt-[271px] mt-30">
@@ -767,9 +631,7 @@ const Introduce = () => {
                           type="submit"
                           className="h-15 w-full lg:mt-14 bg-[#43b871] border-none text-white leading-[1.5715] relative inline-block font-normal whitespace-nowrap text-center cursor-pointer touch-manipulation py-1 px-4 text-[14px]"
                         >
-                          <span className="font-bold text-[24px]/[160%] text-white">
-                            Gửi ngay
-                          </span>
+                          <span className="font-bold text-[24px]/[160%] text-white">Gửi ngay</span>
                         </button>
                       </div>
                     </div>
@@ -793,63 +655,34 @@ const Introduce = () => {
               <div className="mt-[35px] flex">
                 <Link href={"https://www.facebook.com/reavolvn"}>
                   <div className="w-12 h-12 border border-white box-border rounded-lg flex justify-center items-center ">
-                    <Image
-                      src={"/ic_facebook.svg"}
-                      width={24}
-                      height={24}
-                      alt=""
-                    />
+                    <Image src={"/ic_facebook.svg"} width={24} height={24} alt="" />
                   </div>
                 </Link>
                 <Link href={"https://www.instagram.com/reavol.official/"}>
                   <div className="w-12 h-12 border border-white box-border rounded-lg flex justify-center items-center ml-5 md:ml-[30px]">
-                    <Image
-                      src={"/ic_instagram.svg"}
-                      width={24}
-                      height={24}
-                      alt=""
-                    />
+                    <Image src={"/ic_instagram.svg"} width={24} height={24} alt="" />
                   </div>
                 </Link>
-                <Link
-                  href={
-                    "https://www.youtube.com/channel/UC4NcK6yLN-BlTmF_-2DTIwA"
-                  }
-                >
+                <Link href={"https://www.youtube.com/channel/UC4NcK6yLN-BlTmF_-2DTIwA"}>
                   <div className="w-12 h-12 border border-white box-border rounded-lg flex justify-center items-center ml-5 md:ml-[30px]">
                     <Image src={"/tik-tok.svg"} width={24} height={24} alt="" />
                   </div>
                 </Link>
                 <Link href={"tel:0977947961"}>
                   <div className="w-12 h-12 border border-white box-border rounded-lg flex justify-center items-center ml-5 md:ml-[30px]">
-                    <Image
-                      src={"/icon-telephone-call.svg"}
-                      width={24}
-                      height={24}
-                      alt=""
-                    />
+                    <Image src={"/icon-telephone-call.svg"} width={24} height={24} alt="" />
                   </div>
                 </Link>
               </div>
               <div className="mt-[35px] flex">
                 <div className="cursor-pointer">
                   <div>
-                    <Image
-                      src={"/imgbin_app-google.svg"}
-                      width={156}
-                      height={55}
-                      alt=""
-                    />
+                    <Image src={"/imgbin_app-google.svg"} width={156} height={55} alt="" />
                   </div>
                 </div>
                 <div className="cursor-pointer ml-5">
                   <div>
-                    <Image
-                      src={"/imgbin_app-store.svg"}
-                      width={156}
-                      height={55}
-                      alt=""
-                    />
+                    <Image src={"/imgbin_app-store.svg"} width={156} height={55} alt="" />
                   </div>
                 </div>
               </div>

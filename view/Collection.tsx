@@ -23,9 +23,7 @@ const Collection = () => {
   return (
     <div className="m-5">
       <div className="mt-2.5">
-        <div className="text-[30px] font-semibold text-white leading-7">
-          TUYỂN TẬP
-        </div>
+        <div className="text-[30px] font-semibold text-white leading-7">TUYỂN TẬP</div>
         <div className="relative aspect-square md:aspect-3/1 w-full mt-8 mb-20 overflow-hidden rounded-lg">
           {forYou ? (
             <Image

@@ -166,10 +166,7 @@ const Home = () => {
           <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">
             Tuyển tập sách hay cho bạn
           </div>
-          <Link
-            href={"/collection"}
-            className="my-auto ml-auto touch-manipulation"
-          >
+          <Link href={"/collection"} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
               Xem tất cả
             </span>
@@ -179,10 +176,7 @@ const Home = () => {
           responsiveConfig.map(({ key, items, col, className }) => (
             <div key={key} className={`flex-wrap -mx-4 ${className}`}>
               {forYou?.slice(0, items).map((item) => (
-                <div
-                  key={item.id}
-                  className={`mt-[30px] ${col} relative w-full min-h-px px-4`}
-                >
+                <div key={item.id} className={`mt-[30px] ${col} relative w-full min-h-px px-4`}>
                   <BookItemComponent item={item} />
                 </div>
               ))}
@@ -193,17 +187,12 @@ const Home = () => {
         )}
       </div>
       <div className="m-5">
-        <div className="text-[28px]/[28px] text-white font-medium font-Medium">
-          Xu hướng
-        </div>
+        <div className="text-[28px]/[28px] text-white font-medium font-Medium">Xu hướng</div>
         <div className="mt-5 flex justify-between">
           <div className="text-[32px]/[40px] font-semibold text-white font-SemiBold">
             Sách hay trong tuần
           </div>
-          <Link
-            href={"/trending"}
-            className="my-auto ml-auto touch-manipulation"
-          >
+          <Link href={"/trending"} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
               Xem tất cả
             </span>
@@ -213,10 +202,7 @@ const Home = () => {
           responsiveConfig.map(({ key, items, col, className }) => (
             <div key={key} className={`flex-wrap -mx-4 ${className}`}>
               {freeList?.slice(0, items).map((item) => (
-                <div
-                  key={item.id}
-                  className={`${col} relative w-full min-h-px px-4 mt-[30px]`}
-                >
+                <div key={item.id} className={`${col} relative w-full min-h-px px-4 mt-[30px]`}>
                   <BookItemComponent item={item} />
                 </div>
               ))}
@@ -231,10 +217,7 @@ const Home = () => {
           <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">
             Top sách miễn phí
           </div>
-          <Link
-            href={"/bookfree"}
-            className="my-auto ml-auto touch-manipulation"
-          >
+          <Link href={"/bookfree"} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
               Xem tất cả
             </span>
@@ -242,15 +225,9 @@ const Home = () => {
         </div>
         {!isHomeLoading ? (
           responsiveConfig2.map(({ key, items, col, className }) => (
-            <div
-              key={key}
-              className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}
-            >
+            <div key={key} className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}>
               {freeList?.slice(0, items).map((item) => (
-                <div
-                  key={item.id}
-                  className={`${col} relative w-full min-h-px px-4`}
-                >
+                <div key={item.id} className={`${col} relative w-full min-h-px px-4`}>
                   <BookItemComponent2 item={item} />
                 </div>
               ))}
@@ -262,9 +239,7 @@ const Home = () => {
       </div>
       <div className="mt-18 mx-5 mb-5">
         <div>
-          <div className="text-[28px]/[28px] font-medium text-white font-Medium">
-            Tuyển chọn
-          </div>
+          <div className="text-[28px]/[28px] font-medium text-white font-Medium">Tuyển chọn</div>
           <div className="flex mb-8 justify-between">
             <div className="text-[32px]/[40px] font-semibold text-white mt-2.5 font-SemiBold">
               Đọc sách mọi lúc mọi nơi
@@ -280,10 +255,7 @@ const Home = () => {
           responsiveConfig2.map(({ key, col, className }) => (
             <div key={key} className={`p-0! flex-wrap -mx-4 ${className}`}>
               {selections?.slice(0, 2).map((item) => (
-                <div
-                  key={item.id}
-                  className={`pb-6! ${col} relative w-full min-h-px px-4`}
-                >
+                <div key={item.id} className={`pb-6! ${col} relative w-full min-h-px px-4`}>
                   <SelectionItem item={item} />
                 </div>
               ))}
@@ -327,15 +299,9 @@ const Home = () => {
           </div>
           {isHomeLoading === false ? (
             responsiveConfig2.map(({ key, col, className }) => (
-              <div
-                key={key}
-                className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}
-              >
+              <div key={key} className={`mt-7.5 p-0! flex-wrap -mx-4 ${className}`}>
                 {newest?.slice(0, 6).map((item) => (
-                  <div
-                    key={item.id}
-                    className={`${col} relative w-full min-h-px px-4`}
-                  >
+                  <div key={item.id} className={`${col} relative w-full min-h-px px-4`}>
                     <BookItemComponent2 item={item} />
                   </div>
                 ))}
@@ -359,10 +325,7 @@ const Home = () => {
           responsiveConfig3.map(({ key, items, col, className }) => (
             <div key={key} className={`flex-wrap -mx-4 ${className}`}>
               {blogData.data.blogs.slice(0, items).map((item) => (
-                <div
-                  key={item.id}
-                  className={`${col} relative w-full min-h-px px-4`}
-                >
+                <div key={item.id} className={`${col} relative w-full min-h-px px-4`}>
                   <Link href={`/blogs/${item.slug}`}>
                     <div className="aspect-[1.43] relative w-full">
                       <div className="relative overflow-hidden rounded-[10px] h-full w-full">
