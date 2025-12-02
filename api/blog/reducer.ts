@@ -1,9 +1,5 @@
-import {
-  FETCH_BLOG_REQUEST,
-  FETCH_BLOG_SUCCESS,
-  FETCH_BLOG_FAILURE,
-} from "./action";
-
+import { createReducer } from "@reduxjs/toolkit";
+import { fetchBlogData } from "./action";
 import { BlogResponse } from "@/type/blog";
 
 export interface BlogState {
@@ -16,21 +12,16 @@ const initialState: BlogState = {
   isLoading: false,
 };
 
-export const blogReducer = (
-  state = initialState,
-  action: any
-): BlogState => {
-  switch (action.type) {
-    case FETCH_BLOG_REQUEST:
-      return { ...state, isLoading: true };
-
-    case FETCH_BLOG_SUCCESS:
-      return { ...state, isLoading: false, data: action.payload };
-
-    case FETCH_BLOG_FAILURE:
-      return { ...state, isLoading: false };
-
-    default:
-      return state;
-  }
-};
+export const blogReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(fetchBlogData.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(fetchBlogData.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    })
+    .addCase(fetchBlogData.rejected, (state) => {
+      state.isLoading = false;
+    });
+});

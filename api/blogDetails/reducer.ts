@@ -1,11 +1,5 @@
-// blogDetails/reducer.ts
-import {
-  FETCH_BLOG_DETAILS_REQUEST,
-  FETCH_BLOG_DETAILS_SUCCESS,
-  FETCH_BLOG_DETAILS_FAILURE,
-  CLEAR_BLOG_DETAILS,
-} from "./action";
-
+import { createReducer } from "@reduxjs/toolkit";
+import { fetchBlogDetails, clearBlogDetails } from "./action";
 import { BlogDetailsResponse } from "@/type/blog";
 
 export interface BlogDetailsState {
@@ -18,24 +12,19 @@ const initialState: BlogDetailsState = {
   isLoading: false,
 };
 
-export const blogDetailsReducer = (
-  state = initialState,
-  action: any
-): BlogDetailsState => {
-  switch (action.type) {
-    case FETCH_BLOG_DETAILS_REQUEST:
-      return { ...state, isLoading: true };
-
-    case FETCH_BLOG_DETAILS_SUCCESS:
-      return { ...state, isLoading: false, details: action.payload };
-
-    case FETCH_BLOG_DETAILS_FAILURE:
-      return { ...state, isLoading: false };
-
-    case CLEAR_BLOG_DETAILS:
-      return { ...state, details: null };
-
-    default:
-      return state;
-  }
-};
+export const blogDetailsReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(fetchBlogDetails.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(fetchBlogDetails.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.details = action.payload;
+    })
+    .addCase(fetchBlogDetails.rejected, (state) => {
+      state.isLoading = false;
+    })
+    .addCase(clearBlogDetails, (state) => {
+      state.details = null;
+    });
+});

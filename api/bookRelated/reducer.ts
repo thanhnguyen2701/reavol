@@ -1,10 +1,6 @@
+import { createReducer } from "@reduxjs/toolkit";
+import { fetchRelatedBooks, clearBook } from "./action";
 import { RelatedBooksDataResponse } from "@/type";
-import {
-  FETCH_RELATED_REQUEST,
-  FETCH_RELATED_SUCCESS,
-  FETCH_RELATED_FAILURE,
-  CLEAR_RELATED_BOOK,
-} from "./action";
 
 interface BookRelatedState {
   related: RelatedBooksDataResponse | null;
@@ -16,24 +12,19 @@ const initialState: BookRelatedState = {
   isLoading: false,
 };
 
-export const bookRelatedReducer = (
-  state = initialState,
-  action: any
-): BookRelatedState => {
-  switch (action.type) {
-    case FETCH_RELATED_REQUEST:
-      return { ...state, isLoading: true };
-
-    case FETCH_RELATED_SUCCESS:
-      return { ...state, isLoading: false, related: action.payload };
-
-    case FETCH_RELATED_FAILURE:
-      return { ...state, isLoading: false };
-
-    case CLEAR_RELATED_BOOK:
-      return { ...state, related: null };
-
-    default:
-      return state;
-  }
-};
+export const bookRelatedReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(fetchRelatedBooks.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(fetchRelatedBooks.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.related = action.payload;
+    })
+    .addCase(fetchRelatedBooks.rejected, (state) => {
+      state.isLoading = false;
+    })
+    .addCase(clearBook, (state) => {
+      state.related = null;
+    });
+});

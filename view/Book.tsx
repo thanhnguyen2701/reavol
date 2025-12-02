@@ -109,7 +109,7 @@ const Book = () => {
                   </h5>
                   <div className="mt-6">
                     {detailsData.data.chapters.map((item, index) => (
-                      <div className="m-0! flex flex-wrap">
+                      <div key={index} className="m-0! flex flex-wrap">
                         <div className="w-[3%] text-center text-white text-[16px]/[24px] tracking-[.5px]">
                           {index + 1}
                         </div>
