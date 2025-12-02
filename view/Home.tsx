@@ -5,7 +5,7 @@ import BookItemComponent2 from "@/components/BookItemComponent2";
 import Loading from "@/components/Loading";
 import SelectionItem from "@/components/SelectionItem";
 import { fetchBlogData } from "@/api/blog/action";
-import { fetchHomeData } from "@/api/home/action"
+import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,20 +38,60 @@ const Home = () => {
   const newest = newestData?.newest;
 
   const responsiveConfig = [
-    { key: "lg", items: 4, col: 'basis-1/4 max-w-1/4', className: "hidden lg:flex" },
-    { key: "md", items: 3, col: 'basis-1/3 max-w-1/3', className: "hidden md:flex lg:hidden" },
-    { key: "sm", items: 2, col: 'basis-1/2 max-w-1/2', className: "flex md:hidden" },
+    {
+      key: "lg",
+      items: 4,
+      col: "basis-1/4 max-w-1/4",
+      className: "hidden lg:flex",
+    },
+    {
+      key: "md",
+      items: 3,
+      col: "basis-1/3 max-w-1/3",
+      className: "hidden md:flex lg:hidden",
+    },
+    {
+      key: "sm",
+      items: 2,
+      col: "basis-1/2 max-w-1/2",
+      className: "flex md:hidden",
+    },
   ];
 
   const responsiveConfig2 = [
-    { key: "md", items: 8, col: 'basis-1/2 max-w-1/2', className: "hidden md:flex" },
-    { key: "sm", items: 6, col: 'basis-full max-w-full', className: "flex md:hidden" },
+    {
+      key: "md",
+      items: 8,
+      col: "basis-1/2 max-w-1/2",
+      className: "hidden md:flex",
+    },
+    {
+      key: "sm",
+      items: 6,
+      col: "basis-full max-w-full",
+      className: "flex md:hidden",
+    },
   ];
 
   const responsiveConfig3 = [
-    { key: "lg", items: 3, col: 'basis-1/3 max-w-1/3', className: "hidden lg:flex" },
-    { key: "md", items: 2, col: 'basis-1/2 max-w-1/2', className: "hidden md:flex lg:hidden" },
-    { key: "sm", items: 2, col: 'basis-full max-w-full', className: "flex md:hidden" },
+    {
+      key: "lg",
+      items: 3,
+      col: "basis-1/3 max-w-1/3",
+      className: "hidden lg:flex",
+    },
+    {
+      key: "md",
+      items: 2,
+      col: "basis-1/2 max-w-1/2",
+      className: "hidden md:flex lg:hidden",
+    },
+    {
+      key: "sm",
+      items: 2,
+      col: "basis-full max-w-full",
+      className: "flex md:hidden",
+    },
   ];
 
   return (
@@ -354,6 +394,6 @@ const Home = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

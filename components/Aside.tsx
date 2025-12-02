@@ -178,13 +178,13 @@ const Aside = () => {
           <div className="pl-0">
             <Link href={"/"}>
               <div className="mt-4.5 bg-[#1c465d] rounded-[7px] w-8 h-8 flex justify-center items-center">
-                  <Image
-                    src={"/ic_logo_R.svg"}
-                    width={13}
-                    height={17}
-                    alt=""
-                    className=""
-                  />
+                <Image
+                  src={"/ic_logo_R.svg"}
+                  width={13}
+                  height={17}
+                  alt=""
+                  className=""
+                />
               </div>
             </Link>
             <ul className="pt-12.5 overflow-x-hidden rounded-r-[inherit]!">

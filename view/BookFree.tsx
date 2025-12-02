@@ -54,6 +54,6 @@ const BookFree = () => {
       </div>
     </div>
   );
-}
+};
 
-export default BookFree
+export default BookFree;

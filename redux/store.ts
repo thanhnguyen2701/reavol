@@ -1,4 +1,8 @@
-import { applyMiddleware, combineReducers, legacy_createStore as createStore } from "@reduxjs/toolkit";
+import {
+  applyMiddleware,
+  combineReducers,
+  legacy_createStore as createStore,
+} from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 
 import { homeReducer } from "../api/home/reducer";
@@ -6,7 +10,6 @@ import { blogDetailsReducer } from "@/api/blogDetails/reducer";
 import { blogReducer } from "@/api/blog/reducer";
 import { bookDetailsReducer } from "@/api/bookDetails";
 import { bookRelatedReducer } from "@/api/bookRelated";
-
 
 const rootReducer = combineReducers({
   home: homeReducer,

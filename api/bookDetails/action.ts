@@ -7,14 +7,14 @@ export const fetchBookDetails = createAsyncThunk<BookDetailsResponse, number>(
     try {
       const res = await fetch(
         `https://api.reavol.vn/api/v1/article/get-detail-article?articleId=${id}`,
-        { cache: "no-store" }
+        { cache: "no-store" },
       );
       const data = (await res.json()) as BookDetailsResponse;
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
-  }
+  },
 );
 
 export const clearBook = createAction("book/clearBook");

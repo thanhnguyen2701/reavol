@@ -7,12 +7,12 @@ export const fetchBlogData = createAsyncThunk<BlogResponse>(
     try {
       const res = await fetch(
         "https://api.reavol.vn/api/v1/blog/get-blog-for-web",
-        { cache: "no-store" }
+        { cache: "no-store" },
       );
       const data = (await res.json()) as BlogResponse;
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
-  }
+  },
 );

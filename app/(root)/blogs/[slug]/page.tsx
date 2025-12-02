@@ -3,9 +3,7 @@
 import Post from "@/view/Post";
 
 const PostPage = () => {
-  return (
-    <Post />
-  );
+  return <Post />;
 };
 
 export default PostPage;

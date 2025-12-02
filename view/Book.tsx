@@ -12,7 +12,10 @@ import { useEffect } from "react";
 import { selectHomeData } from "@/api/home";
 import { selectBookDetails } from "@/api/bookDetails";
 import { selectBlogDetailsLoading } from "@/api/blogDetails";
-import { selectRelatedBooks, selectRelatedBooksLoading } from "@/api/bookRelated";
+import {
+  selectRelatedBooks,
+  selectRelatedBooksLoading,
+} from "@/api/bookRelated";
 
 const Book = () => {
   const { slug } = useParams();
@@ -54,8 +57,18 @@ const Book = () => {
   }, [book, dispatch]);
 
   const responsiveConfig = [
-    { key: "lg", items: 3, col: 'basis-full max-w-full', className: "hidden lg:flex" },
-    { key: "md", items: 4, col: 'basis-1/2 max-w-1/2', className: "flex lg:hidden" },
+    {
+      key: "lg",
+      items: 3,
+      col: "basis-full max-w-full",
+      className: "hidden lg:flex",
+    },
+    {
+      key: "md",
+      items: 4,
+      col: "basis-1/2 max-w-1/2",
+      className: "flex lg:hidden",
+    },
   ];
 
   return (
@@ -250,6 +263,6 @@ const Book = () => {
       )}
     </div>
   );
-}
+};
 
-export default Book
+export default Book;

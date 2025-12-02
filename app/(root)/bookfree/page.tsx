@@ -3,9 +3,7 @@
 import BookFree from "@/view/BookFree";
 
 const BookFreePage = () => {
-  return (
-    <BookFree />
-  )
+  return <BookFree />;
 };
 
 export default BookFreePage;

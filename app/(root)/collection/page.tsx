@@ -3,9 +3,7 @@
 import Collection from "@/view/Collection";
 
 const CollectionPage = () => {
-  return (
-    <Collection />
-  )
+  return <Collection />;
 };
 
 export default CollectionPage;

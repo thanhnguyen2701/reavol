@@ -1,11 +1,9 @@
-'use client';
+"use client";
 
 import Selection from "@/view/Selection";
 
 const SelectionPage = () => {
-  return (
-    <Selection/>
-  )
-}
+  return <Selection />;
+};
 
-export default SelectionPage
+export default SelectionPage;

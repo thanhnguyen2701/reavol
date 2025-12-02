@@ -56,6 +56,6 @@ const Collection = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Collection
+export default Collection;

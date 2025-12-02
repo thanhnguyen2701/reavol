@@ -3,9 +3,7 @@
 import Book from "@/view/Book";
 
 const BookPage = () => {
-  return (
-    <Book />
-  )
+  return <Book />;
 };
 
 export default BookPage;

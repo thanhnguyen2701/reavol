@@ -3,9 +3,7 @@
 import Trending from "@/view/Trending";
 
 const TrendingPage = () => {
-  return (
-    <Trending/>
-  );
+  return <Trending />;
 };
 
 export default TrendingPage;
