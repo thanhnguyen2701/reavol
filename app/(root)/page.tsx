@@ -4,8 +4,8 @@ import BookItemComponent from "@/components/BookItemComponent";
 import BookItemComponent2 from "@/components/BookItemComponent2";
 import Loading from "@/components/Loading";
 import SelectionItem from "@/components/SelectionItem";
-import { fetchBlogData } from "@/redux/features/blogSlice";
-import { fetchHomeData } from "@/redux/features/homeSlice";
+import { fetchBlogData } from "@/api/blog/action";
+import { fetchHomeData } from "@/api/home/action"
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import Link from "next/link";

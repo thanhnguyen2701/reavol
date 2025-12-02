@@ -1,9 +1,9 @@
 "use client";
 
 import Loading from "@/components/Loading";
-import { fetchBookDetails } from "@/redux/features/bookDetailsSlice";
-import { fetchRelatedBooks } from "@/redux/features/bookRelatedSlice";
-import { fetchHomeData } from "@/redux/features/homeSlice";
+import { fetchBookDetails } from "@/api/bookDetails/action";
+import { fetchRelatedBooks } from "@/api/bookRelated/action";
+import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,15 +59,15 @@ const BookPage = () => {
       {detailsLoading === false && detailsData ? (
         <div className="h-full m-0 lg:w-[65%] md:w-full bg-[#042c43] border border-[rgba(255,255,255,0.59)] box-border rounded-[20px] mt-12 flex flex-wrap overflow-hidden">
           <div className="w-full p-0">
-            <div className="relative aspect-[1.01]">
-                <Image
-                  src={detailsData.data.media.originUrl}
-                  sizes="100vw"
-                  width={1500}
-                  height={770}
-                  alt=""
-                  className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
-                />
+            <div className="relative aspect-[1.01] overflow-hidden">
+              <Image
+                src={detailsData.data.media.originUrl}
+                sizes="100vw"
+                width={1500}
+                height={770}
+                alt=""
+                className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
+              />
             </div>
             <div>
               <div className="px-12.5 pt-12.5 pb-0 items-center  box-border justify-between! flex!">
@@ -129,13 +129,13 @@ const BookPage = () => {
                   <div className="bg-black rounded-[10px] w-47 h-16 flex px-3">
                     <Link href={""} className="w-full flex touch-manipulation">
                       <div className="flex justify-center items-center">
-                          <Image
-                            src={"/app-store.svg"}
-                            width={30}
-                            height={30}
-                            alt=""
-                            className="object-cover align-middle rounded-tl-[inherit]! rounded-tr-[inherit]!"
-                          />
+                        <Image
+                          src={"/app-store.svg"}
+                          width={30}
+                          height={30}
+                          alt=""
+                          className="object-cover align-middle rounded-tl-[inherit]! rounded-tr-[inherit]!"
+                        />
                       </div>
                       <div className="pl-4 pt-2">
                         <h6 className="font-medium text-[14px]/[21px] text-white mt-0! mb-0! w-full!">
@@ -150,13 +150,13 @@ const BookPage = () => {
                   <div className="ml-7 bg-black rounded-[10px] w-47 h-16 flex px-3">
                     <Link href={""} className="w-full flex touch-manipulation">
                       <div className="flex justify-center items-center rounded-tl-[20px]! rounded-tr-[20px]!">
-                          <Image
-                            src={"/playstore.svg"}
-                            width={30}
-                            height={30}
-                            alt=""
-                            className="object-cover align-middle rounded-tl-[20px]! rounded-tr-[20px]!"
-                          />
+                        <Image
+                          src={"/playstore.svg"}
+                          width={30}
+                          height={30}
+                          alt=""
+                          className="object-cover align-middle rounded-tl-[20px]! rounded-tr-[20px]!"
+                        />
                       </div>
                       <div className="pl-4 pt-2">
                         <h6 className="font-medium text-[14px]/[21px] text-white mt-0! mb-0! w-full!">
@@ -194,15 +194,15 @@ const BookPage = () => {
                       className="w-full touch-manipulation"
                     >
                       <div className="bg-[#242730] p-0 rounded-[20px]">
-                        <div className="w-full aspect-[.994] relative">
-                            <Image
-                              src={item.media.originUrl}
-                              sizes="100vw"
-                              width={1500}
-                              height={770}
-                              alt=""
-                              className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
-                            />
+                        <div className="w-full aspect-[.994] relative overflow-hidden">
+                          <Image
+                            src={item.media.originUrl}
+                            sizes="100vw"
+                            width={1500}
+                            height={770}
+                            alt=""
+                            className="rounded-tl-[20px] rounded-tr-[20px] absolute inset-0 box-border p-0 m-auto block bg-cover"
+                          />
                           <div className="absolute w-16 right-5 bottom-5 rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] text-white p-2.5 tracking-[.5px]">
                             <div>
                               <span className="rounded-tr-[10px] rounded-tl-[10px] font-medium text-[10px]/[10px] tracking-[.5px] text-white">

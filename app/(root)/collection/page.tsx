@@ -2,7 +2,7 @@
 
 import BookItemComponent2 from "@/components/BookItemComponent2";
 import Loading from "@/components/Loading";
-import { fetchHomeData } from "@/redux/features/homeSlice";
+import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -22,18 +22,18 @@ const CollectionPage = () => {
         <div className="text-[30px] font-semibold text-white leading-7">
           TUYỂN TẬP
         </div>
-        <div className="relative aspect-square md:aspect-3/1 w-full mt-8 mb-20">
-            {forYou ? (
-              <Image
-                src={forYou[0].media.originUrl}
-                width={1496}
-                height={505}
-                alt=""
-                className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center hover:scale-125 transition-all duration-500"
-              />
-            ) : (
-              <Loading />
-            )}
+        <div className="relative aspect-square md:aspect-3/1 w-full mt-8 mb-20 overflow-hidden rounded-lg">
+          {forYou ? (
+            <Image
+              src={forYou[0].media.originUrl}
+              width={1496}
+              height={505}
+              alt=""
+              className="absolute inset-0 box-border p-0 m-auto block bg-cover bg-center hover:scale-125 transition-all duration-500"
+            />
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
       <div className="flex flex-wrap -mx-4">
