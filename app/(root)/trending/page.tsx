@@ -2,7 +2,7 @@
 
 import BookItemComponent from "@/components/BookItemComponent";
 import Loading from "@/components/Loading";
-import { fetchHomeData } from "@/redux/features/homeSlice";
+import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useEffect } from "react";
 

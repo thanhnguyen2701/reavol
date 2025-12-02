@@ -1,9 +1,9 @@
 "use client";
 
 import Loading from "@/components/Loading";
-import { fetchBookDetails } from "@/redux/features/bookDetailsSlice";
-import { fetchRelatedBooks } from "@/redux/features/bookRelatedSlice";
-import { fetchHomeData } from "@/redux/features/homeSlice";
+import { fetchBookDetails } from "@/api/bookDetails/action";
+import { fetchRelatedBooks } from "@/api/bookRelated/action";
+import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,7 +59,7 @@ const BookPage = () => {
       {detailsLoading === false && detailsData ? (
         <div className="h-full m-0 lg:w-[65%] md:w-full bg-[#042c43] border border-[rgba(255,255,255,0.59)] box-border rounded-[20px] mt-12 flex flex-wrap overflow-hidden">
           <div className="w-full p-0">
-            <div className="relative aspect-[1.01]">
+            <div className="relative aspect-[1.01] overflow-hidden">
               <Image
                 src={detailsData.data.media.originUrl}
                 sizes="100vw"
@@ -194,7 +194,7 @@ const BookPage = () => {
                       className="w-full touch-manipulation"
                     >
                       <div className="bg-[#242730] p-0 rounded-[20px]">
-                        <div className="w-full aspect-[.994] relative">
+                        <div className="w-full aspect-[.994] relative overflow-hidden">
                           <Image
                             src={item.media.originUrl}
                             sizes="100vw"

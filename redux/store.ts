@@ -2,10 +2,10 @@ import { applyMiddleware, combineReducers, legacy_createStore as createStore } f
 import { thunk } from "redux-thunk";
 
 import { homeReducer } from "../api/home/reducer";
-import blogDetailsReducer from "./features/blogDetailsSlice";
-import blogReducer from "./features/blogSlice";
-import bookDetailsReducer from "./features/bookDetailsSlice";
-import bookRelatedReducer from "./features/bookRelatedSlice";
+import { blogDetailsReducer } from "@/api/blogDetails/reducer";
+import { blogReducer } from "@/api/blog/reducer";
+import { bookDetailsReducer } from "@/api/bookDetails";
+import { bookRelatedReducer } from "@/api/bookRelated";
 
 
 const rootReducer = combineReducers({

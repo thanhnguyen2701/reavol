@@ -2,7 +2,7 @@
 
 import Loading from "@/components/Loading";
 import SelectionItem from "@/components/SelectionItem";
-import { fetchHomeData } from "@/redux/features/homeSlice";
+import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useEffect } from "react";
 
