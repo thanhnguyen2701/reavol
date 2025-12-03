@@ -120,37 +120,37 @@ const Introduce = () => {
                 Đọc - Nghe sách mỗi khi
               </h3>
               <div>
-                <div>
+                <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Học tập
                   </span>
                 </div>
-                <div>
+                <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Lái xe
                   </span>
                 </div>
-                <div>
+                <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Đi lại
                   </span>
                 </div>
-                <div>
+                <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Làm việc
                   </span>
                 </div>
-                <div>
+                <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Chạy bộ
                   </span>
                 </div>
-                <div>
+                <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
                     Thư giãn
