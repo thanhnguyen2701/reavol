@@ -6,6 +6,7 @@ import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useEffect } from "react";
 import { selectHomeData, selectHomeLoading } from "@/api/home";
+import { useTranslations } from "next-intl";
 
 const Selection = () => {
   const dispatch = useAppDispatch();
@@ -19,13 +20,15 @@ const Selection = () => {
   const selectionsData = data?.data.find((item) => item.type === 4);
   const selections = selectionsData?.selections;
 
+  const t= useTranslations("Selection");
+
   return (
     <div className="m-5">
       <div>
-        <div className="text-[28px]/[28px] font-medium text-white">Tuyển chọn</div>
+        <div className="text-[28px]/[28px] font-medium text-white">{t('selection')}</div>
         <div className="flex mb-8 justify-between">
           <div className="text-[40px]/[50px] font-semibold text-white mt-2.5">
-            Đọc sách mọi lúc mọi nơi
+            {t('read-anytime-anywhere')}
           </div>
         </div>
         <div className="mt-0 p-0! flex flex-wrap -mx-4">

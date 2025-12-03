@@ -6,6 +6,7 @@ import { fetchHomeData } from "@/api/home/action";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useEffect } from "react";
 import { selectHomeData, selectHomeLoading } from "@/api/home";
+import { useTranslations } from "next-intl";
 
 const Trending = () => {
   const dispatch = useAppDispatch();
@@ -19,13 +20,16 @@ const Trending = () => {
   const freeListData = data?.data.find((item) => item.type === 1);
 
   const freeList = freeListData?.freeList;
+
+  const t= useTranslations("Trending");
+
   return (
     <div className="m-5">
       <div>
-        <div className="text-[28px]/[28px] font-medium text-white">Xu hướng trong tuần</div>
+        <div className="text-[28px]/[28px] font-medium text-white">{t('weely-trends')}</div>
         <div className="flex mb-8 justify-between">
           <div className="text-[40px]/[50px] font-semibold text-white mt-2.5">
-            Sách hay trong tuần
+            {t('books-of-week')}
           </div>
         </div>
         <div className="mt-0 p-0! flex flex-wrap -mx-4">

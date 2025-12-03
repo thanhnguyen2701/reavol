@@ -13,6 +13,7 @@ import { selectHomeData } from "@/api/home";
 import { selectBookDetails } from "@/api/bookDetails";
 import { selectBlogDetailsLoading } from "@/api/blogDetails";
 import { selectRelatedBooks, selectRelatedBooksLoading } from "@/api/bookRelated";
+import { useTranslations } from "next-intl";
 
 const Book = () => {
   const { slug } = useParams();
@@ -68,6 +69,8 @@ const Book = () => {
     },
   ];
 
+  const t = useTranslations("Book");
+
   return (
     <div className="m-5 lg:flex">
       {detailsLoading === false && detailsData ? (
@@ -87,13 +90,13 @@ const Book = () => {
               <div className="px-12.5 pt-12.5 pb-0 items-center  box-border justify-between! flex!">
                 <div className="text-white text-[30px] font-semibold">{detailsData.data.title}</div>
                 <div className="w-37.5 bg-[#33bf71] text-white rounded-[20px] text-center text-[20px] font-InterBold py-1.25 cursor-pointer">
-                  Mua ngay
+                  {t('buy-now')}
                 </div>
               </div>
               <div className="px-12.5 max-w-full relative w-full min-h-px">
                 <div className="mt-12.5">
                   <h5 className="text-[16px]/[20px]! text-white font-bold mt-0 mb-[.5em]">
-                    Những gì về sách ?
+                    {t('book')}
                   </h5>
                   <h6 className="text-[16px]/[24px]! mx-[13px] text-white mt-0 mb-[.5em] font-medium">
                     {detailsData.data.aboutTheBook}
@@ -101,7 +104,7 @@ const Book = () => {
                 </div>
                 <div className="mt-12.5">
                   <h5 className="text-[16px]/[20px]! text-white font-bold mt-0 mb-[.5em]">
-                    Ai nên đọc sách này ?
+                    {t('who')}
                   </h5>
                   <h6 className="text-[16px]/[24px]! mx-[13px] text-white mt-0 mb-[.5em] font-medium">
                     {detailsData.data.whoShouldRead}
@@ -109,7 +112,7 @@ const Book = () => {
                 </div>
                 <div className="mt-12.5">
                   <h5 className="text-[16px]/[20px]! text-white font-bold mt-0 mb-[.5em]">
-                    Ai viết ra cuốn sách này ?
+                    {t('about-author')}
                   </h5>
                   <h6 className="text-[16px]/[24px]! mx-[13px] text-white mt-0 mb-[.5em] font-medium">
                     {detailsData.data.aboutTheAuthor}
@@ -117,7 +120,7 @@ const Book = () => {
                 </div>
                 <div className="mt-12.5">
                   <h5 className="text-[16px]/[20px]! text-white font-bold mt-0 mb-[.5em]">
-                    Phụ lục
+                    {t('appendix')}
                   </h5>
                   <div className="mt-6">
                     {detailsData.data.chapters.map((item, index) => (
@@ -135,7 +138,7 @@ const Book = () => {
               </div>
               <div>
                 <h4 className="text-[18px]/[30px] font-[poppins] tracking-[.5px] text-white text-center pb-5 pt-7.5 mt-0 mb-[.5em] font-medium">
-                  Tải app để đọc bản tóm tắt đầy đủ
+                  {t('download')}
                 </h4>
                 <div className="mt-9 flex pb-7.5 justify-center">
                   <div className="bg-black rounded-[10px] w-47 h-16 flex px-3">
@@ -194,7 +197,7 @@ const Book = () => {
             {responsiveConfig.map(({ key, items, col, className }) => (
               <div key={key} className={`${className} flex-wrap -mx-4`}>
                 <div className="text-white text-[20px]/[36px] tracking-[.5px] font-bold pt-1.5 text-center w-full">
-                  Có thể bạn quan tâm
+                  {t('recommended-for-you')}
                 </div>
                 {relatedData.data.slice(0, items).map((item) => (
                   <div

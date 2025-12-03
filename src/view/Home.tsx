@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { selectHomeData, selectHomeLoading } from "@/api/home";
 import { selectBlogData, selectBlogLoading } from "@/api/blog";
+import { useTranslations } from "next-intl";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -94,13 +95,15 @@ const Home = () => {
     },
   ];
 
+  const t = useTranslations('Home');
+
   return (
     <div>
       <div className="m-5">
         <div className="flex flex-wrap -mx-4">
           <div className="px-4 w-full md:w-2/3 flex flex-col">
             <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold">
-              Khám phá
+              {t('explore')}
             </div>
 
             <div className="relative flex-1 overflow-hidden rounded-[20px] aspect-2/1">
@@ -121,7 +124,7 @@ const Home = () => {
 
           <div className="px-4 w-full md:w-1/3 flex flex-col">
             <div className="text-white font-semibold text-[32px]/10 mb-7 font-SemiBold mt-7 md:mt-0">
-              Hôm nay
+              {t('today')}
             </div>
 
             <div className="relative flex-1  aspect-2/1 group">
@@ -144,17 +147,17 @@ const Home = () => {
               <div className="absolute top-0 w-full">
                 <div className="flex items-center w-[70%] justify-center ml-10">
                   <span className="font-semibold text-[30px]/[36px] tracking-[0.3px] mt-10 text-white font-SemiBold">
-                    15 Phút đọc sách mỗi ngày
+                    {t('read_15_min')}
                   </span>
                 </div>
               </div>
 
               <div className="absolute bottom-0 w-full flex justify-between items-end px-10 py-6 z-12">
                 <div className="text-white! text-[12px]/[12px] tracking-[0.5px] opacity-80 font-Regular">
-                  53K đọc • 1 ngày trước
+                  {t('view&day')}
                 </div>
                 <div className="rounded-[7px] bg-[#242730] opacity-50 font-medium text-[10px]/[10px] tracking-[0.5px] text-white py-1.5 px-2.5">
-                  15 phút
+                  {t('time')}
                 </div>
               </div>
             </div>
@@ -164,11 +167,11 @@ const Home = () => {
       <div className="mt-18 mx-5 mb-5">
         <div className="mt-10 flex justify-between">
           <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">
-            Tuyển tập sách hay cho bạn
+            {t('selection-for-you')}
           </div>
           <Link href={"/collection"} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
-              Xem tất cả
+              {t('view-all')}
             </span>
           </Link>
         </div>
@@ -187,14 +190,14 @@ const Home = () => {
         )}
       </div>
       <div className="m-5">
-        <div className="text-[28px]/[28px] text-white font-medium font-Medium">Xu hướng</div>
+        <div className="text-[28px]/[28px] text-white font-medium font-Medium">{t('trending')}</div>
         <div className="mt-5 flex justify-between">
           <div className="text-[32px]/[40px] font-semibold text-white font-SemiBold">
-            Sách hay trong tuần
+            {t('books-of-week')}
           </div>
           <Link href={"/trending"} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
-              Xem tất cả
+              {t('view-all')}
             </span>
           </Link>
         </div>
@@ -215,11 +218,11 @@ const Home = () => {
       <div className="mt-18 mx-5 mb-5">
         <div className="mt-10 flex justify-between">
           <div className="text-[32px]/[28px] font-semibold text-white font-SemiBold">
-            Top sách miễn phí
+            {t('top-free-books')}
           </div>
           <Link href={"/bookfree"} className="my-auto ml-auto touch-manipulation">
             <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
-              Xem tất cả
+              {t('view-all')}
             </span>
           </Link>
         </div>
@@ -239,14 +242,14 @@ const Home = () => {
       </div>
       <div className="mt-18 mx-5 mb-5">
         <div>
-          <div className="text-[28px]/[28px] font-medium text-white font-Medium">Tuyển chọn</div>
+          <div className="text-[28px]/[28px] font-medium text-white font-Medium">{t('selection')}</div>
           <div className="flex mb-8 justify-between">
             <div className="text-[32px]/[40px] font-semibold text-white mt-2.5 font-SemiBold">
-              Đọc sách mọi lúc mọi nơi
+              {t('read-anytime-anywhere')}
             </div>
             <Link href={"/selection"} className="my-auto ml-auto">
               <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
-                Xem tất cả
+                {t('view-all')}
               </span>
             </Link>
           </div>
@@ -269,15 +272,15 @@ const Home = () => {
         <div>
           <div className="mt-15">
             <div className="text-[28px]/[28px] font-medium text-white font-Medium">
-              Sách mới cập nhật
+              {t('new-updates')}
             </div>
             <div className="flex justify-between">
               <div className="text-[32px]/[40px] font-semibold mb-7.5 text-white mt-4 font-SemiBold">
-                Mỗi ngày một phong cách đọc sách
+                {t('daily-reading-style')}
               </div>
               <Link href={"/booknew"} className="my-auto ml-auto">
                 <span className="text-[16px]/[28px] text-[#33bf71] cursor-pointer font-light font-Light">
-                  Xem tất cả
+                  {t('view-all')}
                 </span>
               </Link>
             </div>
@@ -315,10 +318,10 @@ const Home = () => {
       <div className="m-5">
         <div>
           <div className="mt-15 text-[28px]/[28px]! font-medium! text-white font-Medium">
-            Blog sách
+            {t('book-blog')}
           </div>
           <div className="mt-2.5 text-[32px]/[40px]! font-semibold! mb-7.5! text-white font-SemiBold">
-            Nơi sẻ chia mọi kiến thức về sách
+            {t('a-place-to-share')}
           </div>
         </div>
         {!isBlogLoading && blogData ? (

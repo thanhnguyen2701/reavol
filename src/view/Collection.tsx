@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import { useEffect } from "react";
 import { selectHomeData, selectHomeLoading } from "@/api/home";
+import { useTranslations } from "next-intl";
 
 const Collection = () => {
   const dispatch = useAppDispatch();
@@ -20,10 +21,11 @@ const Collection = () => {
   const forYouData = data?.data.find((item) => item.type === 3);
   const forYou = forYouData?.forYou;
 
+  const t = useTranslations("Collection");
   return (
     <div className="m-5">
       <div className="mt-2.5">
-        <div className="text-[30px] font-semibold text-white leading-7">TUYỂN TẬP</div>
+        <div className="text-[30px] font-semibold text-white leading-7">{t("collection")}</div>
         <div className="relative aspect-square md:aspect-3/1 w-full mt-8 mb-20 overflow-hidden rounded-lg">
           {forYou ? (
             <Image

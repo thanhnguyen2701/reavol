@@ -1,0 +1,51 @@
+{
+  "Sidebar": {
+    "about": "About Reavol",
+    "collections": "Collections",
+    "freeBooks": "Free Books",
+    "selections": "Our Selections",
+    "trendingBooks": "Trending Books"
+  },
+  "Home": {
+    "explore": "Khám phá",
+    "today": "Hôm nay",
+    "read_15_min": "15 Phút đọc sách mỗi ngày",
+    "view&day": "53K đọc • 1 ngày trước",
+    "time": "15 phút",
+    "selection-for-you": "Tuyển tập sách hay cho bạn",
+    "view-all": "Xem tất cả",
+    "trending": "Xu hướng",
+    "books-of-week": "Sách hay trong tuần",
+    "top-free-books": "Top sách miễn phí",
+    "selection": "Tuyển chọn",
+    "read-anytime-anywhere": "Đọc sách mọi lúc mọi nơi",
+    "new-updates": "Sách mới cập nhật",
+    "daily-reading-style": "Mỗi ngày một phong cách đọc sách",
+    "book-blog": "Blog sách",
+    "a-place-to-share": "Nơi sẻ chia mọi kiến thức về sách"
+  },
+  "Book":{
+    "buy-now": "Mua ngay",
+    "download":"Tải app để đọc bản tóm tắt đầy đủ",
+    "recommended-for-you":"Có thể bạn quan tâm",
+    "book": "Những gì về sách ?",
+    "who": "Ai nên đọc sách này ?",
+    "about-author": "Ai viết ra cuốn sách này ?",
+    "appendix": "Phụ lục"
+  },
+  "BookFree":{
+    "free-book": "SÁCH MIỄN PHÍ"
+  },
+  "Collection":{
+    "collection": "TUYỂN TẬP"
+  },
+  "Selection":{
+    "selection": "Tuyển chọn",
+    "read-anytime-anywhere": "Đọc sách mọi lúc mọi nơi"
+  },
+  "Trending":{
+    "weely-trends": "Xu hướng trong tuần",
+    "books-of-week": "Sách hay trong tuần"
+  }
+  
+}

@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import Image from "next/image";
 import { useEffect } from "react";
 import { selectHomeData, selectHomeLoading } from "@/api/home";
+import { useTranslations } from "next-intl";
 const BookFree = () => {
   const dispatch = useAppDispatch();
   const data = useAppSelector(selectHomeData);
@@ -18,10 +19,12 @@ const BookFree = () => {
   const freeListData = data?.data.find((item) => item.type === 1);
   const freeList = freeListData?.freeList;
 
+  const t = useTranslations("BookFree");
+
   return (
     <div className="m-5">
       <div className="mt-2.5">
-        <div className="text-[30px] font-semibold text-white leading-7">SÁCH MIỄN PHÍ</div>
+        <div className="text-[30px] font-semibold text-white leading-7">{t('free-book')}</div>
         <div className="relative aspect-square md:aspect-[2.96] w-full mt-8 mb-20 overflow-hidden rounded-lg">
           {isLoading === false && freeList ? (
             <Image

@@ -1,0 +1,48 @@
+{
+  "Sidebar": {
+    "about": "About Reavol",
+    "collections": "Collections",
+    "freeBooks": "Free Books",
+    "selections": "Our Selections",
+    "trendingBooks": "Trending Books"
+  },
+  "Home": {
+    "explore": "Explore",
+    "today": "Today",
+    "read_15_min": "Read for 15 minutes every day.",
+    "view&day": "53K views • 1 day ago",
+    "time": "15 min",
+    "selection-for-you": "Selections for you",
+    "view-all": "View All",
+    "trending": "Trending",
+    "books-of-week": "Books of the Week",
+    "top-free-books": "Top Free Books",
+    "selection": "Selections",
+    "read-anytime-anywhere": "Read Anytime, Anywhere",
+    "new-updates": "New Updated Books",
+    "daily-reading-style": "A New Way to Read Each Day",
+    "book-blog": "Book Blog",
+    "a-place-to-share": "A Place to Share All Knowledge About Books"
+  },
+  "Book":{
+    "buy-now": "Buy Now",
+    "download":"Download the App to Read the Full Summary",
+    "recommended-for-you":"Recommended for You",
+    "book": "About the Book",
+    "who": "Who Should Read This Book ?",
+    "about-author": "About the Author",
+    "appendix": "Appendix"
+  },
+  "Collection":{
+    "collection": "COLLECTIONS"
+  },
+  "Selection":{
+    "selection": "Selections",
+    "read-anytime-anywhere": "Read Anytime, Anywhere"
+  },
+  "Trending":{
+    "weely-trends": "Weekly Trends",
+    "books-of-week": "Books of the Week"
+  }
+  
+}
