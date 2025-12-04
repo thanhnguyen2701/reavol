@@ -34,6 +34,9 @@
     "about-author": "About the Author",
     "appendix": "Appendix"
   },
+    "BookFree":{
+    "free-book": "FREE BOOKS"
+  },
   "Collection":{
     "collection": "COLLECTIONS"
   },

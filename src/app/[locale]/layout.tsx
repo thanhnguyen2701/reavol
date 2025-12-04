@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ReduxProvider from "@/redux/provider";
+import ReduxProvider from "@/store/provider";
 import i18nConfig from '@/i18n/request';
 import { NextIntlClientProvider } from "next-intl";
 

@@ -1,6 +1,7 @@
 import Loading from "@/components/Loading";
 import { fetchBlogDetails } from "@/api/blogDetails/action";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { useAppDispatch } from "@/hooks";
+import { useAppSelector } from "@/hooks";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";

@@ -3,7 +3,8 @@
 import BookItemComponent2 from "@/components/BookItemComponent2";
 import Loading from "@/components/Loading";
 import { fetchHomeData } from "@/api/home/action";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { useAppDispatch } from "@/hooks";
+import { useAppSelector } from "@/hooks";
 import Image from "next/image";
 import { useEffect } from "react";
 import { selectHomeData, selectHomeLoading } from "@/api/home";
