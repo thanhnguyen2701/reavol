@@ -1,8 +1,12 @@
 import { BookItem } from "@/type";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const BookItemComponent = ({ item }: { item: BookItem }) => {
+
+  const t= useTranslations('BookItemComponent');
+
   return (
     <Link href={`/books/${item.slug}`}>
       <div className="w-full bg-[#0d2d3a] p-0 rounded-[20px] relative inline-block overflow-hidden">
@@ -16,7 +20,7 @@ const BookItemComponent = ({ item }: { item: BookItem }) => {
           />
           <div className="absolute right-5 top-5 rounded-[7px] bg-[#242730] opacity-50 px-2.5 py-1.5 tracking-[0.5px]">
             <span className="font-medium text-[10px]/[10px] tracking-[0.5px] text-white">
-              7 phút
+              7 {t('min')}
             </span>
           </div>
         </div>
@@ -34,7 +38,7 @@ const BookItemComponent = ({ item }: { item: BookItem }) => {
             </div>
             <div className="ml-7.5 items-center w-[76%] mt-2.5">
               <span className="text-[12px]/[12px] tracking-[0.5px] text-[#808191] mix-blend-normal font-Regular font-normal">
-                53K views • 2 weeks ago
+                53K {t('view')} • 2 {t('time')}
               </span>
             </div>
           </div>

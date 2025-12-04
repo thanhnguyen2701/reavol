@@ -1,7 +1,10 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+
+  const t = useTranslations('Footer');
   return (
     <div className="mx-0 z-10">
       <div>
@@ -13,15 +16,14 @@ const Footer = () => {
                   <Image src={"/ic_logo_reavol.svg"} width={250} height={100} alt="" />
                 </div>
                 <h6 className="mt-2.5 text-[16px]/[30px] text-white font-medium font-Medium mb-[.5em]">
-                  DIGITAL E-COMMERCE PLATFORM
+                  {t('digital-ecommerce-platform')}
                 </h6>
-                <div className="text-white font-bold text-[16px]">Công ty Cổ Phần Reavol</div>
+                <div className="text-white font-bold text-[16px]">{t('company-name')}</div>
                 <div className="text-white">
-                  GPKD số 0109650648 do Sở KH và ĐT TP Hà Nội cấp ngày 27/05/2021
+                  {t('company-license')}
                 </div>
                 <div className="text-white">
-                  Địa chỉ: Tầng 6, Toà văn phòng 1, Tổ hợp Sunsquare Số 21 Lê Đức Thọ,
-                  <br /> P. Mỹ Đình 2, Q. Nam Từ Liêm, Tp. Hà Nội
+                  {t('company-address')}
                 </div>
                 <div className="text-white">
                   Hotline: <Link href={"tel:0977947961"}>0977947961</Link>
@@ -75,14 +77,14 @@ const Footer = () => {
                 <div className="flex justify-center relative flex-none w-1/3 max-w-1/3 min-h-px px-4">
                   <div>
                     <h4 className="font-semibold text-[24px]/[36px] text-[#33bf71] font-SemiBold mt-0 mb-2">
-                      VỀ CHÚNG TÔI
+                      {t('about-us-title')}
                     </h4>
                     <div className="mt-4">
                       <Link
                         href={"/introduce"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Giới thiệu
+                        {t('about-us-intro')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -90,7 +92,7 @@ const Footer = () => {
                         href={"/introduce"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Gia nhập đội ngũ của chúng tôi
+                        {t('about-us-join')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -98,7 +100,7 @@ const Footer = () => {
                         href={"/introduce"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Liên hệ
+                        {t('about-us-contact')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -114,14 +116,14 @@ const Footer = () => {
                 <div className="flex justify-center relative flex-none w-2/3 max-w-2/3 min-h-px px-4">
                   <div>
                     <h4 className="font-semibold text-[24px]/[36px] text-[#33bf71] font-SemiBold mt-0 mb-2">
-                      CHÍNH SÁCH
+                      {t('policy-title')}
                     </h4>
                     <div className="mt-4">
                       <Link
                         href={"/privacy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Điều khoản,Chính sách
+                        {t('policy-general')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -129,7 +131,7 @@ const Footer = () => {
                         href={"/payment-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách thanh toán
+                        {t('policy-payment')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -137,7 +139,7 @@ const Footer = () => {
                         href={"/complaint-handling-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách xử lý khiếu nại
+                        {t('policy-complaint')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -145,7 +147,7 @@ const Footer = () => {
                         href={"/return-refund-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách đổi trả và hoàn tiền
+                        {t('policy-refund')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -153,7 +155,7 @@ const Footer = () => {
                         href={"/warranty-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách bảo hành
+                        {t('policy-warranty')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -161,7 +163,7 @@ const Footer = () => {
                         href={"/checking-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách kiểm hàng
+                        {t('policy-checking')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -169,7 +171,7 @@ const Footer = () => {
                         href={"/information-privacy-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách bảo mật thông tin
+                        {t('policy-privacy')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -177,7 +179,7 @@ const Footer = () => {
                         href={"/protection-policy"}
                         className="font-InterRegular text-[18px]/[36px] text-white"
                       >
-                        Chính sách bảo vệ dữ liệu cá nhân Vinaphone
+                        {t('policy-data-protection')}
                       </Link>
                     </div>
                   </div>
@@ -192,15 +194,14 @@ const Footer = () => {
                   <Image src={"/ic_logo_reavol.svg"} width={200} height={80} alt="" />
                 </div>
                 <h6 className="mt-2.5 text-[14px]/[26px] text-white font-medium font-Medium mb-[.5em]">
-                  DIGITAL E-COMMERCE PLATFORM
+                  {t('digital-ecommerce-platform')}
                 </h6>
-                <div className="text-white font-bold text-[16px]">Công ty Cổ Phần Reavol</div>
+                <div className="text-white font-bold text-[16px]">{t('company-name')}</div>
                 <div className="text-white">
-                  GPKD số 0109650648 do Sở KH và ĐT TP Hà Nội cấp ngày 27/05/2021
+                  {t('company-license')}
                 </div>
                 <div className="text-white">
-                  Địa chỉ: Tầng 6, Toà văn phòng 1, Tổ hợp Sunsquare Số 21 Lê Đức Thọ,
-                  <br /> P. Mỹ Đình 2, Q. Nam Từ Liêm, Tp. Hà Nội
+                  {t('company-address')}
                 </div>
                 <div className="text-white">
                   Hotline: <Link href={"tel:0977947961"}>0977947961</Link>
@@ -254,14 +255,14 @@ const Footer = () => {
                 <div className="flex justify-center relative flex-none w-1/3 max-w-1/3 min-h-px px-4">
                   <div>
                     <h4 className="font-semibold text-[16px]/[24px] text-[#33bf71] font-SemiBold mt-0 mb-2">
-                      VỀ CHÚNG TÔI
+                      {t('about-us-title')}
                     </h4>
                     <div className="mt-4">
                       <Link
                         href={"/introduce"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Giới thiệu
+                        {t('about-us-intro')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -269,7 +270,7 @@ const Footer = () => {
                         href={"/introduce"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Gia nhập đội ngũ của chúng tôi
+                        {t('about-us-join')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -277,7 +278,7 @@ const Footer = () => {
                         href={"/introduce"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Liên hệ
+                        {t('about-us-contact')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -293,14 +294,14 @@ const Footer = () => {
                 <div className="flex justify-center relative flex-none w-2/3 max-w-2/3 min-h-px px-4">
                   <div>
                     <h4 className="font-semibold text-[16px]/[24px] text-[#33bf71] font-SemiBold mt-0 mb-2">
-                      CHÍNH SÁCH
+                      {t('policy-title')}
                     </h4>
                     <div className="mt-4">
                       <Link
                         href={"/privacy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Điều khoản,Chính sách
+                        {t('policy-general')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -308,7 +309,7 @@ const Footer = () => {
                         href={"/payment-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách thanh toán
+                        {t('policy-payment')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -316,7 +317,7 @@ const Footer = () => {
                         href={"/complaint-handling-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách xử lý khiếu nại
+                        {t('policy-complaint')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -324,7 +325,7 @@ const Footer = () => {
                         href={"/return-refund-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách đổi trả và hoàn tiền
+                        {t('policy-refund')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -332,7 +333,7 @@ const Footer = () => {
                         href={"/warranty-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách bảo hành
+                        {t('policy-warranty')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -340,7 +341,7 @@ const Footer = () => {
                         href={"/checking-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách kiểm hàng
+                        {t('policy-checking')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -348,7 +349,7 @@ const Footer = () => {
                         href={"/information-privacy-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách bảo mật thông tin
+                        {t('policy-privacy')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -356,7 +357,7 @@ const Footer = () => {
                         href={"/protection-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách bảo vệ dữ liệu cá nhân Vinaphone
+                        {t('policy-data-protection')}
                       </Link>
                     </div>
                   </div>
@@ -371,15 +372,14 @@ const Footer = () => {
                   <Image src={"/ic_logo_reavol.svg"} width={200} height={80} alt="" />
                 </div>
                 <h6 className="mt-2.5 text-[14px]/[26px] text-white font-medium font-Medium mb-[.5em]">
-                  DIGITAL E-COMMERCE PLATFORM
+                  {t('digital-ecommerce-platform')}
                 </h6>
-                <div className="text-white font-bold text-[16px]">Công ty Cổ Phần Reavol</div>
+                <div className="text-white font-bold text-[16px]">{t('company-name')}</div>
                 <div className="text-white">
-                  GPKD số 0109650648 do Sở KH và ĐT TP Hà Nội cấp ngày 27/05/2021
+                  {t('company-license')}
                 </div>
                 <div className="text-white">
-                  Địa chỉ: Tầng 6, Toà văn phòng 1, Tổ hợp Sunsquare Số 21 Lê Đức Thọ,
-                  <br /> P. Mỹ Đình 2, Q. Nam Từ Liêm, Tp. Hà Nội
+                  {t('company-address')}
                 </div>
                 <div className="text-white">
                   Hotline: <Link href={"tel:0977947961"}>0977947961</Link>
@@ -433,14 +433,14 @@ const Footer = () => {
                 <div className="flex justify-center relative flex-none w-1/3 max-w-1/3 min-h-px px-4">
                   <div>
                     <h4 className="font-semibold text-[16px]/[24px] text-[#33bf71] font-SemiBold mt-0 mb-2">
-                      VỀ CHÚNG TÔI
+                      {t('about-us-title')}
                     </h4>
                     <div className="mt-4">
                       <Link
                         href={"/introduce"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Giới thiệu
+                        {t('about-us-intro')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -448,7 +448,7 @@ const Footer = () => {
                         href={"/introduce"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Gia nhập đội ngũ của chúng tôi
+                        {t('about-us-join')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -456,7 +456,7 @@ const Footer = () => {
                         href={"/introduce"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Liên hệ
+                        {t('about-us-contact')}
                       </Link>
                     </div>
                     <div className="mt-4">
@@ -472,14 +472,14 @@ const Footer = () => {
                 <div className="flex justify-center relative flex-none w-2/3 max-w-2/3 min-h-px px-4">
                   <div>
                     <h4 className="font-semibold text-[16px]/[24px] text-[#33bf71] font-SemiBold mt-0 mb-2">
-                      CHÍNH SÁCH
+                      {t('policy-title')}
                     </h4>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
                       <Link
                         href={"/privacy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Điều khoản,Chính sách
+                        {t('policy-general')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -487,7 +487,7 @@ const Footer = () => {
                         href={"/payment-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách thanh toán
+                        {t('policy-payment')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -495,7 +495,7 @@ const Footer = () => {
                         href={"/complaint-handling-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách xử lý khiếu nại
+                        {t('policy-complaint')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -503,7 +503,7 @@ const Footer = () => {
                         href={"/return-refund-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách đổi trả và hoàn tiền
+                        {t('policy-refund')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -511,7 +511,7 @@ const Footer = () => {
                         href={"/warranty-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách bảo hành
+                        {t('policy-warranty')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -519,7 +519,7 @@ const Footer = () => {
                         href={"/checking-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách kiểm hàng
+                        {t('policy-checking')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -527,7 +527,7 @@ const Footer = () => {
                         href={"/information-privacy-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách bảo mật thông tin
+                        {t('policy-privacy')}
                       </Link>
                     </div>
                     <div className="mt-4 font-InterRegular text-[14px]/[20px] text-white">
@@ -535,7 +535,7 @@ const Footer = () => {
                         href={"/protection-policy"}
                         className="font-InterRegular text-[14px]/[20px] text-white"
                       >
-                        Chính sách bảo vệ dữ liệu cá nhân Vinaphone
+                        {t('policy-data-protection')}
                       </Link>
                     </div>
                   </div>

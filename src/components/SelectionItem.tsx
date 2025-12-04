@@ -1,7 +1,10 @@
 import { Selection } from "@/type";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const SelectionItem = ({ item }: { item: Selection }) => {
+  const t = useTranslations('SelectionItem');
+
   return (
     <>
       <div className="relative aspect-[1.53] w-full bg-cover rounded-[20px] bg-position-1/2 cursor-pointer animation-fadein overflow-hidden">
@@ -21,7 +24,7 @@ const SelectionItem = ({ item }: { item: Selection }) => {
           {item?.description}
         </div>
         <div className="text-[13px]/[13px] mix-blend-normal text-[#b7b9d2] tracking-[0.5px] mt-1.5 font-normal font-Regular">
-          {item.numArticle} chủ đề
+          {item.numArticle} {t('topic')}
         </div>
       </div>
     </>

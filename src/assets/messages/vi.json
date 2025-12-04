@@ -1,10 +1,11 @@
 {
   "Sidebar": {
-    "about": "About Reavol",
-    "collections": "Collections",
-    "freeBooks": "Free Books",
-    "selections": "Our Selections",
-    "trendingBooks": "Trending Books"
+    "explore": "Khám phá",
+    "about": "Giới thiệu Reavol",
+    "collections": "Tuyển tập",
+    "freeBooks": "Sách miễn phí",
+    "selections": "Tuyển chọn",
+    "trendingBooks": "Xu hướng"
   },
   "Home": {
     "explore": "Khám phá",
@@ -46,6 +47,128 @@
   "Trending":{
     "weely-trends": "Xu hướng trong tuần",
     "books-of-week": "Sách hay trong tuần"
+  },
+  "Introduce": {
+    "login": "Đăng nhập",
+    "title": "KHƠI NGUỒN TRI THỨC VÀ SÁNG TẠO CÙNG REAVOL",
+    "subtitle": "Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn mang đến cho người dùng những sản phẩm chất lượng cùng trải nghiệm tuyệt vời",
+    "start-now": "Bắt đầu ngay",
+
+    "utilities-title": "TIỆN ÍCH",
+    "utilities-subtitle": "Khám phá mọi điều hay",
+    "read-books": "Đọc sách",
+    "read-books-desc": "Trên 2500 cuốn sách",
+    "audiobook": "Sách nói",
+    "audiobook-desc": "Giọng đọc tự nhiên, truyền cảm hứng",
+    "watch-video": "Xem video",
+    "watch-video-desc": "Nghe sách miễn phí không có quảng cáo",
+    "writing": "Sáng tác",
+    "writing-desc": "Tự do sáng tác, đa dạng, hấp dẫn",
+
+    "best-choice-title": "LỰA CHỌN TỐT NHẤT",
+    "best-choice-subtitle": "Đọc - Nghe sách mỗi khi",
+    "study": "Học tập",
+    "drive": "Lái xe",
+    "commute": "Đi lại",
+    "work": "Làm việc",
+    "running": "Chạy bộ",
+    "relax": "Thư giãn",
+
+    "content-title": "NỘI DUNG HẤP DẪN",
+    "content-subtitle": "Xây dựng thói quen đọc sách mỗi ngày",
+    "creator-camp-desc": "Tại Trại sáng tác của Reavol, các bạn có thể đăng tải những tác phẩm của mình và kiếm tiền từ chính tác phẩm đó. Hãy đăng kí làm Cộng tác viên của Reavol ngay hôm nay để có thể mang tác phẩm của mình đến gần hơn với những người yêu sách!",
+    "try-now": "Bắt đầu thử",
+
+    "categories-title": "THỂ LOẠI",
+    "categories-question": "Sách bạn yêu thích nhất?",
+    "politics-society": "Chính trị & xã hội",
+    "psychology": "Tâm lý học",
+    "science": "Khoa học",
+    "biography-history": "Tiểu sử và lịch sử",
+    "health-fitness": "Sức khỏe và thể hình",
+    "corporate-culture": "Văn hóa doanh nghiệp",
+    "entrepreneurship-small-business": "Tinh thần khởi nghiệp & Doanh nghiệp nhỏ",
+    "motivation-inspiration": "Động lực và Truyền cảm hứng",
+    "economics": "Kinh tế học",
+    "management-leadership": "Quản lý lãnh đạo",
+    "money-investment": "Tiền bạc và đầu tư",
+    "productivity-time-management": "Hiệu suất làm việc và Quản lý thời gian",
+    "personal-development": "Phát triển cá nhân và tự hoàn thiện bản thân",
+    "marketing-sales": "Marketing và bán hàng",
+    "gender-relationship": "Giới tính và mối quan hệ",
+    "small-investment-fast-growth": "Đầu tư nhỏ, phát triển nhanh",
+
+    "unlock-title": "Mở khóa toàn bộ sách <bold>1 năm / trọn đời</bold>",
+    "unlock-item1": "Đọc và nghe hơn <bold>2500 cuốn sách cùng 16 thể loại</bold> khác nhau",
+    "unlock-item2": "Dễ dàng tiếp thu tri thức từ <bold>5 cuốn sách mỗi ngày</bold>",
+    "unlock-item3": "Xem thỏa thích những video hay về sách <bold>không</bold> bị làm phiền bởi <bold>quảng cáo</bold>",
+    "unlock-item4": "<bold>Đọc miễn phí</bold> chương đầu tiên với các <bold>truyện độc quyền</bold>",
+    "unlock-item5": "Tham gia vào các sự kiện <bold>kiếm Rtoken</bold>",
+
+    "kocs-benefits-title": "QUYỀN LỢI CỦA KOCS",
+    "kocs-benefit1": "Hưởng % hoa hồng trực tiếp từ mỗi đơn hàng",
+    "kocs-benefit2": "Hỗ trợ KOCs xây dựng nội dung trên mạng xã hội",
+    "kocs-benefit3": "Tham gia vào các chiến lược phát triển với các đối tác của Reavol",
+
+    "kocs-register-title": "ĐĂNG KÝ TÀI KHOẢN KOCS",
+    "kocs-register-subtitle": "Bạn đã sẵn sàng gia tăng thu nhập cùng Reavol KOCs?",
+    "register-name": "Tên đăng ký *",
+    "register-phone": "Số điện thoại *",
+    "register-email": "Email *",
+    "register-address": "Địa chỉ *",
+    "register-job": "Công việc hiện tại *",
+    "register-platform": "Nền tảng lựa chọn:",
+    "send-now": "Gửi ngay",
+
+    "footer-address": "Tòa Licogi 13, Khuất Duy Tiến, Thanh Xuân, Hà Nội",
+    "footer-application": "Ứng dụng",
+    "footer-category": "Thể loại",
+    "footer-contributor": "Cộng tác viên",
+    "footer-reading-benefit": "Lợi ích của đọc",
+    "footer-policies": "Chính sách",
+    "footer-payment": "Thanh toán",
+    "footer-services": "Dịch vụ",
+    "footer-reading-card": "Thẻ đọc sách",
+    "footer-support": "Trợ giúp",
+    "footer-about-us": "Về chúng tôi",
+    "footer-intro": "Giới thiệu",
+    "footer-website": "Website"
+  },
+  "BookItemComponent": {
+    "min": "phút",
+    "view": "lượt xem",
+    "time": "tuần trước"
+  },
+  "BookItemComponent2": {
+    "read-more": "READ MORE"
+  },
+  "Footer":{
+     "digital-ecommerce-platform": "DIGITAL E-COMMERCE PLATFORM",
+  "company-name": "Công ty Cổ Phần Reavol",
+  "company-license": "GPKD số 0109650648 do Sở KH và ĐT TP Hà Nội cấp ngày 27/05/2021",
+  "company-address": "Địa chỉ: Tầng 6, Toà văn phòng 1, Tổ hợp Sunsquare Số 21 Lê Đức Thọ, P. Mỹ Đình 2, Q. Nam Từ Liêm, Tp. Hà Nội",
+
+  "about-us-title": "VỀ CHÚNG TÔI",
+  "about-us-intro": "Giới thiệu",
+  "about-us-join": "Gia nhập đội ngũ của chúng tôi",
+  "about-us-contact": "Liên hệ",
+
+  "policy-title": "CHÍNH SÁCH",
+  "policy-general": "Điều khoản,Chính sách",
+  "policy-payment": "Chính sách thanh toán",
+  "policy-complaint": "Chính sách xử lý khiếu nại",
+  "policy-refund": "Chính sách đổi trả và hoàn tiền",
+  "policy-warranty": "Chính sách bảo hành",
+  "policy-checking": "Chính sách kiểm hàng",
+  "policy-privacy": "Chính sách bảo mật thông tin",
+  "policy-data-protection": "Chính sách bảo vệ dữ liệu cá nhân Vinaphone"
+  },
+  "Header": {
+    "search": "Tìm Kiếm"
+  },
+  "SelectionItem":{
+    "topic": "chủ đề"
   }
+
   
 }

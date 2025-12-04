@@ -1,8 +1,12 @@
 import { BookItem } from "@/type";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const BookItemComponent2 = ({ item }: { item: BookItem }) => {
+
+  const t= useTranslations('BookItemComponent2');
+
   return (
     <Link href={`/books/${item.slug}`} className="touch-manipulation">
       <div className="flex items-center">
@@ -27,7 +31,7 @@ const BookItemComponent2 = ({ item }: { item: BookItem }) => {
             </div>
             <div className="readButton w-26 flex justify-end items-center">
               <div className="w-full font-bold text-[12px]/[20px] -tracking-[.01em] rounded-[10px] text-[#33bf71] uppercase transition-all duration-500 relative overflow-hidden py-1 px-3 z-1 cursor-pointer flex justify-center hover:text-white">
-                ĐỌC NGAY
+                {t('read-more')}
               </div>
             </div>
           </div>

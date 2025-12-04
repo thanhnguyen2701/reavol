@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React from "react";
 
 const Header = () => {
+  const t = useTranslations('Header');
+  
   return (
     <div className="mt-2.5 mr-5 px-5 h-20 flex items-center">
       <div className="flex items-center w-full">
@@ -11,7 +13,7 @@ const Header = () => {
               <div className="w-full! rounded-[10px]! bg-[#1c465d]! h-10 px-[11px] py-1 transition-all duration-500 ease-in inline-flex">
                 <input
                   type="text"
-                  placeholder="Tìm Kiếm"
+                  placeholder={t('search')}
                   className="text-white text-[16px]/[13px] font-Regular text-ellipsis touch-manipulation w-full transition-all duration-500 ease-in"
                 />
                 <span className="box-border ml-1 flex flex-none items-center">

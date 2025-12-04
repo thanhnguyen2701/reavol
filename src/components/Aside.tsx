@@ -1,10 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 const Aside = () => {
   const pathname = usePathname();
+
+  const t = useTranslations("Sidebar");
 
   return (
     <>
@@ -40,7 +43,7 @@ const Aside = () => {
                   <span
                     className={`menu-item_text ${pathname === "/" ? "active" : ""} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}
                   >
-                    Khám phá
+                    {t('explore')}
                   </span>
                 </div>
               </Link>
@@ -64,7 +67,7 @@ const Aside = () => {
                   <span
                     className={`menu-item_text ${pathname === "/introduce" ? "active" : ""} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}
                   >
-                    Giới thiệu Reavol
+                    {t('about')}
                   </span>
                 </div>
               </Link>
@@ -88,7 +91,7 @@ const Aside = () => {
                   <span
                     className={`menu-item_text ${pathname === "/collection" ? "active" : ""} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}
                   >
-                    Tuyển tập
+                    {t('collections')}
                   </span>
                 </div>
               </Link>
@@ -112,7 +115,7 @@ const Aside = () => {
                   <span
                     className={`menu-item_text ${pathname === "/bookfree" ? "active" : ""} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}
                   >
-                    Sách miễn phí
+                    {t('freeBooks')}
                   </span>
                 </div>
               </Link>
@@ -136,7 +139,7 @@ const Aside = () => {
                   <span
                     className={`menu-item_text ${pathname === "/selection" ? "active" : ""} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}
                   >
-                    Tuyển chọn
+                    {t('selections')}
                   </span>
                 </div>
               </Link>
@@ -160,7 +163,7 @@ const Aside = () => {
                   <span
                     className={`menu-item_text ${pathname === "/trending" ? "active" : ""} text-[14px] tracking-[0.3px] text-white h-10 flex items-center font-semibold`}
                   >
-                    Xu hướng
+                    {t('trendingBooks')}
                   </span>
                 </div>
               </Link>

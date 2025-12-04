@@ -1,8 +1,12 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Introduce = () => {
+
+  const t = useTranslations("Introduce");
+
   return (
     <div className="w-full relative h-full bg-[#044063]">
       <div className="bg-[#044063]">
@@ -15,21 +19,20 @@ const Introduce = () => {
             </div>
             <div className="mt-10">
               <span className="cursor-pointer text-white text-[24px]/[130%] font-semibold">
-                Đăng nhập
+                {t("login")}
               </span>
             </div>
           </div>
           <div className={`flex flex-wrap -mx-4`}>
             <div className={`text-white mt-[70px] relative w-full min-h-px px-4 md:w-1/2`}>
               <p className="lg:text-[50px]/[140%] md:text-[46px]/[120%] text-[42px]/[110%] font-bold w-[600px] md:w-[500px] mt-0 lg:mb-[1em] mb-[.5em]">
-                KHƠI NGUỒN TRI THỨC VÀ SÁNG TẠO CÙNG REAVOL
+                {t("title")}
               </p>
               <p className="lg:mt-[82px] font-normal lg:text-[30px]/[160%] md:text-[28px]/[140%] text-[24px]/[120%] lg:mb-[1em] mb-[.5em]">
-                Ứng dụng chuyên về nội dung số đầu tiên của Việt Nam, hứa hẹn mang đến cho người
-                dùng những sản phẩm chất lượng cùng trải nghiệm tuyệt vời
+                {t("subtitle")}
               </p>
               <div className="lg:mt-[35px] flex items-center justify-center w-[438px] lg:h-[92px] h-20 bg-[#43b871] rounded-[10px]">
-                <span className="font-bold text-[24px] text-white">Bắt đầu ngay</span>
+                <span className="font-bold text-[24px] text-white">{t("start-now")}</span>
               </div>
             </div>
             <div
@@ -51,10 +54,10 @@ const Introduce = () => {
         <div className={styles.container}>
           <div className="lg:pt-[150px] pt-[100px]">
             <div className="font-semibold text-[24px]/[130%] text-[#43b871] text-center">
-              TIỆN ÍCH
+              {t("utilities-title")}
             </div>
             <div className="mt-6 font-semibold text-[36px]/[130%] text-[#163b56] text-center">
-              Khám phá mọi điều hay
+              {t("utilities-subtitle")}
             </div>
             <div className="mt-[90px] flex flex-wrap -mx-4">
               <div className="flex-none w-1/2 md:w-1/4 max-w-1/2 md:max-w-1/4 relative min-h-px px-4">
@@ -63,10 +66,10 @@ const Introduce = () => {
                 </div>
                 <div className="text-center font-normal text-[24px]/[36px] text-[#163b56]">
                   <p className="mt-[41px] font-semibold text-[30px]/[45px] text-[43b871] mb-[1em]">
-                    Đọc sách
+                    {t("read-books")}
                   </p>
                   <span className="line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]">
-                    Trên 2500 cuốn sách
+                    {t("read-books-desc")}
                   </span>
                 </div>
               </div>
@@ -76,10 +79,10 @@ const Introduce = () => {
                 </div>
                 <div className="text-center font-normal text-[24px]/[36px] text-[#163b56]">
                   <p className="mt-[41px] font-semibold text-[30px]/[45px] text-[43b871] mb-[1em]">
-                    Sách nói
+                    {t("audiobook")}
                   </p>
                   <span className="line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]">
-                    Giọng đọc tự nhiên, truyền cảm hứng
+                    {t("audiobook-desc")}
                   </span>
                 </div>
               </div>
@@ -89,10 +92,10 @@ const Introduce = () => {
                 </div>
                 <div className="text-center font-normal text-[24px]/[36px] text-[#163b56]">
                   <p className="mt-[41px] font-semibold text-[30px]/[45px] text-[43b871] mb-[1em]">
-                    Xem video
+                    {t("watch-video")}
                   </p>
                   <span className="line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]">
-                    Nghe sách miễn phí không có quảng cáo
+                    {t("watch-video-desc")}
                   </span>
                 </div>
               </div>
@@ -102,10 +105,10 @@ const Introduce = () => {
                 </div>
                 <div className="text-center font-normal text-[24px]/[36px] text-[#163b56]">
                   <p className="mt-[41px] font-semibold text-[30px]/[45px] text-[43b871] mb-[1em]">
-                    Sáng tác
+                    {t("writing")}
                   </p>
                   <span className="line-clamp-3 font-normal text-[24px]/[36px] text-[#163b56]">
-                    Tự do sáng tác, đa dạng, hấp dẫn
+                    {t("writing-desc")}
                   </span>
                 </div>
               </div>
@@ -114,46 +117,46 @@ const Introduce = () => {
           <div className="mt-[150px] flex flex-wrap -mx-4">
             <div className="flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <p className="font-semibold text-[24px]/[130%] text-[#43b871] mt-0 mb-[1em]">
-                LỰA CHỌN TỐT NHẤT
+                {t("best-choice-title")}
               </p>
               <h3 className="font-bold text-[48px]/[130%] text-[#163b56] lg:w-[70%] font-[poppins] mt-0 mb-[0.5em]">
-                Đọc - Nghe sách mỗi khi
+                {t("best-choice-subtitle")}
               </h3>
               <div>
                 <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
-                    Học tập
+                    {t("study")}
                   </span>
                 </div>
                 <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
-                    Lái xe
+                    {t("drive")}
                   </span>
                 </div>
                 <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
-                    Đi lại
+                    {t('commute')}
                   </span>
                 </div>
                 <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
-                    Làm việc
+                    {t('work')}
                   </span>
                 </div>
                 <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
-                    Chạy bộ
+                    {t('running')}
                   </span>
                 </div>
                 <div className="mb-6 flex items-center">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <span className="ml-6 font-semibold text-[36px]/[75px] tracking-[.005em] text-[#163b56]">
-                    Thư giãn
+                    {t('relax')}
                   </span>
                 </div>
               </div>
@@ -175,18 +178,16 @@ const Introduce = () => {
             </div>
             <div className="flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <p className="font-semibold text-[24px]/[130%] text-[#43b871] font-[poppins] mt-0 mb-[1em]">
-                NỘI DUNG HẤP DẪN
+                {t('content-title')}
               </p>
               <h3 className="mt-6 font-bold text-[48px]/[130%] text-[#163b56] font-[poppins] mb-[0.5em]">
-                Xây dựng thói quen đọc sách mỗi ngày
+                {t('content-subtitle')}
               </h3>
               <div className="lg:mt-15 font-normal text-[20px]/[30px] tracking-[.005em] text-[#163b56]">
-                Tại Trại sáng tác của Reavol, các bạn có thể đăng tải những tác phẩm của mình và
-                kiếm tiền từ chính tác phẩm đó. Hãy đăng kí làm Cộng tác viên của Reavol ngay hôm
-                nay để có thể mang tác phẩm của mình đến gần hơn với những người yêu sách!
+                {t('creator-camp-desc')}
               </div>
               <div className="mt-[35px] mb-auto mx-auto flex lg:w-[438px] h-[92px] bg-[#43b871] rounded-[10px] items-center justify-center">
-                <span className="font-bold text-[24px]/[160%] text-white">Bắt đầu thử</span>
+                <span className="font-bold text-[24px]/[160%] text-white">{t('try-now')}</span>
               </div>
             </div>
           </div>
@@ -194,28 +195,28 @@ const Introduce = () => {
       </div>
       <div className="bg-[#f4faf6]">
         <h3 className="pt-15 font-semibold text-[24px]/[130%] text-[#43b871] text-center font-[poppins] mt-0 mb-[0.5em]">
-          THỂ LOẠI
+          {t('categories-title')}
         </h3>
         <h4 className="mt-6 font-bold text-[48px]/[130%] text-[#163b56] text-center font-[poppins] mg-[.5em]">
-          Sách bạn yêu thích nhất ?
+          {t('categories-question')}
         </h4>
         <div className="flex justify-center">
           <div className="ml-5 w-[285px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Chính trị & xã hội
+              {t('politics-society')}
             </span>
           </div>
           <div className="ml-5 w-[215px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Tâm lý học
+              {t('psychology')}
             </span>
           </div>
           <div className="ml-5 w-[209px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Khoa học
+              {t('science')}
             </span>
           </div>
         </div>
@@ -223,19 +224,19 @@ const Introduce = () => {
           <div className="ml-5 w-[308px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Tiểu sử và lịch sử
+              {t('biography-history')}
             </span>
           </div>
           <div className="ml-5 w-[350px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Sức khỏe và thể hình
+              {t('health-fitness')}
             </span>
           </div>
           <div className="ml-5 w-[339px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Văn hóa doanh nghiệp
+              {t('corporate-culture')}
             </span>
           </div>
         </div>
@@ -243,13 +244,13 @@ const Introduce = () => {
           <div className="ml-5 w-[612px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Tính thần khởi nghiệp & Doanh nghiệp nhỏ
+              {t('entrepreneurship-small-business')}
             </span>
           </div>
           <div className="ml-5 w-[431px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Động lực và Truyền cảm hứng
+              {t('motivation-inspiration')}
             </span>
           </div>
         </div>
@@ -257,19 +258,19 @@ const Introduce = () => {
           <div className="ml-5 w-[219px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Kinh tế học
+              {t('economics')}
             </span>
           </div>
           <div className="ml-5 w-[274px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Quản lý lãnh đạo
+              {t('management-leadership')}
             </span>
           </div>
           <div className="ml-5 w-[305px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Tiền bạc và đầu tư
+              {t('money-investment')}
             </span>
           </div>
         </div>
@@ -277,13 +278,13 @@ const Introduce = () => {
           <div className="ml-5 w-[546px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Hiệu suất làm việc và Quản lý thời gian
+              {t('productivity-time-management')}
             </span>
           </div>
           <div className="ml-5 w-[612px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Phát triển cá nhân và tự hoàn thiện bản thân
+              {t('personal-development')}
             </span>
           </div>
         </div>
@@ -291,13 +292,13 @@ const Introduce = () => {
           <div className="ml-5 w-[359px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Marketing và bán hàng
+              {t('marketing-sales')}
             </span>
           </div>
           <div className="ml-5 w-[375px] h-[71px] bg-white rounded-[10px] flex justify-center items-center">
             <Image src={"/ic_tower.svg"} width={30} height={30} alt="" />
             <span className="font-normal lg:text-[24px]/[17px] md:text-[20px]/[17px] text-[14px]/[12px] -tracking-[.01em] text-[#163b56] ">
-              Giới tính và mối quan hệ
+              {t('gender-relationship')}
             </span>
           </div>
         </div>
@@ -311,7 +312,7 @@ const Introduce = () => {
             <div className="lg:mt-[150px] md:mt-25 mt-15 flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <div className="lg:w-[450px]">
                 <span className="font-bold lg:text-[48px]/[130%] md:text-[40px]/[115%] text-[36px]/[100%] text-[#163b56]">
-                  Đầu tư nhỏ, phát triển nhanh
+                  {t('small-investment-fast-growth')}
                 </span>
               </div>
               <div className="mt-8">
@@ -319,7 +320,9 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Mở khóa toàn bộ sách<b> 1 năm/trọn đời</b>
+                      {t.rich("unlock-title", {
+                        bold: (chunks) => <b>{chunks}</b>
+                      })}
                     </span>
                   </div>
                 </div>
@@ -327,7 +330,9 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Đọc và nghe hơn <b>2500 cuốn sách cùng 16 thể loại</b> khác nhau
+                      {t.rich("unlock-item1", {
+                        bold: (chunks) => <b>{chunks}</b>
+                      })}
                     </span>
                   </div>
                 </div>
@@ -335,7 +340,9 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Dễ dàng tiếp thu tri thức từ<b> 5 cuồn sách mỗi ngày</b>
+                      {t.rich("unlock-item2", {
+                        bold: (chunks) => <b>{chunks}</b>
+                      })}
                     </span>
                   </div>
                 </div>
@@ -343,24 +350,27 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Xem thỏa thích những video hay về sách<b> không</b> bị làm phiền bởi
-                      <b> quảng cáo</b>
+                      {t.rich("unlock-item3", {
+                        bold: (chunks) => <b>{chunks}</b>
+                      })}
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
-                    <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      <b>Đọc miễn phí</b> chương đầu tiên với các <b>truyện độc quyền</b>
-                    </span>
+                    {t.rich("unlock-item4", {
+                        bold: (chunks) => <b>{chunks}</b>
+                      })}
                   </div>
                 </div>
                 <div className="flex items-center mt-9">
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4 w-full">
                     <span className="font-normal md:text-[20px]/[30px] text-[16px]/[20px]">
-                      Tham gia vào các sự kiện<b> kiếm Rtoken</b>
+                      {t.rich("unlock-item5", {
+                        bold: (chunks) => <b>{chunks}</b>
+                      })}
                     </span>
                   </div>
                 </div>
@@ -379,7 +389,7 @@ const Introduce = () => {
       <div className="bg-white">
         <div className="text-center lg:pt-30 pt-20">
           <h5 className="font-semibold text-[36px]/[130%] text-[#43b871] mt-0 mb-[0.5em]">
-            QUYỀN LỢI CỦA KOCS
+            {t('kocs-benefits-title')}
           </h5>
         </div>
         <div className={styles.container}>
@@ -395,7 +405,7 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4">
                     <span className="font-normal text-[20px]/[30px]">
-                      Hưởng % hoa hồng trực tiếp từ mỗi đơn hàng
+                      {t('kocs-benefit1')}
                     </span>
                   </div>
                 </div>
@@ -403,7 +413,7 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4">
                     <span className="font-normal text-[20px]/[30px]">
-                      Hỗ trợ KOCs xây dựng nội dung trên mạng xã hội
+                      {t('kocs-benefit2')}
                     </span>
                   </div>
                 </div>
@@ -411,7 +421,7 @@ const Introduce = () => {
                   <Image src="/ic_integrated.svg" width={48} height={48} alt="" />
                   <div className="ml-4">
                     <span className="font-normal text-[20px]/[30px]">
-                      Tham gia vào các chiến lược phát triển với các đối tác của Reavol.
+                      {t('kocs-benefit3')}
                     </span>
                   </div>
                 </div>
@@ -425,11 +435,11 @@ const Introduce = () => {
           <div className="lg:pb-[242px] pb-20 flex flex-wrap -mx-4">
             <div className="flex-none w-1/2 max-w-1/2 relative min-h-px px-4">
               <h6 className="lg:pt-[150px] pt-25 font-semibold lg:text-[36px]/[130%] text-[30px]/[110%] md:w-[450px] text-[#43b871] mt-0 mb-[.5em]">
-                ĐĂNG KÝ TÀI KHOẢN KOCS
+                {t('kocs-register-title')}
               </h6>
               <h5 className="mt-6 font-bold lg:text-[48px]/[140%] md:text-[44px]/[130%] text-[40px]/[110%] text-[#163b56] w-[80%] mb-[.5em]">
-                Bạn đã sẵn sàng gia tăng thu nhập cùng Reavol KOCs?
-              </h5>
+                {t('kocs-register-subtitle')}
+                </h5>
               <div className="mt-[21px]">
                 <Image src="/ic_loginKOCS.avif" width={540} height={540} alt="" />
               </div>
@@ -445,7 +455,7 @@ const Introduce = () => {
                       <div className="flex-auto max-w-full">
                         <input
                           type="text"
-                          placeholder="Tên đăng ký *"
+                          placeholder={t('register-name')}
                           id="basic_name"
                           value=""
                           className="text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500"
@@ -460,7 +470,7 @@ const Introduce = () => {
                       <div className="flex-auto max-w-full">
                         <input
                           type="text"
-                          placeholder="Số điện thoại *"
+                          placeholder={t('register-phone')}
                           id="basic_phone"
                           value=""
                           className="text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500"
@@ -475,7 +485,7 @@ const Introduce = () => {
                       <div className="flex-auto max-w-full">
                         <input
                           type="text"
-                          placeholder="Email *"
+                          placeholder={t('register-email')}
                           id="basic_email"
                           value=""
                           className="text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500"
@@ -490,7 +500,7 @@ const Introduce = () => {
                       <div className="flex-auto max-w-full">
                         <input
                           type="text"
-                          placeholder="Địa chỉ *"
+                          placeholder={t('register-address')}
                           id="basic_address"
                           value=""
                           className="text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500"
@@ -505,7 +515,7 @@ const Introduce = () => {
                       <div className="flex-auto max-w-full">
                         <input
                           type="text"
-                          placeholder="Công việc hiện tại *"
+                          placeholder={t('register-job')}
                           id="basic_working"
                           value=""
                           className="text-[20px]/[1.5715] lg:mt-6 h-15! rounded-[10px] text-ellipsis touch-manipulation box-border m-0 relative inline-block w-full min-w-0 py-1 px-[11px] text-[rgba(0,0,0,0.85)] bg-white border border-gray-300 transition-all duration-500"
@@ -518,10 +528,10 @@ const Introduce = () => {
                   <div className="pb-2 leading-[1.5715] whitespace-normal text-left inline-block grow-0 overflow-hidden align-middle relative max-w-full min-h-px">
                     <label
                       htmlFor="basic_platform"
-                      title="Nền tảng lựa chọn:"
+                      title={t('register-platform')}
                       className="ant-form-item-required m-0 h-auto relative inline-flex items-center text-[rgba(0,0,0,0.85)] text-[14px]"
                     >
-                      Nền tảng lựa chọn:
+                      {t('register-platform')}
                     </label>
                   </div>
                   <div className="flex flex-col grow relative max-w-full min-h-px">
@@ -631,7 +641,7 @@ const Introduce = () => {
                           type="submit"
                           className="h-15 w-full lg:mt-14 bg-[#43b871] border-none text-white leading-[1.5715] relative inline-block font-normal whitespace-nowrap text-center cursor-pointer touch-manipulation py-1 px-4 text-[14px]"
                         >
-                          <span className="font-bold text-[24px]/[160%] text-white">Gửi ngay</span>
+                          <span className="font-bold text-[24px]/[160%] text-white">{t('send-now')} </span>
                         </button>
                       </div>
                     </div>
@@ -650,7 +660,7 @@ const Introduce = () => {
                 <Image src="/ic_footer.svg" width={197} height={64} alt="" />
               </div>
               <h6 className="mt-8 font-normal md:text-[20px]/[30px] text-[16px]/[20px] text-white w-[80%] mb-[.5em]">
-                Tòa Licogi 13, Khuất Duy Tiến, Thanh Xuân, Hà Nội
+                {t('footer-address')}
               </h6>
               <div className="mt-[35px] flex">
                 <Link href={"https://www.facebook.com/reavolvn"}>
@@ -691,44 +701,44 @@ const Introduce = () => {
               <div className="mt-[122px] flex flex-wrap -mx-4">
                 <div className="mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-1/3 relative min-h-px px-4">
                   <h4 className="font-semibold md:text-[24px]/[36px] text-[20px]/[28px] text-white">
-                    Ứng dụng
+                    {t('footer-application')}
                   </h4>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Thể loại
+                    {t('footer-category')}
                   </div>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Cộng tác viên
+                    {t('footer-contributor')}
                   </div>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Lợi ích của đọc
+                    {t('footer-reading-benefit')}
                   </div>
                 </div>
                 <div className="mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-1/3 relative min-h-px px-4">
                   <h4 className="font-semibold md:text-[24px]/[36px] text-[20px]/[28px] text-white">
-                    Chính sách
+                    {t('footer-policies')}
                   </h4>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Thanh toán
+                    {t('footer-payment')}
                   </div>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Dịch vụ
+                    {t('footer-services')}
                   </div>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Thẻ đọc sách
+                    {t('footer-reading-card')}
                   </div>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Trợ giúp
+                    {t('footer-support')}
                   </div>
                 </div>
                 <div className="mt-[33px] font-medium text-[20px]/[30px] text-white flex-none w-1/3 max-w-1/3 relative min-h-px px-4">
                   <h4 className="font-semibold md:text-[24px]/[36px] text-[20px]/[28px] text-white">
-                    Về chúng tôi
+                    {t('footer-about-us')}
                   </h4>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Giới thiệu
+                    {t('footer-intro')}
                   </div>
                   <div className="mt-[33px] font-medium md:text-[20px]/[30px] text-[16px]/[24px] text-white">
-                    Website
+                    {t('footer-website')}
                   </div>
                 </div>
               </div>

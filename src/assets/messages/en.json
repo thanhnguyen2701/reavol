@@ -1,5 +1,6 @@
 {
   "Sidebar": {
+    "explore": "Explore",
     "about": "About Reavol",
     "collections": "Collections",
     "freeBooks": "Free Books",
@@ -43,6 +44,126 @@
   "Trending":{
     "weely-trends": "Weekly Trends",
     "books-of-week": "Books of the Week"
+  },
+  "Introduce": {
+  "login": "Login",
+  "title": "IGNITE KNOWLEDGE AND CREATIVITY WITH REAVOL",
+  "subtitle": "The first Vietnamese application specializing in digital content, promising to bring users high-quality products and excellent experiences",
+  "start-now": "Get Started",
+
+  "utilities-title": "UTILITIES",
+  "utilities-subtitle": "Explore all the good things",
+  "read-books": "Read Books",
+  "read-books-desc": "Over 2500 books",
+  "audiobook": "Audiobooks",
+  "audiobook-desc": "Natural, inspiring voice narration",
+  "watch-video": "Watch Videos",
+  "watch-video-desc": "Listen to books for free with no ads",
+  "writing": "Writing",
+  "writing-desc": "Create freely with diverse and engaging content",
+
+  "best-choice-title": "BEST CHOICE",
+  "best-choice-subtitle": "Read - Listen to books anytime",
+  "study": "Study",
+  "drive": "Driving",
+  "commute": "Commuting",
+  "work": "Working",
+  "running": "Running",
+  "relax": "Relaxing",
+
+  "content-title": "ENGAGING CONTENT",
+  "content-subtitle": "Build a daily reading habit",
+  "creator-camp-desc": "At Reavol’s Creator Camp, you can upload your own works and earn money from them. Register as a Reavol Contributor today to bring your work closer to book lovers!",
+  "try-now": "Try Now",
+
+  "categories-title": "CATEGORIES",
+  "categories-question": "What books do you love the most?",
+  "politics-society": "Politics & Society",
+  "psychology": "Psychology",
+  "science": "Science",
+  "biography-history": "Biography & History",
+  "health-fitness": "Health & Fitness",
+  "corporate-culture": "Corporate Culture",
+  "entrepreneurship-small-business": "Entrepreneurship & Small Business",
+  "motivation-inspiration": "Motivation & Inspiration",
+  "economics": "Economics",
+  "management-leadership": "Management & Leadership",
+  "money-investment": "Money & Investment",
+  "productivity-time-management": "Productivity & Time Management",
+  "personal-development": "Personal Development & Self-Improvement",
+  "marketing-sales": "Marketing & Sales",
+  "gender-relationship": "Gender & Relationships",
+  "small-investment-fast-growth": "Small Investment, Fast Growth",
+
+  "unlock-title": "Unlock all books for <bold>1 year / lifetime</bold>",
+  "unlock-item1": "Read and listen to over <bold>2500 books across 16 categories</bold>",
+  "unlock-item2": "Easily absorb knowledge from <bold>5 books a day</bold>",
+  "unlock-item3": "Enjoy great book videos <bold>without</bold> being bothered by <bold>ads</bold>",
+  "unlock-item4": "<bold>Read</bold> the first chapter <bold>for free</bold> with <bold>exclusive stories</bold>",
+  "unlock-item5": "Join events to <bold>earn Rtoken</bold>",
+
+  "kocs-benefits-title": "BENEFITS OF KOCs",
+  "kocs-benefit1": "Receive direct commission percentage from every order",
+  "kocs-benefit2": "Support KOCs in creating content on social media",
+  "kocs-benefit3": "Participate in development strategies with Reavol’s partners",
+
+  "kocs-register-title": "REGISTER A KOC ACCOUNT",
+  "kocs-register-subtitle": "Are you ready to increase your income with Reavol KOCs?",
+  "register-name": "Registration Name *",
+  "register-phone": "Phone Number *",
+  "register-email": "Email *",
+  "register-address": "Address *",
+  "register-job": "Current Occupation *",
+  "register-platform": "Preferred Platform:",
+  "send-now": "Submit Now",
+
+  "footer-address": "Licogi 13 Building, Khuat Duy Tien, Thanh Xuan, Hanoi",
+  "footer-application": "Application",
+  "footer-category": "Categories",
+  "footer-contributor": "Contributors",
+  "footer-reading-benefit": "Benefits of Reading",
+  "footer-policies": "Policies",
+  "footer-payment": "Payment",
+  "footer-services": "Services",
+  "footer-reading-card": "Reading Card",
+  "footer-support": "Support",
+  "footer-about-us": "About Us",
+  "footer-intro": "Introduction",
+  "footer-website": "Website"
+  },
+  "BookItemComponent": {
+    "min": "min",
+    "view": "views",
+    "time": "weeks ago"
+  },
+  "BookItemComponent2": {
+    "read-more": "ĐỌC NGAY"
+  },
+  "Footer": {
+  "digital-ecommerce-platform": "DIGITAL E-COMMERCE PLATFORM",
+  "company-name": "Reavol Joint Stock Company",
+  "company-license": "Business License No. 0109650648 issued by the Hanoi Department of Planning and Investment on 27/05/2021",
+  "company-address": "Address: 6th Floor, Office Building 1, Sunsquare Complex, 21 Le Duc Tho Street, My Dinh 2 Ward, Nam Tu Liem District, Hanoi City",
+
+  "about-us-title": "ABOUT US",
+  "about-us-intro": "Introduction",
+  "about-us-join": "Join our team",
+  "about-us-contact": "Contact",
+
+  "policy-title": "POLICIES",
+  "policy-general": "Terms & Policies",
+  "policy-payment": "Payment Policy",
+  "policy-complaint": "Complaint Handling Policy",
+  "policy-refund": "Return & Refund Policy",
+  "policy-warranty": "Warranty Policy",
+  "policy-checking": "Inspection Policy",
+  "policy-privacy": "Information Privacy Policy",
+  "policy-data-protection": "Vinaphone Personal Data Protection Policy"
+},
+  "Header": {
+    "search": "Search"
+  },
+  "SelectionItem":{
+    "topic": "topics"
   }
-  
 }
